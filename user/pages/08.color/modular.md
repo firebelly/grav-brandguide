@@ -1,5 +1,5 @@
 ---
-title: 'Brand Position'
+title: Color
 content:
     items: '@self.modular'
     order:
