@@ -1,5 +1,5 @@
 {% extends 'partials/base.html.twig' %}
-{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'}) }}{% endmacro %}
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
 
 {% block header_navigation %}
 <nav class="main-nav">
