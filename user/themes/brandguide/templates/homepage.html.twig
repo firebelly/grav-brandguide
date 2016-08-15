@@ -1,11 +1,4 @@
 {% extends 'partials/base.html.twig' %}
-{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'}) }}{% endmacro %}
-
-{% block header_navigation %}
-<nav class="main-nav">
-    {% include 'partials/navigation.html.twig' %}
-</nav>
-{% endblock %}
 
 {% block content %}
     {{ page.content }}

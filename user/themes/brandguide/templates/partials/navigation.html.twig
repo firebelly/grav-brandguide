@@ -2,31 +2,24 @@
 
 <ul>
     {% for page in pages.children %}
-        {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-        <li class="{{ current_page }}">
-            <a href="{{ page.url }}">
-                {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-                {{ page.menu }}
-            </a>
-            {% if page.collection() %}
-                <ul>
-                {% for module in page.collection() %}
-                    <li>
-                        <a href="{{ page.url }}#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
-                    </li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        </li>
-    {% endfor %}
-
-    {% for mitem in site.menu %}
-        <li>
-            <a href="{{ mitem.url }}">
-                {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
-                {{ mitem.text }}
-            </a>
-        </li>
+        {# omit homepage & homepage modules from navigation #}
+        {% if page.menu != 'Home' %}
+            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
+            <li class="{{ current_page }}">
+                <a href="{{ page.url }}">
+                    {{ page.menu }}
+                </a>
+                {% if page.collection() %}
+                    <ul>
+                    {% for module in page.collection() %}
+                        <li>
+                            <a href="{{ page.url }}#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endif %}
     {% endfor %}
 </ul>
 

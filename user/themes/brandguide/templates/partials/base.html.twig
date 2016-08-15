@@ -31,13 +31,9 @@
     <div class="header">
         <div class="wrapper padding">
             <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
-                <i class="fa fa-rebel"></i>
                 {{ config.site.title }}
             </a>
             {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
             {% endblock %}
         </div>
     </div>
