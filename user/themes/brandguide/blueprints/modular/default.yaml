@@ -4,7 +4,25 @@ title: Text
 form:
   fields:
     tabs:
+
       fields:
+        assets:
+          type: tab
+          title: Assets
+          fields:
+            header.assets:
+              name: assets
+              type: list
+              label: Assets
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .file:
+                  label: Choose media
+                  type: pagemediaselect
+
         advanced:
           fields:
             columns:
@@ -19,16 +37,11 @@ form:
                 header.template:
                   default: modular/text
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+
         content:
           fields:
             uploads:
               label: Page Media (first one will be displayed next to your content)
-            header.image_align:
-              type: select
-              label: Image position
-              classes: fancy
-              default: left
-              options:
-                'left': 'Left'
-                'right': 'Right'
-              type:
+            header.sidenote:
+              type: textarea
+              label: Sidenote

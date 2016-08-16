@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'worchesteref';
+  src: url("../fonts/elsnerflake_-_worchesteref-regular-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'worchesteref';
+  src: url("../fonts/elsnerflake_-_worchesteref-medium-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-medium-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'worchesteref';
+  src: url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+h1 {
+  font: 700 51px/1.2 'worchesteref', serif; }
+
+h2 {
+  font: 900 25px/1.2 'worchesteref', serif; }
+
+h3 {
+  font: 900 17px/1.2 'worchesteref', serif; }
+
+body {
+  background: #fff;
+  color: #363d39;
+  font: normal 16px/1.4 'worchesteref', serif; }
+
+.main-nav {
+  width: 20%;
+  float: left; }
+
+body:not(.homepage) #body {
+  margin-left: 21%;
+  border-left: 1px solid #363d39;
+  padding-left: 20px; }
+
+a.logo {
+  font-size: 50px;
+  display: block; }
+
+.sidenote {
+  font-size: small;
+  padding: 10px;
+  background: #eee; }
+
+/*# sourceMappingURL=application.css.map */

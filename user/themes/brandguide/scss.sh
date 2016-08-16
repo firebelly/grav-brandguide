@@ -1,2 +1,2 @@
 #!/bin/sh
-scss --watch scss:css
+scss --watch scss:css-compiled

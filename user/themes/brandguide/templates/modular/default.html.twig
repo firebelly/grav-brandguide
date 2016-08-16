@@ -3,5 +3,19 @@
     {% if image %}
         {{ image.cropResize(400,400).html('','','align-'~page.header.image_align) }}
     {% endif %}
+    {% if page.header.sidenote %}
+        <div class="sidenote">
+          {{ header.sidenote }}
+        </div>
+    {% endif %}
+    {% if page.header.assets %}
+      <div class="assets">
+        <ul class="assets">
+          {% for asset in page.header.assets %}
+            <li><a href="{{ page.media[ asset.file ].url }}">{{ asset.title }}</a></li>
+          {% endfor %}
+        </ul>
+       </div>
+    {% endif %}
 {{ content }}
 </div>
