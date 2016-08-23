@@ -9,11 +9,11 @@
                 <a href="{{ page.url }}">
                     {{ page.menu }}
                 </a>
-                {% if page.collection() %}
+                {% if page.children %}
                     <ul>
-                    {% for module in page.collection() %}
+                    {% for childpage in page.children %}
                         <li>
-                            <a href="{{ page.url }}#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
+                            <a href="{{ page.url }}#{{ _self.pageLinkName(childpage.menu) }}">{{ childpage.menu }}</a>
                         </li>
                     {% endfor %}
                     </ul>
