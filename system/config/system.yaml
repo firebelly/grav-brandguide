@@ -33,7 +33,7 @@ pages:
   publish_dates: true                       # automatically publish/unpublish based on dates
   process:
     markdown: true                          # Process Markdown
-    twig: false                             # Process Twig
+    twig: true                             # Process Twig
   twig_first: false                         # Process Twig before markdown when processing both on a page
   events:
     page: true                              # Enable page level events

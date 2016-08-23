@@ -1,0 +1,31 @@
+form:
+  fields:
+    brandAssets:
+      type: section
+      title: Brand Assets
+      underline: true
+
+      fields:
+        primaryLogo:
+          type: file
+          label: Primary Brand Logo
+          destination: 'user/themes/brandguide/assets'
+          accept:
+            - image/*
+          multiple: false
+
+    brandcolors:
+      type: section
+      title: Brand Colors
+      underline: true
+
+      fields:
+        primaryColor:
+          type: colorpicker
+          label: Primary Brand Color
+        secondColor:
+          type: colorpicker
+          label: Secondary Brand Color
+        tertiaryColor:
+          type: colorpicker
+          label: Tertiary Brand Color

@@ -18,6 +18,8 @@
     {% endblock %}
     {{ assets.css() }}
 
+    {% include 'partials/brandstyles.html.twig' %}
+
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
     {% endblock %}

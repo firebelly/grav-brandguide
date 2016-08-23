@@ -1,0 +1,27 @@
+// Base styles
+
+body {
+  color: #363d39;
+  background: #fff;
+  font: normal 16px/1.4 'worchesteref', serif;
+}
+.main-nav {
+  width: 20%;
+  float: left;
+}
+
+body:not(.homepage) #body {
+  margin-left: 21%;
+  border-left: 1px solid #363d39;
+  padding-left: 20px;
+}
+
+a.logo {
+  font-size: 50px;
+  display: block;
+}
+.sidenote {
+  font-size: small;
+  padding: 10px;
+  background: #eee;
+}

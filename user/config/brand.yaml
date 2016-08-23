@@ -1,0 +1,12 @@
+myfield: '#edd342'
+primaryColor: '#353d38'
+secondColor: '#f1bd19'
+tertiaryColor: '#d0d0c2'
+primaryLogo:
+  user/themes/brandguide/assets/Primary-Vertical---Black.png:
+    name: Primary-Vertical---Black.png
+    path: user/themes/brandguide/assets/Primary-Vertical---Black.png
+    type: image/png
+    size: 5956
+    file: user/themes/brandguide/assets/Primary-Vertical---Black.png
+    route: null
