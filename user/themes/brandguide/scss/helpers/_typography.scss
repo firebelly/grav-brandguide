@@ -27,11 +27,21 @@ $font-sans: 'Helvetica', sans-serif;
 $font-mono: 'Courier New', mono;
 
 h1 {
-  font: 700 51px/1.2 'worchesteref', serif;
+  font: 700 51px/1.2 $font-regular;
 }
 h2 {
-  font: 900 25px/1.2 'worchesteref', serif;
+  font: 900 25px/1.2 $font-regular;
 }
 h3 {
-  font: 900 17px/1.2 'worchesteref', serif;
+  font: 900 17px/1.2 $font-regular;
+}
+
+.h1 {
+  font: 700 51px/1.2 $font-regular;
+}
+.h2 {
+  font: 900 25px/1.2 $font-regular;
+}
+.h3 {
+  font: 900 17px/1.2 $font-regular;
 }

@@ -1,3 +1,6 @@
+// Vendor
+@import "vendor/normalize";
+
 // Helpers
 @import "helpers/variables";
 @import "helpers/typography";
@@ -5,3 +8,6 @@
 // Components
 @import "components/base";
 @import "components/header";
+
+// Pages
+@import "pages/page";

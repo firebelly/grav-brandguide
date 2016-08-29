@@ -23,8 +23,6 @@ custom_file:
         route: null
 ---
 
-### Value Proposition
-
 ## FLOR provides a uniquely rewarding design experience built firmly on our belief that care for people and the planet are essential to Good Design.
 
 bzz

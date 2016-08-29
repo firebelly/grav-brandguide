@@ -3,28 +3,44 @@
 
 {% block header_navigation %}
 <nav class="main-nav">
-    {% include 'partials/navigation.html.twig' %}
+  {% include 'partials/navigation.html.twig' %}
 </nav>
 {% endblock %}
 
 {% block content %}
-    {{ page.content }}
+<section class="page-section">
+  <div class="section-intro">
+    <div class="wrapper padding">            
+      <h2 class="page-title">{{ page.title }}</h2>
+      <div class="page-content">
+        {{ page.content }}
+      </div>
+    </div>   
+  </div>
 
-    {% for childpage in page.children %}
-        <div class="childpage" id="{{ _self.pageLinkName(childpage.menu) }}">
-            {{ childpage.content }}
-        </div>
-    {% endfor %}
+  {% for childpage in page.children %}
+  <div class="childpage" id="{{ _self.pageLinkName(childpage.menu) }}">
+    <div class="wrapper padding">
+      <h2 class="subpage-title">{{ childpage.title }}</h2>
+      <div class="subpage-content">
+        {{ childpage.content }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
 
+  <div class="wrapper padding">
     <nav class="page-nav">
-        {% set next_page = pages.children.nextSibling(page.path) %}
-        {% if next_page and next_page.title != 'Home' %}
-            <a class="button" href="{{ next_page.url }}">&larr; {{ next_page.title }}</a>
-        {% endif %}
+      {% set next_page = pages.children.nextSibling(page.path) %}
+      {% if next_page and next_page.title != 'Home' %}
+      <a class="button" href="{{ next_page.url }}">&larr; {{ next_page.title }}</a>
+      {% endif %}
 
-        {% set prev_page = pages.children.prevSibling(page.path) %}
-        {% if prev_page %}
-            <a class="button" href="{{ prev_page.url }}">{{ prev_page.title }} &rarr;</a>
-        {% endif %}
+      {% set prev_page = pages.children.prevSibling(page.path) %}
+      {% if prev_page %}
+      <a class="button" href="{{ prev_page.url }}">{{ prev_page.title }} &rarr;</a>
+      {% endif %}
     </nav>
+  </div>
+</section>
 {% endblock %}

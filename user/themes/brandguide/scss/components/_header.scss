@@ -23,8 +23,8 @@
   .menu-icon {
     height: 1px;
     width: 12px;
-    margin: 4px;
     display: block;
+    margin: 4px auto;
     background: $black;
     position: relative;
     &::before,
@@ -64,7 +64,7 @@
   background: $white;
   will-change: transform;
   transform: translateX(-100%);
-  padding: #{$global-padding * 2} $global-padding $global-padding;
+  padding: #{$global-padding * 2} #{$global-padding * 2} $global-padding;
   transition: transform .2s $slide-easing;
   &.active {
     transform: translateX(0);

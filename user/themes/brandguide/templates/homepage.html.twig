@@ -1,6 +1,7 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
+  <div class="wrapper padding">
     <img src="{{config.brand.primaryLogo|first.path}}">
     {{ page.content }}
     {% for module in page.collection() %}
@@ -8,4 +9,5 @@
 	        {{ module.content }}
 	      </div>
     {% endfor %}
+  </div>
 {% endblock %}
