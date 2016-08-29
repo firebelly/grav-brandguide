@@ -4,7 +4,8 @@
     <img src="{{config.brand.primaryLogo|first.path}}">
     {{ page.content }}
     {% for module in page.collection() %}
-        <div id="{{ _self.pageLinkName(module.menu) }}"></div>
-        {{ module.content }}
+        <div class="module" id="{{ _self.pageLinkName(module.menu) }}">
+	        {{ module.content }}
+	      </div>
     {% endfor %}
 {% endblock %}
