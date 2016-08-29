@@ -1,5 +1,5 @@
 myfield: '#edd342'
-primaryColor: '#353d38'
+primaryColor: '#ffffff'
 secondColor: '#f1bd19'
 tertiaryColor: '#d0d0c2'
 primaryLogo:
@@ -10,3 +10,8 @@ primaryLogo:
     size: 5956
     file: user/themes/brandguide/assets/Primary-Vertical---Black.png
     route: null
+primaryTextColor: '#353d38'
+secondTextColor: '#353d38'
+tertiaryTextColor: '#353d38'
+secondaryColor: '#f1bd19'
+secondaryTextColor: '#353d38'

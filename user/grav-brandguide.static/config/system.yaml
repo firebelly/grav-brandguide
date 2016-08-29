@@ -1,0 +1,4 @@
+debugger:
+  enabled: true
+assets:
+  js_pipeline: false
