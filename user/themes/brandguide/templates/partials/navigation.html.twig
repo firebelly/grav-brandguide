@@ -1,6 +1,6 @@
 {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
 
-<ul>
+<ol>
     {% for page in pages.children %}
         {# omit homepage & homepage modules from navigation #}
         {% if page.menu != 'Home' %}
@@ -10,16 +10,16 @@
                     {{ page.menu }}
                 </a>
                 {% if page.collection() %}
-                    <ul>
+                    <ol>
                     {% for module in page.collection() %}
                         <li>
                             <a href="{{ page.url }}#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
                         </li>
                     {% endfor %}
-                    </ul>
+                    </ol>
                 {% endif %}
             </li>
         {% endif %}
     {% endfor %}
-</ul>
+</ol>
 

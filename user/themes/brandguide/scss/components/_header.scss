@@ -1,0 +1,124 @@
+// Header
+
+.header {
+  .logo {
+    line-height: 1;
+    text-decoration: none;
+  } 
+}
+
+// Nav
+.menu-toggle {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: fixed;
+  font-weight: 700;
+  background: $white;
+  font-family: $font-regular;
+  transition: background .2s ease-out;
+  .menu-icon {
+    height: 1px;
+    width: 12px;
+    margin: 4px;
+    display: block;
+    background: $black;
+    position: relative;
+    &::before,
+    &::after {
+      left: 0;
+      width: 100%;
+      height: 1px;
+      content: '';
+      position: absolute;
+      background: $black;
+    }
+    &::before {
+      top: -4px;
+    }
+    &::after {
+      bottom: -4px;
+    }
+  }
+  .label {
+    margin-top: 7px;
+    writing-mode: vertical-rl;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: darken($white,10%);
+  }
+}
+
+.main-nav {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  position: fixed;
+  background: $white;
+  will-change: transform;
+  transform: translateX(-100%);
+  padding: #{$global-padding * 2} $global-padding $global-padding;
+  transition: transform .2s $slide-easing;
+  &.active {
+    transform: translateX(0);
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ol {
+    counter-reset: item;
+    font-family: $font-mono;
+    > li {
+      font-size: 10px;
+      counter-increment: item;
+    }
+    ol li {
+      list-style: none;
+      &::before {
+        margin-left: -24px;
+        content: counters(item, ".");
+      }
+    }
+  }
+  > ol {
+    list-style-type: decimal-leading-zero;
+    > li {
+      margin-bottom: 10px;
+      > a {
+        font-size: 17px;
+        font-weight: 900;
+        font-family: $font-regular;
+        &::after {
+          width: 4px;
+          content: '';
+          height: 1px;
+          display: block;
+          background: $black;
+          margin: 5px 0 6px -12px;
+        }
+      }
+      ol {
+        margin: 0;
+        padding: 0;
+        li {
+          a {          
+            font-size: 10px;
+            font-weight: 400;
+            font-family: $font-sans;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
