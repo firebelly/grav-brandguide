@@ -22,10 +22,19 @@ form:
       fields:
         primaryColor:
           type: colorpicker
-          label: Primary Brand Color
-        secondColor:
+          label: Primary Background Color
+        primaryTextColor:
           type: colorpicker
-          label: Secondary Brand Color
+          label: Primary Text Color
+        secondaryColor:
+          type: colorpicker
+          label: Secondary Background Color
+        secondaryTextColor:
+          type: colorpicker
+          label: Secondary Text Color
         tertiaryColor:
           type: colorpicker
-          label: Tertiary Brand Color
+          label: Tertiary Background Color
+        tertiaryTextColor:
+          type: colorpicker
+          label: Tertiary Text Color
