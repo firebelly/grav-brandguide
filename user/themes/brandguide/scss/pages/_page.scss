@@ -1,0 +1,15 @@
+// Page Styles
+
+.page-section {
+  .page-title {
+    @extend .h1;
+  }
+
+  .subpage-title {
+    @extend .h2;
+  }
+}
+
+.section-intro {
+  min-height: 75vh;
+}
