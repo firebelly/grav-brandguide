@@ -1,8 +1,12 @@
 // Base styles
+*,*::before,*::after {
+  box-sizing: inherit;
+}
 
 body {
   color: #363d39;
   background: #fff;
+  box-sizing: border-box;
   font: normal 16px/1.4 'worchesteref', serif;
 }
 .main-nav {
@@ -10,10 +14,12 @@ body {
   float: left;
 }
 
-body:not(.homepage) #body {
-  margin-left: 21%;
-  border-left: 1px solid #363d39;
-  padding-left: 20px;
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
 }
 
 a.logo {
@@ -24,4 +30,10 @@ a.logo {
   font-size: small;
   padding: 10px;
   background: #eee;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: #{$global-padding * 2} $global-padding #{$global-padding * 2} #{$global-padding * 2};
 }

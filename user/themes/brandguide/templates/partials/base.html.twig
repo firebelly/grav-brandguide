@@ -22,6 +22,8 @@
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/libs/velocity.min.js', {'priority':20, 'group':'bottom'}) %}
+        {% do assets.addJs('theme://js/main.js', {'priority':10, 'group':'bottom'}) %}
     {% endblock %}
     {{ assets.js() }}
 
@@ -35,8 +37,10 @@
             <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
                 {{ config.site.title }}
             </a>
-            {% block header_navigation %}
-            {% endblock %}
+            <div class="nav-wrap">            
+                {% block header_navigation %}
+                {% endblock %}
+            </div>
         </div>
     </div>
 {% endblock %}

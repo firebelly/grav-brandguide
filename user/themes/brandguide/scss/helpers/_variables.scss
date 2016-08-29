@@ -1,6 +1,8 @@
 // Variables
 
 // Colors
+$white: #fff;
+$black: #000;
 
 // Brand Swatches
 // $brand-primary: ;
@@ -12,6 +14,9 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 975px;
 $breakpoint-xl: 1200px;
 // $breakpoint-nav: ;
+
+// Spacing
+$global-padding: 36px;
 
 // Easings
 $slide-easing: cubic-bezier(0.65, 0, 0.35, 1);
