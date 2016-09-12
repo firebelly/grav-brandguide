@@ -1,6 +1,17 @@
 title: Brandguide
 author:
   name: Firebelly
-  email: 'developer@firebellydesign.com'
+  email: developer@firebellydesign.com
+taxonomies:
+  - category
+  - tag
 metadata:
-    description: 'Firebelly Brand Guide'
+  description: 'Firebelly Brand Guide'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+blog:
+  route: /blog
+primaryColor: '#f1bd19'

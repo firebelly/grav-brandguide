@@ -1,3 +1,5 @@
 ---
 title: Logotypes
+sectionBrandColor: secondary
 ---
+

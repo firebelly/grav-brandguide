@@ -425,19 +425,31 @@ a.logo {
   padding: 10px;
   background: #eee; }
 
+.site-main {
+  padding: 0 50px; }
+
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
   padding: 72px 36px 72px 72px; }
 
-.header .logo {
-  line-height: 1;
-  text-decoration: none; }
+.header {
+  padding: 0 50px; }
+  .header .logo {
+    line-height: 1;
+    text-decoration: none; }
+    .header .logo img {
+      bottom: -4px;
+      height: 50px;
+      position: relative;
+      vertical-align: baseline; }
 
 .menu-toggle {
   top: 0;
   left: 0;
+  bottom: 0;
   z-index: 2;
+  width: 50px;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -466,6 +478,7 @@ a.logo {
       bottom: -4px; }
   .menu-toggle .label {
     margin-top: 7px;
+    white-space: nowrap;
     writing-mode: vertical-rl; }
   .menu-toggle:focus {
     outline: none; }
@@ -526,5 +539,15 @@ a.logo {
 
 .section-intro {
   min-height: 75vh; }
+
+.homepage .intro-section img {
+  max-width: 400px; }
+.homepage .feature {
+  margin-top: 50px; }
+  .homepage .feature h1 {
+    margin-top: 0; }
+
+.logotypes .childpage#primary img {
+  max-width: 60px; }
 
 /*# sourceMappingURL=application.css.map */

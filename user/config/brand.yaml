@@ -15,3 +15,17 @@ secondTextColor: '#353d38'
 tertiaryTextColor: '#353d38'
 secondaryColor: '#f1bd19'
 secondaryTextColor: '#353d38'
+primaryLogoVertical:
+  user/themes/brandguide/assets/Primary-Vertical---Black.png:
+    name: Primary-Vertical---Black.png
+    type: image/png
+    size: 3393
+    path: user/themes/brandguide/assets/Primary-Vertical---Black.png
+primaryLogoHorizontal:
+  user/themes/brandguide/assets/Primary-Horizontal---Black.png:
+    name: Primary-Horizontal---Black.png
+    type: image/png
+    size: 4475
+    path: user/themes/brandguide/assets/Primary-Horizontal---Black.png
+quaternaryColor: '#fab28a'
+quaternaryTextColor: '#353d38'

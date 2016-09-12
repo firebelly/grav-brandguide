@@ -29,13 +29,13 @@
 
 {% endblock head%}
 </head>
-<body id="top" class="{{ page.header.body_classes }}">
+<body id="top" class="{{ page.header.body_classes }} {{ page.header.title|lower }}">
 
 {% block header %}
     <div class="header">
         <div class="wrapper padding">
             <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
-                {{ config.site.title }}
+                <img src="{{config.brand.primaryLogoHorizontal|first.path}}"> {{ config.site.title }}
             </a>
             <div class="nav-wrap">            
                 {% block header_navigation %}

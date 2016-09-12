@@ -1,4 +1,4 @@
-title: Section
+title: Brand Settings
 '@extends':
     type: default
     context: blueprints://pages
@@ -6,16 +6,18 @@ title: Section
 form:
   fields:
     tabs:
+      type: tabs
+      active: 1
 
       fields:
-        brandSettings:
+        gallery:
           type: tab
           title: Brand Settings
+
           fields:
             header.sectionBrandColor:
               type: select
               label: Section Brand Color
-              default: tertiary
               options:
                 primary: Primary
                 secondary: Secondary

@@ -1,13 +1,17 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  <div class="wrapper padding">
-    <img src="{{config.brand.primaryLogo|first.path}}">
-    {{ page.content }}
-    {% for module in page.collection() %}
-        <div class="module" id="{{ _self.pageLinkName(module.menu) }}">
-	        {{ module.content }}
-	      </div>
-    {% endfor %}
+  <div class="intro-section">
+    <div class="wrapper">
+      {{ page.content }}
+    </div>
   </div>
+    
+  {% for module in page.collection() %}
+      <div class="feature module background-{{ module.header.sectionBrandColor }}" id="{{ _self.pageLinkName(module.menu) }}">
+        <div class="wrapper">
+          {{ module.content }}
+        </div>
+      </div>
+  {% endfor %}
 {% endblock %}

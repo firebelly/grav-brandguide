@@ -9,7 +9,7 @@
 
 {% block content %}
 <section class="page-section">
-  <div class="section-intro">
+  <div class="section-intro background-{{ page.header.sectionBrandColor }}">
     <div class="wrapper padding">            
       <h2 class="page-title">{{ page.title }}</h2>
       <div class="page-content">
@@ -24,6 +24,10 @@
       <h2 class="subpage-title">{{ childpage.title }}</h2>
       <div class="subpage-content">
         {{ childpage.content }}
+
+        {% for modularpage in page.modular %}
+            {{ modularpage.content }}
+        {% endfor %}
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 ---
 title: Layout
+sectionBrandColor: tertiary
 content:
     items: '@self.modular'
     order:

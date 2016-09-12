@@ -44,4 +44,12 @@ form:
               label: Page Media (first one will be displayed next to your content)
             header.sidenote:
               type: textarea
-              label: Sidenote
+              label: Sidenote            
+            header.sectionBrandColor:
+              type: select
+              label: Section Brand Color
+              options:
+                primary: Primary
+                secondary: Secondary
+                tertiary: Tertiary
+                quaternary: Quaternary

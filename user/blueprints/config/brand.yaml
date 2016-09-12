@@ -6,9 +6,16 @@ form:
       underline: true
 
       fields:
-        primaryLogo:
+        primaryLogoVertical:
           type: file
-          label: Primary Brand Logo
+          label: Primary Brand Logo - Vertical
+          destination: 'user/themes/brandguide/assets'
+          accept:
+            - image/*
+          multiple: false
+        primaryLogoHorizontal:
+          type: file
+          label: Primary Brand Logo - Horizontal
           destination: 'user/themes/brandguide/assets'
           accept:
             - image/*
@@ -38,3 +45,9 @@ form:
         tertiaryTextColor:
           type: colorpicker
           label: Tertiary Text Color
+        quaternaryColor:
+          type: colorpicker
+          label: Quaternary Background Color
+        quaternaryTextColor:
+          type: colorpicker
+          label: Quaternary Text Color
