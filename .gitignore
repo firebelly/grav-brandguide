@@ -27,7 +27,7 @@ user/themes/*
 !user/themes/.*
 !user/themes/brandguide
 user/localhost/config/security.yaml
-user/grav-brandguide.static/security.yaml
+user/grav-brandguide.static/config/security.yaml
 
 # OS Generated
 .DS_Store*
