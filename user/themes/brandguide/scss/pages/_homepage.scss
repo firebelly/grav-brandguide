@@ -11,5 +11,9 @@
     h1 {
       margin-top: 0;
     }
+
+    @include media-md {
+      min-height: 50vh;
+    }
   }
 }

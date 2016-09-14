@@ -546,6 +546,9 @@ a.logo {
   margin-top: 50px; }
   .homepage .feature h1 {
     margin-top: 0; }
+  @media screen and (min-width: 768px) {
+    .homepage .feature {
+      min-height: 50vh; } }
 
 .logotypes .childpage#primary img {
   max-width: 60px; }
