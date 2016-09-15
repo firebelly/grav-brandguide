@@ -24,9 +24,9 @@
       <h2 class="subpage-title">{{ childpage.title }}</h2>
       <div class="subpage-content">
         {{ childpage.content }}
-
-        {% for modularpage in page.modular %}
-            {{ modularpage.content }}
+        {% for modular in childpage.collection %}
+          <aside class="sidenote">{{ modular.header.sidenote }}</aside>
+          {{ modular.content }}
         {% endfor %}
       </div>
     </div>

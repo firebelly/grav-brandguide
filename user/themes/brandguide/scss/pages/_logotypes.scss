@@ -2,10 +2,29 @@
 
 .logotypes {
   .childpage {
-   &#primary {
-    img {
-      max-width: 60px;
+    ._primary-vertical {
+      img {
+        max-width: 60px;
+      }
     }
-   }
+    ._primary-horizontal {
+      img {
+        max-width: 240px;
+      }
+    }
+  }
+
+  .subpage-content {
+    position: relative;
+    .sidenote {
+      font-size: 8px;
+      text-align: right;
+      font-family: $font-sans;
+      @include media-md {
+        top: 0;
+        right: 100%;
+        position: absolute;
+      }
+    }
   }
 }
