@@ -15,7 +15,9 @@
   }
 
   .subpage-content {
-    position: relative;
+    .modular-container {
+      position: relative;
+    }
     .sidenote {
       font-size: 8px;
       text-align: right;

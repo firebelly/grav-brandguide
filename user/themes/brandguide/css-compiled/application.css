@@ -550,16 +550,16 @@ a.logo {
   max-width: 60px; }
 .logotypes .childpage ._primary-horizontal img {
   max-width: 240px; }
-.logotypes .subpage-content {
+.logotypes .subpage-content .modular-container {
   position: relative; }
-  .logotypes .subpage-content .sidenote {
-    font-size: 8px;
-    text-align: right;
-    font-family: "Helvetica", sans-serif; }
-    @media screen and (min-width: 768px) {
-      .logotypes .subpage-content .sidenote {
-        top: 0;
-        right: 100%;
-        position: absolute; } }
+.logotypes .subpage-content .sidenote {
+  font-size: 8px;
+  text-align: right;
+  font-family: "Helvetica", sans-serif; }
+  @media screen and (min-width: 768px) {
+    .logotypes .subpage-content .sidenote {
+      top: 0;
+      right: 100%;
+      position: absolute; } }
 
 /*# sourceMappingURL=application.css.map */

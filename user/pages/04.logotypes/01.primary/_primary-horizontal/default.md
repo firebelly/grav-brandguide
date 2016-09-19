@@ -1,5 +1,6 @@
 ---
 title: 'Primary Horizontal'
+sidenote: '4x1 - Primary Horizontal'
 sectionBrandColor: primary
 ---
 
