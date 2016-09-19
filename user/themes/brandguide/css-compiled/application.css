@@ -484,6 +484,7 @@ a.logo {
   top: 0;
   left: 0;
   bottom: 0;
+  z-index: 10;
   width: 300px;
   position: fixed;
   background: #fff;
