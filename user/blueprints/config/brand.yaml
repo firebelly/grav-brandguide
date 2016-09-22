@@ -6,20 +6,29 @@ form:
       underline: true
 
       fields:
-        primaryLogoVertical:
-          type: file
-          label: Primary Brand Logo - Vertical
-          destination: 'user/themes/brandguide/assets'
-          accept:
-            - image/*
-          multiple: false
-        primaryLogoHorizontal:
-          type: file
-          label: Primary Brand Logo - Horizontal
-          destination: 'user/themes/brandguide/assets'
-          accept:
-            - image/*
-          multiple: false
+        columns:
+          type: columns
+          fields:
+            column1:
+              type: column
+              fields:
+                primaryLogoVertical:
+                  type: file
+                  label: Primary Brand Logo - Vertical
+                  destination: 'user/themes/brandguide/assets'
+                  accept:
+                    - image/*
+                  multiple: false
+            column2:
+              type: column
+              fields:
+                primaryLogoHorizontal:
+                  type: file
+                  label: Primary Brand Logo - Horizontal
+                  destination: 'user/themes/brandguide/assets'
+                  accept:
+                    - image/*
+                  multiple: false
 
     brandcolors:
       type: section

@@ -12,12 +12,60 @@ form:
           type: tab
           title: Brand Settings
           fields:
-            header.sectionBrandColor:
-              type: select
-              label: Section Brand Color
-              default: tertiary
-              options:
-                primary: Primary
-                secondary: Secondary
-                tertiary: Tertiary
-                quaternary: Quaternary
+            brandColorGuideSection:
+              type: section
+              title: Brand Color Guide
+              underline: true
+              fields:
+                columns:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        brandColorPrimary:
+                          type: colorpicker
+                          size: small
+                          style: vertical
+                          label: Primary
+                          disabled: true
+                          config-default@: brand.primaryColor
+                        brandColorTertiary:
+                          type: colorpicker
+                          size: small
+                          style: vertical
+                          label: Tertiary
+                          disabled: true
+                          config-default@: brand.tertiaryColor
+                    column2:
+                      type: column
+                      fields:
+                        brandColorSecondary:
+                          type: colorpicker
+                          size: small
+                          style: vertical
+                          label: Secondary
+                          disabled: true
+                          config-default@: brand.secondaryColor
+                        brandColorQuaternary:
+                          type: colorpicker
+                          size: small
+                          style: vertical
+                          label: Quaternary
+                          disabled: true
+                          config-default@: brand.quaternaryColor
+
+            seclectBrandColorSection:
+              type: section
+              title: Section Brand Color
+              underline: true
+              fields:
+                header.sectionBrandColor:
+                  type: select
+                  label: Select the Section Brand Color
+                  default: primary 
+                  options:
+                    primary: Primary
+                    secondary: Secondary
+                    tertiary: Tertiary
+                    quaternary: Quaternary

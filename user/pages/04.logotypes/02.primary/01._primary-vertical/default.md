@@ -1,6 +1,6 @@
 ---
 title: 'Primary Vertical'
-sidenote: "1 x 4  \r\n-  \r\nPrimary Vertical"
+sidenote: "1  x  4  \r\n-  \r\nPrimary Vertical"
 sectionBrandColor: primary
 ---
 

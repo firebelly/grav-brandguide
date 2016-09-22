@@ -1,0 +1,13 @@
+// Grid
+
+
+@include media-md {
+  .grid {
+    @include clearfix;
+  }
+
+  .one-half {
+    width: 50%;
+    float: left;
+  }
+}

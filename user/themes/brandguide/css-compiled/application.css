@@ -397,6 +397,20 @@ h3 {
 .h3 {
   font: 900 17px/1.2 "worchesteref", serif; }
 
+@media screen and (min-width: 768px) {
+  .grid, .logotypes .subpage-content {
+    *zoom: 1; }
+    .grid:before, .logotypes .subpage-content:before, .grid:after, .logotypes .subpage-content:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      overflow: hidden; }
+    .grid:after, .logotypes .subpage-content:after {
+      clear: both; }
+
+  .one-half, .logotypes .subpage-content .modular-container {
+    width: 50%;
+    float: left; } }
 *, *::before, *::after {
   box-sizing: inherit; }
 
@@ -500,7 +514,7 @@ a.logo {
       text-decoration: underline; }
   .main-nav ol {
     counter-reset: item;
-    font-family: "Courier New", mono; }
+    font-family: "Pitch", "Courier New", mono; }
     .main-nav ol > li {
       font-size: 10px;
       counter-increment: item; }
@@ -530,8 +544,15 @@ a.logo {
         .main-nav > ol > li ol li a {
           font-size: 10px;
           font-weight: 400;
-          font-family: "Helvetica", sans-serif;
+          font-family: "Replica Pro", "Helvetica", sans-serif;
           text-transform: uppercase; }
+
+.page-section .childpage {
+  margin-top: 70px; }
+.page-section .subpage-title {
+  margin-bottom: 140px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #000; }
 
 .section-intro {
   min-height: 75vh; }
@@ -546,20 +567,39 @@ a.logo {
     .homepage .feature {
       min-height: 50vh; } }
 
+.logotypes .childpage .modular-row {
+  margin-bottom: 50px; }
+  @media screen and (min-width: 768px) {
+    .logotypes .childpage .modular-row {
+      margin-bottom: 0;
+      padding-right: 50px; } }
+  .logotypes .childpage .modular-row p {
+    margin: 0; }
+  .logotypes .childpage .modular-row a {
+    margin: 0 20px 20px 0;
+    display: inline-block; }
+    .logotypes .childpage .modular-row a img {
+      vertical-align: top; }
 .logotypes .childpage ._primary-vertical img {
   max-width: 60px; }
 .logotypes .childpage ._primary-horizontal img {
   max-width: 240px; }
+.logotypes .childpage ._secondary-vertical img,
+.logotypes .childpage ._tertiary img {
+  max-width: 144px; }
+.logotypes .childpage ._secondary-horizontal img {
+  max-width: 216px; }
+.logotypes .childpage#tertiary .modular-container {
+  width: 100%; }
 .logotypes .subpage-content .modular-container {
   position: relative; }
 .logotypes .subpage-content .sidenote {
+  top: 5px;
+  right: 100%;
   font-size: 8px;
   text-align: right;
-  font-family: "Helvetica", sans-serif; }
-  @media screen and (min-width: 768px) {
-    .logotypes .subpage-content .sidenote {
-      top: 0;
-      right: 100%;
-      position: absolute; } }
+  position: absolute;
+  padding-right: 20px;
+  font-family: "Replica Pro", "Helvetica", sans-serif; }
 
 /*# sourceMappingURL=application.css.map */

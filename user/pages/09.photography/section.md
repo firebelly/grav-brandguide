@@ -1,5 +1,6 @@
 ---
 title: Photography
+sectionBrandColor: quaternary
 content:
     items: '@self.modular'
     order:

@@ -5,8 +5,15 @@
     @extend .h1;
   }
 
+  .childpage {
+    margin-top: 70px;
+  }
+
   .subpage-title {
     @extend .h2;
+    margin-bottom: 140px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $black;
   }
 }
 
