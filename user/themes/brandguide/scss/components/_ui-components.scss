@@ -1,0 +1,33 @@
+// UI Components
+
+.copy-message {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: 30;
+  position: fixed;
+  background: #f4f1ec;
+  font-family: $font-mono;
+  padding: $global-padding;
+  transform: translate(-50%, -50%);
+  &.-active {
+    visibility: visible;
+    animation: showHide 3s forwards;
+  }
+
+  .copied-value {
+    font-weight: 700;
+    display: inline-block;
+    padding: $vertical-beat;
+    background: rgba(0,0,0,.05);
+  }
+}
+
+@keyframes showHide {
+  0%, 100% {
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+}

@@ -9,8 +9,10 @@
 @import "helpers/grid";
 
 // Components
+@import "components/ui-components";
 @import "components/base";
 @import "components/header";
+@import "components/colorpalettes";
 
 // Pages
 @import "pages/page";

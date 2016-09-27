@@ -42,8 +42,6 @@ form:
           fields:
             content:
               type: ignore
-            header.title:
-              type: ignore
             uploads:
               type: ignore
             header.contentFirstTitle:

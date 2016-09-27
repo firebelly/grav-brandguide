@@ -1,0 +1,10 @@
+<div class="colorpalettes">
+  {% for color in header.colors %}
+    <div class="color">
+      <div class="swatch" style="background-color:{{ color.color }}" data-clipboard-text="{{ color.color }}"></div>
+      <p class="cmyk">CMYK: <span class="value"></span></p>
+      <p class="rgb">RGB: <span class="value"></span></p>
+      <p class="hex">Hex: <span class="value">{{ color.color }}</span></p>
+    </div>
+  {% endfor %}
+</div>

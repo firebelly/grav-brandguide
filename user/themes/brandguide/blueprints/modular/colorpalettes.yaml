@@ -1,0 +1,22 @@
+title: Color Palettes
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        content:
+          fields:
+            content:
+              type: ignore
+            uploads:
+              type: ignore
+            header.colors:
+              name: colors
+              type: list
+              label: Colors
+              fields:
+                .color:
+                  type: colorpicker
+                  label: Color

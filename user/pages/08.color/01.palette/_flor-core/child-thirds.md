@@ -1,5 +1,5 @@
 ---
-title: 'FLOR Core'
+title: Palettes
 contentFirstTitle: 'FLOR Core'
 contentFirst: 'Fuga. Soluptum sinus et velis dolupie ndaepud isciur, velenient. Endempores eum del is nimagnis et fugianisquas diciant, sincipsa natem iliciet rat maio ipsapis doluptaspis.'
 contentSecondTitle: 'Natural Set'

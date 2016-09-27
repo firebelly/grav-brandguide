@@ -10,14 +10,14 @@
 {% block content %}
 <section class="page-section">
   <div class="section-intro background-{{ page.header.sectionBrandColor }}">
-    <div class="wrapper padding">            
+    <div class="wrapper padding">
       <h2 class="page-title">{{ page.title }}</h2>
       {% if page.content %}
         <div class="page-content">
           {{ page.content }}
         </div>
       {% endif %}
-    </div>   
+    </div>
   </div>
 
   <div class="wrapper">
@@ -27,7 +27,7 @@
       <div class="subpage-content">
         {{ childpage.content }}
         {% for modular in childpage.collection %}
-          <div class="modular-container">          
+          <div class="modular-container">
             <aside class="sidenote">{{ modular.header.sidenote }}</aside>
             {{ modular.content }}
           </div>
@@ -47,7 +47,7 @@
       <a class="button" href="{{ prev_page.url }}">{{ prev_page.title }} &rarr;</a>
       {% endif %}
     </nav>
-    
+
   </div>
 </section>
 {% endblock %}

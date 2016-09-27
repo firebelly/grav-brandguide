@@ -22,6 +22,7 @@ var FB = (function($) {
     _resize();
 
     _initNav();
+    _initColorPalettes();
 
     // Esc handlers
     $(document).keyup(function(e) {
@@ -98,6 +99,79 @@ var FB = (function($) {
   function _hideMobileNav() {
     $('body, .menu-toggle').removeClass('menu-open');
     $('.main-nav').removeClass('active');
+  }
+
+  function _initColorPalettes() {
+    $('.colorpalettes .color').each(function() {
+      var hex = $(this).find('.hex .value').text().replace('#', '');
+      var rgb = _hexToRgb(hex);
+      var cmyk = _rgbToCmyk(rgb);
+      rgb = rgb.r + ', ' + rgb.g + ', ' + rgb.b;
+      cmyk = cmyk.c + ', ' + cmyk.m + ', ' + cmyk.y + ', ' + cmyk.k;
+      $(this).find('.rgb .value').text(rgb);
+      $(this).find('.cmyk .value').text(cmyk);
+    });
+
+    // Click to Copy
+    var clipboard = new Clipboard('.swatch');
+
+    clipboard.on('success', function(e) {
+      var value = e.text;
+      $('body').append('<div class="copy-message"><span class="copied-value">' + value + '</span> copied!</div>');
+      $('.copy-message').addClass('-active');
+    });
+
+  }
+
+  // Color Conversions
+  function _hexToRgb(hex) {
+    // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+      return r + r + g + g + b + b;
+    });
+
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+  }
+  function CMYK(c, m, y, k) {
+    if (c <= 0) { c = 0; }
+    if (m <= 0) { m = 0; }
+    if (y <= 0) { y = 0; }
+    if (k <= 0) { k = 0; }
+   
+    if (c > 100) { c = 100; }
+    if (m > 100) { m = 100; }
+    if (y > 100) { y = 100; }
+    if (k > 100) { k = 100; }
+   
+    this.c = c;
+    this.m = m;
+    this.y = y;
+    this.k = k;
+  }
+  function _rgbToCmyk (RGB){
+    var result = new CMYK(0, 0, 0, 0);
+ 
+    r = RGB.r / 255;
+    g = RGB.g / 255;
+    b = RGB.b / 255;
+ 
+    result.k = Math.min( 1 - r, 1 - g, 1 - b );
+    result.c = ( 1 - r - result.k ) / ( 1 - result.k );
+    result.m = ( 1 - g - result.k ) / ( 1 - result.k );
+    result.y = ( 1 - b - result.k ) / ( 1 - result.k );
+ 
+    result.c = Math.round( result.c * 100 );
+    result.m = Math.round( result.m * 100 );
+    result.y = Math.round( result.y * 100 );
+    result.k = Math.round( result.k * 100 );
+ 
+    return result;
   }
 
   // Track ajax pages in Analytics

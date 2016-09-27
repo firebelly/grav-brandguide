@@ -435,6 +435,30 @@ h3,
   .one-third {
     float: left;
     width: 33.3333%; } }
+.copy-message {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: 30;
+  position: fixed;
+  background: #f4f1ec;
+  font-family: "Pitch", "Courier New", mono;
+  padding: 40px;
+  transform: translate(-50%, -50%); }
+  .copy-message.-active {
+    visibility: visible;
+    animation: showHide 3s forwards; }
+  .copy-message .copied-value {
+    font-weight: 700;
+    display: inline-block;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.05); }
+
+@keyframes showHide {
+  0%, 100% {
+    opacity: 0; }
+  25%, 75% {
+    opacity: 1; } }
 *, *::before, *::after {
   box-sizing: inherit; }
 
@@ -596,6 +620,51 @@ a.logo {
         @media screen and (min-width: 768px) {
           .main-nav > ol > li ol {
             display: block; } }
+
+.colorpalettes {
+  *zoom: 1; }
+  .colorpalettes:before, .colorpalettes:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .colorpalettes:after {
+    clear: both; }
+  .colorpalettes .color {
+    width: 100%; }
+    @media screen and (min-width: 480px) {
+      .colorpalettes .color {
+        width: 50%;
+        float: left;
+        margin-left: 12px; }
+        .colorpalettes .color:first-of-type {
+          margin-left: 0; } }
+    @media screen and (min-width: 768px) {
+      .colorpalettes .color {
+        width: 25%; } }
+  .colorpalettes .swatch {
+    height: 0;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 100%;
+    margin-bottom: 8px; }
+    .colorpalettes .swatch::after {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      color: #fff;
+      display: flex;
+      position: absolute;
+      align-content: center;
+      font-family: "Pitch", "Courier New", mono;
+      background: rgba(0, 0, 0, 0.1);
+      content: 'copy to clipboard';
+      transition: opacity .2s ease-out; }
+    .colorpalettes .swatch:hover::after {
+      opacity: 1; }
 
 .page-section .page-title {
   margin-bottom: 144px; }

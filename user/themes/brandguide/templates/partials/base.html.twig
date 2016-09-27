@@ -23,6 +23,7 @@
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
         {% do assets.addJs('theme://js/libs/velocity.min.js', {'priority':20, 'group':'bottom'}) %}
+        {% do assets.addJs('theme://js/libs/clipboard.js', {'priority':20, 'group':'bottom'}) %}
         {% do assets.addJs('theme://js/main.js', {'priority':10, 'group':'bottom'}) %}
     {% endblock %}
     {{ assets.js() }}
