@@ -58,23 +58,21 @@ var FB = (function($) {
   // Handles main nav
   function _initNav() {
     // SEO-useless nav toggler
-    if (!$body.is('.homepage')) {    
-      $('<button class="menu-toggle"><span class="menu-icon"></span><span class="label visually-hidden">Table of Contents</span></button>')
-        .prependTo('.header')
-        .on('click', function(e) {
-          if (!$('.main-nav').is('.active')) {
-            _showMobileNav();
-          } else {
-            _hideMobileNav();
-          }
-      });
-
-      $document.on('click', 'body.menu-open', function(e) {
-        if (!isNav($(e.target))) {
+    $('<button class="menu-toggle"><span class="menu-icon"></span><span class="label visually-hidden">Table of Contents</span></button>')
+      .prependTo('.header')
+      .on('click', function(e) {
+        if (!$('.main-nav').is('.active')) {
+          _showMobileNav();
+        } else {
           _hideMobileNav();
         }
-      });
-    }
+    });
+
+    $document.on('click', 'body.menu-open', function(e) {
+      if (!isNav($(e.target))) {
+        _hideMobileNav();
+      }
+    });
 
     function isNav(target) {
       if (target.is('.menu-toggle') || target.parents('.menu-toggle').length || target.is('.main-nav') || target.parents('.main-nav').length) {
