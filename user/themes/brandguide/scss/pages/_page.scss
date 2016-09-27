@@ -3,6 +3,7 @@
 .page-section {
   .page-title {
     @extend .h1;
+    margin-bottom: 144px;
   }
 
   .childpage {
@@ -19,4 +20,30 @@
 
 .section-intro {
   min-height: 75vh;
+  @include media-md {
+    .page-content {
+      width: 408px;
+      margin-left: 144px;
+      position: relative;
+      > p:first-of-type {
+        margin-top: 0;
+      }
+      &::before {
+        top: 36px;
+        height: 1px;
+        width: 72px;
+        content: '';
+        right: 100%;
+        background: $black;
+        position: absolute;
+        transform: translateX(-36px);
+      }
+    }
+  }
+}
+
+.modular-container {
+  .modular-title {
+    @extend .h1;
+  }
 }

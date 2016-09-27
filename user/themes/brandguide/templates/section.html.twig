@@ -12,15 +12,17 @@
   <div class="section-intro background-{{ page.header.sectionBrandColor }}">
     <div class="wrapper padding">            
       <h2 class="page-title">{{ page.title }}</h2>
-      <div class="page-content">
-        {{ page.content }}
-      </div>
+      {% if page.content %}
+        <div class="page-content">
+          {{ page.content }}
+        </div>
+      {% endif %}
     </div>   
   </div>
 
+  <div class="wrapper">
   {% for childpage in page.children %}
-  <div class="childpage" id="{{ _self.pageLinkName(childpage.menu) }}">
-    <div class="wrapper padding">
+    <div class="childpage" id="{{ _self.pageLinkName(childpage.menu) }}">
       <h2 class="subpage-title">{{ childpage.title }}</h2>
       <div class="subpage-content">
         {{ childpage.content }}
@@ -32,10 +34,8 @@
         {% endfor %}
       </div>
     </div>
-  </div>
-  {% endfor %}
+    {% endfor %}
 
-  <div class="wrapper padding">
     <nav class="page-nav">
       {% set next_page = pages.children.nextSibling(page.path) %}
       {% if next_page and next_page.title != 'Home' %}
@@ -47,6 +47,7 @@
       <a class="button" href="{{ prev_page.url }}">{{ prev_page.title }} &rarr;</a>
       {% endif %}
     </nav>
+    
   </div>
 </section>
 {% endblock %}

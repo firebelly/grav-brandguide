@@ -1,0 +1,66 @@
+title: Child Thirds
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        assets:
+          type: tab
+          title: Assets
+          fields:
+            header.assets:
+              name: assets
+              type: list
+              label: Assets
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .file:
+                  label: Choose media
+                  type: pagemediaselect
+
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/text
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/text
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+
+        content:
+          fields:
+            content:
+              type: ignore
+            header.title:
+              type: ignore
+            uploads:
+              type: ignore
+            header.contentFirstTitle:
+              label: First Item Title
+              type: text
+            header.contentFirst:
+              label: First Item Text
+              type: textarea
+            header.contentSecondTitle:
+              label: Second Item Title
+              type: text
+            header.contentSecond:
+              label: Second Item Text
+              type: textarea
+            header.contentThirdTitle:
+              label: Third Item Title
+              type: text
+            header.contentThird:
+              label: Third Item Text
+              type: textarea

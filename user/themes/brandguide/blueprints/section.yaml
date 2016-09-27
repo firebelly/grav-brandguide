@@ -37,6 +37,13 @@ form:
                           label: Tertiary
                           disabled: true
                           config-default@: brand.tertiaryColor
+                        brandColorQuinary:
+                          type: colorpicker
+                          size: small
+                          style: vertical
+                          label: Quinary
+                          disabled: true
+                          config-default@: brand.quinaryColor
                     column2:
                       type: column
                       fields:
@@ -69,3 +76,4 @@ form:
                     secondary: Secondary
                     tertiary: Tertiary
                     quaternary: Quaternary
+                    quinary: Quinary

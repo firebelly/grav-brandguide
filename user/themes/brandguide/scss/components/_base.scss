@@ -7,7 +7,7 @@ body {
   color: #363d39;
   background: #fff;
   box-sizing: border-box;
-  font: normal 16px/1.4 'worchesteref', serif;
+  font: normal 14px/20px $font-regular;
 }
 .main-nav {
   width: 20%;
@@ -27,12 +27,8 @@ a.logo {
   display: block;
 }
 
-.site-main {
-  padding: 0 50px;
-}
-
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
-  padding: #{$global-padding * 2} $global-padding #{$global-padding * 2} #{$global-padding * 2};
+  padding: #{$global-padding * 2};
 }

@@ -364,6 +364,24 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden; }
+
+body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .visually-hidden button {
+  display: none !important; }
+
 @font-face {
   font-family: 'worchesteref';
   src: url("../fonts/elsnerflake_-_worchesteref-regular-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-regular-webfont.woff") format("woff");
@@ -379,23 +397,25 @@ textarea {
   src: url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff") format("woff");
   font-weight: 900;
   font-style: normal; }
-h1 {
-  font: 700 51px/1.2 "worchesteref", serif; }
+h1,
+.h1,
+.main-nav > ol > li > a,
+.page-section .page-title,
+.modular-container .modular-title {
+  font: 700 39px/32px "worchesteref", serif; }
 
-h2 {
-  font: 900 25px/1.2 "worchesteref", serif; }
+h2,
+.h2,
+.page-section .subpage-title {
+  font: 900 26px/24px "worchesteref", serif; }
 
-h3 {
-  font: 900 17px/1.2 "worchesteref", serif; }
-
-.h1, .page-section .page-title {
-  font: 700 51px/1.2 "worchesteref", serif; }
-
-.h2, .page-section .subpage-title {
-  font: 900 25px/1.2 "worchesteref", serif; }
-
-.h3 {
-  font: 900 17px/1.2 "worchesteref", serif; }
+h3,
+.h3,
+.header h2,
+.main-nav > ol > li ol li a {
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font: 700 10px/16px "Replica Pro", "Helvetica", sans-serif; }
 
 @media screen and (min-width: 768px) {
   .grid, .logotypes .subpage-content {
@@ -410,7 +430,11 @@ h3 {
 
   .one-half, .logotypes .subpage-content .modular-container {
     width: 50%;
-    float: left; } }
+    float: left; }
+
+  .one-third {
+    float: left;
+    width: 33.3333%; } }
 *, *::before, *::after {
   box-sizing: inherit; }
 
@@ -418,7 +442,7 @@ body {
   color: #363d39;
   background: #fff;
   box-sizing: border-box;
-  font: normal 16px/1.4 'worchesteref', serif; }
+  font: normal 14px/20px "worchesteref", serif; }
 
 .main-nav {
   width: 20%;
@@ -434,80 +458,97 @@ a.logo {
   font-size: 50px;
   display: block; }
 
-.site-main {
-  padding: 0 50px; }
-
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 72px 36px 72px 72px; }
+  padding: 80px; }
 
 .header {
-  padding: 0 50px; }
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  position: fixed;
+  text-align: center;
+  width: 80px;
+  padding: 40px 0; }
   .header .logo {
     line-height: 1;
     text-decoration: none; }
     .header .logo img {
-      bottom: -4px;
-      height: 50px;
+      width: 16px;
       position: relative;
       vertical-align: baseline; }
+  .header h2 {
+    margin: 0;
+    left: 26px;
+    line-height: 33px;
+    position: absolute;
+    white-space: nowrap;
+    bottom: 40px;
+    padding-left: 40px;
+    transform: rotate(-90deg) translatey(100%);
+    transform-origin: bottom left; }
+    .header h2::after {
+      top: 0;
+      left: 0;
+      width: 1px;
+      content: '';
+      background: #000;
+      position: absolute;
+      height: 20px; }
 
 .menu-toggle {
-  top: 0;
-  left: 0;
-  bottom: 0;
   z-index: 2;
-  width: 50px;
-  border: none;
-  padding: 10px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
-  position: fixed;
   font-weight: 700;
-  background: #fff;
+  overflow: hidden;
+  background: none;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid #000;
   font-family: "worchesteref", serif;
-  transition: background .2s ease-out; }
-  .menu-toggle .menu-icon {
-    height: 1px;
+  margin-bottom: 40px;
+  transition: transform .25s ease-out; }
+  .menu-toggle::before, .menu-toggle::after {
+    top: 11px;
+    left: 5px;
     width: 12px;
-    display: block;
-    margin: 4px auto;
-    background: #000;
-    position: relative; }
-    .menu-toggle .menu-icon::before, .menu-toggle .menu-icon::after {
-      left: 0;
-      width: 100%;
-      height: 1px;
-      content: '';
-      position: absolute;
-      background: #000; }
-    .menu-toggle .menu-icon::before {
-      top: -4px; }
-    .menu-toggle .menu-icon::after {
-      bottom: -4px; }
-  .menu-toggle .label {
-    margin-top: 7px;
-    white-space: nowrap;
-    writing-mode: vertical-rl; }
+    height: 1px;
+    content: '';
+    position: absolute;
+    background: #000; }
+  .menu-toggle::after {
+    transform: rotate(-90deg); }
   .menu-toggle:focus {
     outline: none; }
   .menu-toggle:hover {
     background: #e6e6e6; }
+  .menu-toggle.menu-open {
+    transform: rotate(135deg); }
+    .menu-toggle.menu-open::before, .menu-toggle.menu-open::after {
+      top: 10px; }
 
 .main-nav {
   top: 0;
   left: 0;
   bottom: 0;
+  opacity: 0;
   z-index: 10;
-  width: 300px;
+  width: 100%;
   position: fixed;
   background: #fff;
-  will-change: transform;
-  transform: translateX(-100%);
-  padding: 72px 72px 36px;
-  transition: transform 0.2s cubic-bezier(0.65, 0, 0.35, 1); }
+  pointer-events: none;
+  will-change: opacity;
+  transition: opacity .5s ease-in-out;
+  padding: 80px 80px 40px; }
   .main-nav.active {
-    transform: translateX(0); }
+    opacity: 1;
+    pointer-events: auto; }
+  .main-nav .toc-label {
+    max-width: 133px; }
   .main-nav a {
     text-decoration: none; }
     .main-nav a:hover {
@@ -522,31 +563,44 @@ a.logo {
       list-style: none; }
       .main-nav ol ol li::before {
         margin-left: -24px;
-        content: counters(item,"."); }
+        content: counters(item,".");
+        padding-right: 40px; }
   .main-nav > ol {
+    margin-top: 120px;
+    margin-bottom: 80px;
     list-style-type: decimal-leading-zero; }
+    @media screen and (min-width: 768px) {
+      .main-nav > ol {
+        columns: 2;
+        column-rule: 1px solid #000;
+        column-gap: 80px; } }
+    @media screen and (min-width: 975px) {
+      .main-nav > ol {
+        columns: 4; } }
     .main-nav > ol > li {
+      break-inside: avoid;
       margin-bottom: 10px; }
       .main-nav > ol > li > a {
-        font-size: 17px;
-        font-weight: 900;
-        font-family: "worchesteref", serif; }
+        display: block;
+        word-break: break-all;
+        padding-left: 40px; }
         .main-nav > ol > li > a::after {
           width: 4px;
           content: '';
           height: 1px;
           display: block;
           background: #000;
-          margin: 5px 0 6px -12px; }
+          margin: 5px 0 6px -52px; }
       .main-nav > ol > li ol {
         margin: 0;
-        padding: 0; }
-        .main-nav > ol > li ol li a {
-          font-size: 10px;
-          font-weight: 400;
-          font-family: "Replica Pro", "Helvetica", sans-serif;
-          text-transform: uppercase; }
+        padding: 0;
+        display: none; }
+        @media screen and (min-width: 768px) {
+          .main-nav > ol > li ol {
+            display: block; } }
 
+.page-section .page-title {
+  margin-bottom: 144px; }
 .page-section .childpage {
   margin-top: 70px; }
 .page-section .subpage-title {
@@ -556,6 +610,22 @@ a.logo {
 
 .section-intro {
   min-height: 75vh; }
+  @media screen and (min-width: 768px) {
+    .section-intro .page-content {
+      width: 408px;
+      margin-left: 144px;
+      position: relative; }
+      .section-intro .page-content > p:first-of-type {
+        margin-top: 0; }
+      .section-intro .page-content::before {
+        top: 36px;
+        height: 1px;
+        width: 72px;
+        content: '';
+        right: 100%;
+        background: #000;
+        position: absolute;
+        transform: translateX(-36px); } }
 
 .homepage .intro-section img {
   max-width: 400px; }

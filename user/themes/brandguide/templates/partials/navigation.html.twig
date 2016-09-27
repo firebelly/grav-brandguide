@@ -1,5 +1,5 @@
 {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
-
+<img class="toc-label" src="{{ url("theme://") }}/images/toc-label.png" alt="Table of Contents">
 <ol>
     {% for page in pages.children %}
         {# omit homepage & homepage modules from navigation #}

@@ -59,8 +59,8 @@ var FB = (function($) {
   function _initNav() {
     // SEO-useless nav toggler
     if (!$body.is('.homepage')) {    
-      $('<button class="menu-toggle"><span class="menu-icon"></span><span class="label">Table of Contents</span></button>')
-        .prependTo('.nav-wrap')
+      $('<button class="menu-toggle"><span class="menu-icon"></span><span class="label visually-hidden">Table of Contents</span></button>')
+        .prependTo('.header')
         .on('click', function(e) {
           if (!$('.main-nav').is('.active')) {
             _showMobileNav();

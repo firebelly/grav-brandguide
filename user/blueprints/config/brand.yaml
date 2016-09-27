@@ -51,12 +51,9 @@ form:
         tertiaryColor:
           type: colorpicker
           label: Tertiary Background Color
-        tertiaryTextColor:
-          type: colorpicker
-          label: Tertiary Text Color
         quaternaryColor:
           type: colorpicker
           label: Quaternary Background Color
-        quaternaryTextColor:
+        quinaryColor:
           type: colorpicker
-          label: Quaternary Text Color
+          label: Quinary Background Color

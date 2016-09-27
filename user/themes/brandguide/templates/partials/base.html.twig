@@ -33,15 +33,14 @@
 
 {% block header %}
     <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
-                <img src="{{config.brand.primaryLogoHorizontal|first.path}}"> {{ config.site.title }}
-            </a>
-            <div class="nav-wrap">            
-                {% block header_navigation %}
-                {% endblock %}
-            </div>
-        </div>
+        <a class="logo" href="{{ base_url == '' ? '/' : base_url }}">
+            <img src="{{config.brand.primaryLogoVertical|first.path}}">
+        </a>
+        <h2>Brand Guildelines</h2>
+    </div>
+    <div class="nav-wrap">
+        {% block header_navigation %}
+        {% endblock %}
     </div>
 {% endblock %}
 
