@@ -1,11 +1,4 @@
 {% extends 'partials/base.html.twig' %}
-{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
-
-{% block header_navigation %}
-<nav class="main-nav">
-  {% include 'partials/navigation.html.twig' %}
-</nav>
-{% endblock %}
 
 {% block content %}
 <section class="page-section">
@@ -26,28 +19,24 @@
       <h2 class="subpage-title">{{ childpage.title }}</h2>
       <div class="subpage-content">
         {{ childpage.content }}
-        {% for modular in childpage.collection %}
-          <div class="modular-container">
-            <aside class="sidenote">{{ modular.header.sidenote }}</aside>
-            {{ modular.content }}
-          </div>
-        {% endfor %}
       </div>
     </div>
     {% endfor %}
-
-    <nav class="page-nav">
-      {% set next_page = pages.children.nextSibling(page.path) %}
-      {% if next_page and next_page.title != 'Home' %}
-      <a class="button" href="{{ next_page.url }}">&larr; {{ next_page.title }}</a>
-      {% endif %}
-
-      {% set prev_page = pages.children.prevSibling(page.path) %}
-      {% if prev_page %}
-      <a class="button" href="{{ prev_page.url }}">{{ prev_page.title }} &rarr;</a>
-      {% endif %}
-    </nav>
-
-  </div>
+  </div><!-- .wrapper -->
 </section>
+
+<nav class="page-nav">
+  <div class="wrapper">
+    {% set prev_page = pages.children.nextSibling(page.path) %}
+    {% if prev_page and prev_page.title != 'Home' %}
+    <a class="button prev" href="{{ prev_page.url }}"><span class="arrow"></span><span class="label">prev</span> {{ prev_page.title }}</a>
+    {% endif %}
+
+    {% set next_page = pages.children.prevSibling(page.path) %}
+    {% if next_page %}
+    <a class="button next" href="{{ next_page.url }}"><span class="label">next</span> {{ next_page.title }} <span class="arrow"></span></a>
+    {% endif %}
+  </div>
+  <div class="colorbar background-{{ page.header.sectionBrandColor }}"></div>
+</nav>
 {% endblock %}

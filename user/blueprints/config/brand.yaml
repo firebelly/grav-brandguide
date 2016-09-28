@@ -57,3 +57,6 @@ form:
         quinaryColor:
           type: colorpicker
           label: Quinary Background Color
+        senaryColor:
+          type: colorpicker
+          label: Senary Background Color

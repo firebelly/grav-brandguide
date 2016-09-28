@@ -31,3 +31,30 @@
     opacity: 1;
   }
 }
+
+.arrow {
+  width: 25px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+  &::before {
+    left: 0;
+    top: 10px;
+    height: 1px;
+    width: 100%;
+    content: '';
+    background: $black;
+    position: absolute;
+  }
+  &::after {
+    top: 3px;
+    right: 2px;
+    content: '';
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    transform: rotate(-45deg);
+    border-right: 1px solid $black;
+    border-bottom: 1px solid $black;
+  }
+}

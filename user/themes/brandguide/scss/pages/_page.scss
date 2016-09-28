@@ -7,14 +7,20 @@
   }
 
   .childpage {
-    margin-top: 70px;
+    padding-top: $global-padding;
+    @include dots($black, 4px, top);
+    margin-top: #{$global-padding * 2};
   }
 
   .subpage-title {
     @extend .h2;
     margin-bottom: 140px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid $black;
+  }
+}
+
+.subpage-content {
+  .content {
+    margin-bottom: #{$vertical-beat * 4};
   }
 }
 
@@ -45,5 +51,75 @@
 .modular-container {
   .modular-title {
     @extend .h1;
+  }
+}
+
+// Page Nav
+.page-nav {
+  @extend .h2;
+  margin-top: #{$global-padding * 2};
+  
+  .wrapper {
+    padding-bottom: 0;
+  }
+
+  .button {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: #{$global-padding / 2};
+  }
+
+  .label {
+    @extend .h3;
+    display: block;
+  }
+
+  .arrow {
+    top: 22px;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    transition: opacity .2s ease-out, transform .2s ease-out;
+  }
+
+  .prev {
+    text-align: right;
+    padding-right: $global-padding;
+    .arrow {
+      right: 100%;
+      margin-right: $global-padding;
+      transform: rotate(180deg) translateX(-20px);
+    }
+
+    &:hover {
+      .arrow {
+        opacity: 1;
+        transform: rotate(180deg) translateX(0);
+      }
+    }
+  }
+  .next {
+    padding-left: $global-padding; 
+    border-left: 1px solid $black;
+    .arrow {
+      left: 100%;
+      transform: translateX(-20px);
+      margin-left: $global-padding;
+    }
+
+    &:hover {
+      .arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .colorbar {
+    height: #{$global-padding * 2};
+    @include media-md {
+      width: 72%;
+    }
   }
 }

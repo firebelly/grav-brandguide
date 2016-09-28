@@ -1,11 +1,14 @@
 ---
-title: 'Design Set'
+title: Natural
 colors:
     -
-        color: '#a0dae3'
+        color: '#353d38'
     -
-        color: '#fab28a'
+        color: '#757c78'
     -
-        color: '#6fa4d8'
+        color: '#bbbfbb'
+    -
+        color: '#e9eef1'
 ---
 
+Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.

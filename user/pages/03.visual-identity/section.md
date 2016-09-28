@@ -1,5 +1,6 @@
 ---
 title: 'Visual Identity'
+sectionBrandColor: quaternary
 content:
     items: '@self.modular'
     order:

@@ -8,8 +8,6 @@ form:
       fields:
         content:
           fields:
-            content:
-              type: ignore
             uploads:
               type: ignore
             header.colors:

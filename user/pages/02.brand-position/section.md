@@ -1,5 +1,5 @@
 ---
 title: 'Brand Position'
-sectionBrandColor: secondary
+sectionBrandColor: tertiary
 ---
 

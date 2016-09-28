@@ -20,5 +20,34 @@ body {
 .background-quinary {
   background: {{ config.brand.quinaryColor }};
 }
+.background-senary {
+  background: {{ config.brand.senaryColor  }};
+}
 
+@media screen and (min-width:768px) {
+  .section-intro.background-primary {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} 72%, transparent 72%, transparent 100%);
+  }
+  .section-intro.background-secondary {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} 72%, transparent 72%, transparent 100%);
+  }
+  .section-intro.background-tertiary {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} 72%, transparent 72%, transparent 100%);
+  }
+  .section-intro.background-quaternary {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} 72%, transparent 72%, transparent 100%);
+  }
+  .section-intro.background-quinary {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} 72%, transparent 72%, transparent 100%);
+  }
+  .section-intro.background-senary {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} 72%, transparent 72%, transparent 100%);
+  }
+}
 </style>
