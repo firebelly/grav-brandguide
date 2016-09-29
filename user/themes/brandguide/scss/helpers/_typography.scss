@@ -26,15 +26,14 @@ $font-regular: 'worchesteref', serif;
 $font-sans: 'Replica Pro', 'Helvetica', sans-serif;
 $font-mono: 'Pitch', 'Courier New', mono;
 
-h1,
 .h1 {
   font: 700 39px/32px $font-regular;
 }
-h2,
+
 .h2 {
   font: 700 28px/30px $font-regular;
 }
-h3,
+
 .h3 {
   letter-spacing: .15em;
   text-transform: uppercase;

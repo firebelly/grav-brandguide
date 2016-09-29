@@ -50,11 +50,24 @@
     top: 3px;
     right: 2px;
     content: '';
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     position: absolute;
     transform: rotate(-45deg);
     border-right: 1px solid $black;
     border-bottom: 1px solid $black;
+  }
+}
+
+.button {
+  @extend .h3;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid $black;
+  transition: background .2s ease-out;
+  padding: #{$vertical-beat * 1.5} #{$vertical-beat * 1.5} #{$vertical-beat * 1.25};
+  &:hover,
+  &:focus {
+    background: rgba(0,0,0,.1);
   }
 }

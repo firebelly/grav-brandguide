@@ -1,6 +1,6 @@
 ---
 title: 'Value Proposition'
-sidenote: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'
+sidenote: "1 / 5<br>\r\n—<br>\r\nWe’re in the <br>\r\nbusiness of <br>\r\nselling design.<br>"
 assets:
     -
         title: test
@@ -23,8 +23,4 @@ custom_file:
         route: null
 ---
 
-## FLOR provides a uniquely rewarding design experience built firmly on our belief that care for people and the planet are essential to Good Design.
-
-bzz
-
-![](liz-out.jpg?sepia)
+FLOR provides a uniquely rewarding design experience built firmly on our belief that care for people and the planet are essential to Good Design.

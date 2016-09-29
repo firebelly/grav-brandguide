@@ -1,5 +1,13 @@
 ---
 title: 'Design Philosophy'
+sidenote: "2  /  5<br>\r\n—<br>\r\nGood Design exists at the intersection of beauty, function and intelligence."
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Good design is intentional,
+and requires time, energy and communication. It values humanity, embodies a clear vision for the future, and it builds in room for growth. 
+
+### good design distills complex thoughts
+into simple, honest expressions. It transforms powerful ideas into objects and experiences that can be seen, felt, remembered and shared.
+
+### good design is the foundation for a beautiful life,
+a beautiful home and a beautiful planet. In a well-design system, nothing goes to waste. No materials are used that cannot be replaced. Each piece works in harmony with all others—it serves a purpose and can be repurposed to maintain the system’s beauty and integrity.

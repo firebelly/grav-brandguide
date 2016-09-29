@@ -23,6 +23,7 @@ var FB = (function($) {
 
     _initNav();
     _initColorPalettes();
+    _initPageNav();
 
     // Esc handlers
     $(document).keyup(function(e) {
@@ -120,7 +121,14 @@ var FB = (function($) {
       $('body').append('<div class="copy-message"><span class="copied-value">' + value + '</span> copied!</div>');
       $('.copy-message').addClass('-active');
     });
+  }
 
+  function _initPageNav() {
+    $('.page-nav a').hover(function() {
+      $('.page-nav .colorbar').addClass('background-' + $(this).data('color') + '-override');
+    }, function() {
+      $('.page-nav .colorbar').removeClass('background-' + $(this).data('color') + '-override');
+    });
   }
 
   // Color Conversions

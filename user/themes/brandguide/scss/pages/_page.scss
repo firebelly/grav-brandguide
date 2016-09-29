@@ -6,21 +6,75 @@
     margin-bottom: 144px;
   }
 
+  .page-small-title {
+    @extend .h3;
+    border-bottom: 1px solid $black;
+    padding-bottom: #{$vertical-beat * 2};
+  }
+  
   .childpage {
     padding-top: $global-padding;
     @include dots($black, 4px, top);
     margin-top: #{$global-padding * 2};
+    &:first-of-type {
+      background: none;
+    }
+
+    > .subpage-content > .nested-modular > .content > h3 {
+      display: none;
+    }
   }
 
   .subpage-title {
-    @extend .h2;
-    margin-bottom: 140px;
+    @extend .h1;
   }
 }
 
 .subpage-content {
+  @extend .grid;
+  position: relative;
+  .modular-container {
+    @extend .one-half;
+    position: relative;
+  }
   .content {
+    position: relative;
     margin-bottom: #{$vertical-beat * 4};
+    .nested-title {
+      @extend .h2;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-bottom: #{$vertical-beat * 3};
+    }
+  }
+  .sidenote {
+    top: 5px;
+    right: 100%;
+    width: 100px;
+    font-size: 8px;
+    text-align: right;
+    position: absolute;
+    padding-right: 20px;
+    font-family: $font-sans;
+  }
+}
+
+.user-content {
+  h1 {
+    @extend .h1;
+    margin-bottom: 0;
+  }
+  h2 {
+    @extend .h2;
+    margin-bottom: 0;
+  }
+  h3 {
+    @extend .h3;
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 0;
+    max-width: 580px;
   }
 }
 
@@ -54,6 +108,23 @@
   }
 }
 
+.nested-modular,
+.subnested-modulars {
+  @extend .grid;
+}
+
+.nested-modular {
+  padding: #{$vertical-beat * 4} 0;
+  @include dots($black, 4px, top);
+  &:first-of-type {
+    background: none;
+  }
+}
+
+.subnested-module-content {
+  position: relative;
+}
+
 // Page Nav
 .page-nav {
   @extend .h2;
@@ -63,7 +134,7 @@
     padding-bottom: 0;
   }
 
-  .button {
+  .nav-button {
     position: relative;
     text-decoration: none;
     display: inline-block;
@@ -118,6 +189,7 @@
 
   .colorbar {
     height: #{$global-padding * 2};
+    transition: background .2s ease-out;
     @include media-md {
       width: 72%;
     }

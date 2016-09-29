@@ -397,41 +397,33 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   src: url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff") format("woff");
   font-weight: 900;
   font-style: normal; }
-h1,
-.h1,
-.main-nav > ol > li > a,
-.page-section .page-title,
-.modular-container .modular-title {
+.h1, .main-nav > ol > li > a, .page-section .page-title, .page-section .subpage-title, .user-content h1, .modular-container .modular-title {
   font: 700 39px/32px "worchesteref", serif; }
 
-h2,
-.h2,
-.page-section .subpage-title,
-.page-nav {
+.h2, .subpage-content .content .nested-title, .user-content h2, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
-h3,
-.h3,
-.header h2,
-.main-nav > ol > li ol li a,
-.colorpalettes .color p .label,
-.page-nav .label {
+.h3, .button, .header h2, .main-nav > ol > li ol li a, .colorpalettes .color p .label, .page-section .page-small-title, .user-content h3, .page-nav .label {
   letter-spacing: .15em;
   text-transform: uppercase;
   font: 700 10px/16px "Replica Pro", "Helvetica", sans-serif; }
 
 @media screen and (min-width: 768px) {
-  .grid, .logotypes .subpage-content {
+  .grid, .subpage-content, .nested-modular,
+  .subnested-modulars {
     *zoom: 1; }
-    .grid:before, .logotypes .subpage-content:before, .grid:after, .logotypes .subpage-content:after {
+    .grid:before, .subpage-content:before, .nested-modular:before,
+    .subnested-modulars:before, .grid:after, .subpage-content:after, .nested-modular:after,
+    .subnested-modulars:after {
       content: "\0020";
       display: block;
       height: 0;
       overflow: hidden; }
-    .grid:after, .logotypes .subpage-content:after {
+    .grid:after, .subpage-content:after, .nested-modular:after,
+    .subnested-modulars:after {
       clear: both; }
 
-  .one-half, .logotypes .subpage-content .modular-container {
+  .one-half, .subpage-content .modular-container {
     width: 50%;
     float: left; }
 
@@ -479,12 +471,21 @@ h3,
     top: 3px;
     right: 2px;
     content: '';
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     position: absolute;
     transform: rotate(-45deg);
     border-right: 1px solid #000;
     border-bottom: 1px solid #000; }
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #000;
+  transition: background .2s ease-out;
+  padding: 15px 15px 12.5px; }
+  .button:hover, .button:focus {
+    background: rgba(0, 0, 0, 0.1); }
 
 *, *::before, *::after {
   box-sizing: inherit; }
@@ -711,6 +712,9 @@ a.logo {
 
 .page-section .page-title {
   margin-bottom: 144px; }
+.page-section .page-small-title {
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px; }
 .page-section .childpage {
   padding-top: 40px;
   background-position: top;
@@ -719,11 +723,41 @@ a.logo {
   background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
   background-image: -webkit-linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
   margin-top: 80px; }
-.page-section .subpage-title {
-  margin-bottom: 140px; }
+  .page-section .childpage:first-of-type {
+    background: none; }
+  .page-section .childpage > .subpage-content > .nested-modular > .content > h3 {
+    display: none; }
 
-.subpage-content .content {
-  margin-bottom: 40px; }
+.subpage-content {
+  position: relative; }
+  .subpage-content .modular-container {
+    position: relative; }
+  .subpage-content .content {
+    position: relative;
+    margin-bottom: 40px; }
+    .subpage-content .content .nested-title {
+      letter-spacing: 0;
+      text-transform: none;
+      margin-bottom: 30px; }
+  .subpage-content .sidenote {
+    top: 5px;
+    right: 100%;
+    width: 100px;
+    font-size: 8px;
+    text-align: right;
+    position: absolute;
+    padding-right: 20px;
+    font-family: "Replica Pro", "Helvetica", sans-serif; }
+
+.user-content h1 {
+  margin-bottom: 0; }
+.user-content h2 {
+  margin-bottom: 0; }
+.user-content h3 {
+  margin-bottom: 0; }
+.user-content p {
+  margin-top: 0;
+  max-width: 580px; }
 
 .section-intro {
   min-height: 75vh; }
@@ -744,11 +778,24 @@ a.logo {
         position: absolute;
         transform: translateX(-36px); } }
 
+.nested-modular {
+  padding: 40px 0;
+  background-position: top;
+  background-repeat: repeat-x;
+  background-size: 4px 1px;
+  background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
+  background-image: -webkit-linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%); }
+  .nested-modular:first-of-type {
+    background: none; }
+
+.subnested-module-content {
+  position: relative; }
+
 .page-nav {
   margin-top: 80px; }
   .page-nav .wrapper {
     padding-bottom: 0; }
-  .page-nav .button {
+  .page-nav .nav-button {
     position: relative;
     text-decoration: none;
     display: inline-block;
@@ -782,7 +829,8 @@ a.logo {
       opacity: 1;
       transform: translateX(0); }
   .page-nav .colorbar {
-    height: 80px; }
+    height: 80px;
+    transition: background .2s ease-out; }
     @media screen and (min-width: 768px) {
       .page-nav .colorbar {
         width: 72%; } }
@@ -795,39 +843,31 @@ a.logo {
   .homepage .feature {
     min-height: 50vh; } }
 
-.logotypes .childpage .modular-row {
+#logotypes .modular-row {
   margin-bottom: 50px; }
   @media screen and (min-width: 768px) {
-    .logotypes .childpage .modular-row {
+    #logotypes .modular-row {
       margin-bottom: 0;
       padding-right: 50px; } }
-  .logotypes .childpage .modular-row p {
+  #logotypes .modular-row p {
     margin: 0; }
-  .logotypes .childpage .modular-row a {
+  #logotypes .modular-row a {
     margin: 0 20px 20px 0;
     display: inline-block; }
-    .logotypes .childpage .modular-row a img {
+    #logotypes .modular-row a img {
       vertical-align: top; }
-.logotypes .childpage ._primary-vertical img {
+    #logotypes .modular-row a.button {
+      margin-top: 40px; }
+#logotypes ._primary-vertical img {
   max-width: 60px; }
-.logotypes .childpage ._primary-horizontal img {
+#logotypes ._primary-horizontal img {
   max-width: 240px; }
-.logotypes .childpage ._secondary-vertical img,
-.logotypes .childpage ._tertiary img {
+#logotypes ._secondary-vertical img,
+#logotypes ._tertiary img {
   max-width: 144px; }
-.logotypes .childpage ._secondary-horizontal img {
+#logotypes ._secondary-horizontal img {
   max-width: 216px; }
-.logotypes .childpage#tertiary .modular-container {
+#logotypes#tertiary .modular-container {
   width: 100%; }
-.logotypes .subpage-content .modular-container {
-  position: relative; }
-.logotypes .subpage-content .sidenote {
-  top: 5px;
-  right: 100%;
-  font-size: 8px;
-  text-align: right;
-  position: absolute;
-  padding-right: 20px;
-  font-family: "Replica Pro", "Helvetica", sans-serif; }
 
 /*# sourceMappingURL=application.css.map */

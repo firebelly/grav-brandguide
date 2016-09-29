@@ -1,0 +1,14 @@
+<div class="nested-modular">
+  <div class="content user-content">
+    <h3 class="nested-title">{{ page.title }}</h3>
+    {{ page.content }}
+    <div class="sidenote">
+      {{ page.header.sidenote }}
+    </div>
+  </div>
+  <div class="subnested-modulars">  
+    {% for module in page.children %}
+      {{ module.content }}
+    {% endfor %}
+  </div>
+</div>

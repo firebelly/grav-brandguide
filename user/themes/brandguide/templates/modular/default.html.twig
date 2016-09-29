@@ -1,3 +1,8 @@
-<div class="modular-row {{ page.slug }}">
-  {{ content }}
+<div class="modular-container">
+  <div class="modular-row {{ page.slug }} user-content">
+    {{ content }}
+    <div class="sidenote">
+      {{ page.header.sidenote }}
+    </div>
+  </div>
 </div>
