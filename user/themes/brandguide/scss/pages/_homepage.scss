@@ -2,8 +2,17 @@
 
 .homepage {
   .intro-section {
+    p {
+      margin: 0;
+    }
     img {
-      max-width: 400px;
+      max-width: 100%;
+    }
+
+    @include media-md {
+      img {
+        max-width: 400px;
+      }
     }
   }
 
