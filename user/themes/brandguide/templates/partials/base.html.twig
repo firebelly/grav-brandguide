@@ -41,7 +41,9 @@
     </div>
     {% block header_navigation %}
     <nav class="main-nav">
-      {% include 'partials/navigation.html.twig' %}
+      <div class="-inner">
+          {% include 'partials/navigation.html.twig' %}
+      </div>
     </nav>
     {% endblock %}
 {% endblock %}

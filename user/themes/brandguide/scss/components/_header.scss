@@ -108,14 +108,25 @@
   pointer-events: none;
   will-change: opacity;
   padding: $global-padding;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .3s ease-out;
   &.active {
     opacity: 1;
     pointer-events: auto;
+    .-inner {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @include media-md {
-    padding: #{$global-padding * 2} #{$global-padding * 2} $global-padding;
+    padding: $global-padding #{$global-padding * 2} $global-padding;
+  }
+
+  .-inner {
+    opacity: 0;
+    will-change: opacity, transform;
+    transform: translateY(-#{$global-padding * 3});
+    transition: opacity .3s ease-out .4s, transform .3s ease-out .3s;
   }
 
   .toc-label {
@@ -147,7 +158,7 @@
       }
     }
   }
-  > ol {
+  .nav-list {
     margin-top: $global-padding;
     padding-left: #{$global-padding / 2};
     margin-bottom: #{$global-padding * 2};
