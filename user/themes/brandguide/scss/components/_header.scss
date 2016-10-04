@@ -7,7 +7,7 @@
   z-index: 20;
   position: fixed;
   text-align: center;
-  width: #{$global-padding * 2};
+  width: $global-padding;
   padding: $global-padding 0;
   .logo {
     line-height: 1;
@@ -21,13 +21,13 @@
 
   h2 {
     margin: 0;
-    left: 26px;
+    left: 13px;
     @extend .h3;
     line-height: 33px;
     position: absolute;
     white-space: nowrap;
-    bottom: $global-padding;
     padding-left: $global-padding;
+    bottom: #{$global-padding / 2};
     transform: rotate(-90deg) translatey(100%);
     transform-origin: bottom left;
     &::after {
@@ -40,10 +40,20 @@
       height: #{$global-padding / 2};
     }
   }
+
+  @include media-md {
+    width: #{$global-padding * 2};
+
+    h2 {
+      left: 26px;
+      bottom: $global-padding;
+    }
+  }
 }
 
 // Nav
 .menu-toggle {
+  top: -15px;
   z-index: 2;
   width: 31px;
   height: 31px;
@@ -55,8 +65,8 @@
   border-radius: 50%;
   border: 1px solid $black;
   font-family: $font-regular;
-  margin-bottom: $global-padding;
-  transition: transform .25s ease-out;
+  margin-bottom: #{$global-padding / 2};
+  transition: transform .2s ease-out, background .2s ease-out;
   &::before,
   &::after {
     top: 14px;
@@ -74,7 +84,7 @@
     outline: none;
   }
   &:hover {
-    background: darken($white,10%);
+    background: $white;
   }
   &.menu-open {
     transform: rotate(135deg);
@@ -92,19 +102,27 @@
   opacity: 0;
   z-index: 10;
   width: 100%;
+  overflow: auto;
   position: fixed;
   background: $white;
   pointer-events: none;
   will-change: opacity;
+  padding: $global-padding;
   transition: opacity .5s ease-in-out;
-  padding: #{$global-padding * 2} #{$global-padding * 2} $global-padding;
   &.active {
     opacity: 1;
     pointer-events: auto;
   }
 
+  @include media-md {
+    padding: #{$global-padding * 2} #{$global-padding * 2} $global-padding;
+  }
+
   .toc-label {
-    max-width: 133px;
+    max-width: 100px;
+    @include media-md {
+      max-width: 133px;
+    }
   }
 
   a {
@@ -130,15 +148,17 @@
     }
   }
   > ol {
-    margin-top: #{$global-padding * 3};
+    margin-top: $global-padding;
+    padding-left: #{$global-padding / 2};
     margin-bottom: #{$global-padding * 2};
     list-style-type: decimal-leading-zero;
-    @include media-md {
+    @include media-lg {
       columns: 2;
       column-rule: 1px solid $black;
+      margin-top: #{$global-padding * 3};
       column-gap: #{$global-padding * 2};
     }
-    @include media-lg {
+    @include media-xl {
       columns: 4;
     }
 
@@ -146,17 +166,20 @@
       break-inside: avoid;
       margin-bottom: 10px;
       > a {
-        @extend .h1;
+        @include h1;
         display: block;
         word-break: break-all;
-        padding-left: $global-padding;
-        &::after {
-          width: 4px;
-          content: '';
-          height: 1px;
-          display: block;
-          background: $black;
-          margin: 5px 0 6px -52px;
+        padding-left: #{$global-padding / 2};
+        @include media-lg {        
+          padding-left: $global-padding;
+          &::after {
+            width: 4px;
+            content: '';
+            height: 1px;
+            display: block;
+            background: $black;
+            margin: 5px 0 6px -52px;
+          }
         }
       }
       ol {

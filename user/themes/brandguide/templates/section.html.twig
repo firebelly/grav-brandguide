@@ -11,6 +11,13 @@
           {{ page.content }}
         </div>
       {% endif %}
+        <div class="intro-image">
+          {% if page.media.images %}
+            {{ page.media.images|first }}
+          {% else %}
+            <img aria-hidden="true" src="{{ url('theme://images/blank-grid.png') }}">
+          {% endif %}
+        </div>
     </div>
   </div>
 
@@ -38,7 +45,7 @@
     {% endif %}
 
     {% set next_page = pages.children.prevSibling(page.path) %}
-    {% if next_page %}
+    {% if pages.children.isLast(page.path) == false %}
     <a class="nav-button next" href="{{ next_page.url }}" data-color="{{ next_page.header.sectionBrandColor }}"><span class="label">next</span> {{ next_page.title }} <span class="arrow"></span></a>
     {% endif %}
   </div>

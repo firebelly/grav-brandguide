@@ -44,6 +44,13 @@ form:
                           label: Quinary
                           disabled: true
                           config-default@: brand.quinaryColor
+                        brandColorSeptenary:
+                          type: colorpicker
+                          size: small
+                          style: vertical
+                          label: Septenary
+                          disabled: true
+                          config-default@: brand.septenaryColor
                     column2:
                       type: column
                       fields:
@@ -85,3 +92,4 @@ form:
                     quaternary: Quaternary
                     quinary: Quinary
                     senary: Senary
+                    septenary: Septenary

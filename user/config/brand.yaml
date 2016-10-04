@@ -32,3 +32,16 @@ primaryLogoHorizontal:
     path: user/themes/brandguide/assets/Primary-Horizontal---Black.png
 quinaryColor: '#ddcccf'
 senaryColor: '#bfbbbd'
+color: '#911616'
+colorName: test
+colors:
+  -
+    colorName: Primary
+    colorValue: '#ffffff'
+  -
+    colorName: Secondary
+    colorValue: '#f1bd19'
+  -
+    colorName: Tertiary
+    colorValue: '#fab28a'
+septenaryColor: '#a0dae3'

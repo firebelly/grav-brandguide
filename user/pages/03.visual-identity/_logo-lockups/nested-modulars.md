@@ -1,6 +1,7 @@
 ---
-title: Photography
-sectionBrandColor: quaternary
+title: 'Logo Lockups'
+body_classes: logo-lockups
+sectionBrandColor: primary
 content:
     items: '@self.modular'
     order:

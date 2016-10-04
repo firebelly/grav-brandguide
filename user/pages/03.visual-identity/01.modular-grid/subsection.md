@@ -3,8 +3,8 @@ title: 'Modular Grid'
 image_align: left
 ---
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Focused on movement and creativity, the identity system builds in flexibility for mutable messaging and styles, demonstrating infinite design possibilities within a supportive, principled framework. 
 
-## Secondary Header
+The visual brand is playful and confident. It conveys simplicity and invites interaction. It is the design experience, made visual. 
 
-Duis aute irure dolor in reprehenderit in voluptate.
+![](modular-grid.jpg)

@@ -1,6 +1,6 @@
 ---
-title: Typography
-sectionBrandColor: quaternary
+title: Photography
+sectionBrandColor: septenary
 content:
     items: '@self.modular'
     order:

@@ -60,3 +60,6 @@ form:
         senaryColor:
           type: colorpicker
           label: Senary Background Color
+        septenaryColor:
+          type: colorpicker
+          label: Septenary Background Color

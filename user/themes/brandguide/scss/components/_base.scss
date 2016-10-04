@@ -31,5 +31,9 @@ a.logo {
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
-  padding: #{$global-padding * 2};
+  padding: $global-padding;
+
+  @include media-md {
+    padding: #{$global-padding * 2};
+  }
 }

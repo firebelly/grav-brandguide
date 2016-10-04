@@ -1,5 +1,7 @@
 // Grid
 
+$column: 100% * 1 / 20;
+
 
 @include media-md {
   .grid {
