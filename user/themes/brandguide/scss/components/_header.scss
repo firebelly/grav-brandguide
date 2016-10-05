@@ -108,25 +108,29 @@
   pointer-events: none;
   will-change: opacity;
   padding: $global-padding;
-  transition: opacity .3s ease-out;
+  transition: opacity .3s ease-out .3s;
+  @include media-md {
+    padding: $global-padding #{$global-padding * 2} $global-padding;
+  }
   &.active {
     opacity: 1;
     pointer-events: auto;
+    transition: opacity .3s ease-out 0s;
     .-inner {
       opacity: 1;
-      transform: translateY(0);
+      transition: opacity .3s ease-out .4s;
     }
-  }
-
-  @include media-md {
-    padding: $global-padding #{$global-padding * 2} $global-padding;
+    .nav-list {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .3s ease-out .5s, transform .5s ease-out .4s;
+    }
   }
 
   .-inner {
     opacity: 0;
-    will-change: opacity, transform;
-    transform: translateY(-#{$global-padding * 3});
-    transition: opacity .3s ease-out .4s, transform .3s ease-out .3s;
+    will-change: opacity;
+    transition: opacity .3s ease-out .1s;
   }
 
   .toc-label {
@@ -159,10 +163,14 @@
     }
   }
   .nav-list {
+    opacity: 0;
     margin-top: $global-padding;
+    will-change: opacity, transform;
     padding-left: #{$global-padding / 2};
     margin-bottom: #{$global-padding * 2};
     list-style-type: decimal-leading-zero;
+    transform: translateY(-#{$global-padding * 3});
+    transition: opacity .3s ease-out 0s, transform .5s ease-out 0s;
     @include media-lg {
       columns: 2;
       column-rule: 1px solid $black;

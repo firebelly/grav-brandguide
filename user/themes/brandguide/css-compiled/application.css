@@ -604,21 +604,25 @@ a.logo {
   pointer-events: none;
   will-change: opacity;
   padding: 50px;
-  transition: opacity .3s ease-out; }
-  .main-nav.active {
-    opacity: 1;
-    pointer-events: auto; }
-    .main-nav.active .-inner {
-      opacity: 1;
-      transform: translateY(0); }
+  transition: opacity .3s ease-out .3s; }
   @media screen and (min-width: 768px) {
     .main-nav {
       padding: 50px 100px 50px; } }
+  .main-nav.active {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity .3s ease-out 0s; }
+    .main-nav.active .-inner {
+      opacity: 1;
+      transition: opacity .3s ease-out .4s; }
+    .main-nav.active .nav-list {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .3s ease-out .5s, transform .5s ease-out .4s; }
   .main-nav .-inner {
     opacity: 0;
-    will-change: opacity, transform;
-    transform: translateY(-150px);
-    transition: opacity .3s ease-out .4s, transform .3s ease-out .3s; }
+    will-change: opacity;
+    transition: opacity .3s ease-out .1s; }
   .main-nav .toc-label {
     max-width: 50px; }
     @media screen and (min-width: 768px) {
@@ -641,10 +645,14 @@ a.logo {
         content: counters(item,".");
         padding-right: 50px; }
   .main-nav .nav-list {
+    opacity: 0;
     margin-top: 50px;
+    will-change: opacity, transform;
     padding-left: 25px;
     margin-bottom: 100px;
-    list-style-type: decimal-leading-zero; }
+    list-style-type: decimal-leading-zero;
+    transform: translateY(-150px);
+    transition: opacity .3s ease-out 0s, transform .5s ease-out 0s; }
     @media screen and (min-width: 975px) {
       .main-nav .nav-list {
         columns: 2;
