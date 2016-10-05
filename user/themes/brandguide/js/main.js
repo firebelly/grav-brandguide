@@ -120,14 +120,10 @@ var FB = (function($) {
       var value = e.text;
       $('body').append('<div class="copy-message"><span class="copied-value">' + value + '</span> copied!</div>');
       $('.copy-message').addClass('-active');
-    });
-  }
 
-  function _initPageNav() {
-    $('.page-nav a').hover(function() {
-      $('.page-nav .colorbar').addClass('background-' + $(this).data('color') + '-override');
-    }, function() {
-      $('.page-nav .colorbar').removeClass('background-' + $(this).data('color') + '-override');
+      setTimeout(function() {
+        $('.copy-message.-active').remove();
+      }, 3000);
     });
   }
 
@@ -180,6 +176,14 @@ var FB = (function($) {
     result.k = Math.round( result.k * 100 );
  
     return result;
+  }
+
+  function _initPageNav() {
+    $('.page-nav a').hover(function() {
+      $('.page-nav .colorbar').addClass('background-' + $(this).data('color') + '-override');
+    }, function() {
+      $('.page-nav .colorbar').removeClass('background-' + $(this).data('color') + '-override');
+    });
   }
 
   // Track ajax pages in Analytics
