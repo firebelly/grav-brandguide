@@ -22,17 +22,11 @@
   </div>
 
   <div class="wrapper">
-  <h2 class="page-small-title">{{ page.title }}</h2>
-  {% for childpage in page.children %}
-    <div class="childpage" id="{{  _self.pageLinkName(childpage.menu) }}">
-      <h2 class="subpage-title">{{ childpage.title }}</h2>
-      <div class="subpage-content user-content">
+    <h2 class="page-small-title">{{ page.title }}</h2>
+    {% for childpage in page.children %}
+      <div class="childpage {{ childpage.header.body_classes }}">
         {{ childpage.content }}
-        <div class="sidenote">
-          {{ childpage.header.sidenote }}
-        </div>
       </div>
-    </div>
     {% endfor %}
   </div><!-- .wrapper -->
 </section>

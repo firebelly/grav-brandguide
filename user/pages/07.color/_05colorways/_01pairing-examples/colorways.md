@@ -122,5 +122,3 @@ colorways:
         colorFour: '#5d725f'
         colorFourLabel: 'Natural Green 02'
 ---
-
-### Pairing Examples

@@ -15,4 +15,3 @@ colors:
         colorLabel: 'Natural Undertone 04'
 ---
 
-### Undertones

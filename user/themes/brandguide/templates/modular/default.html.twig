@@ -1,8 +1,15 @@
-<div class="modular-container">
-  <div class="modular-row {{ page.slug }} user-content">
-    {{ content }}
-    <div class="sidenote">
-      {{ page.header.sidenote }}
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
+
+<div class="subpage-content" id="{{  _self.pageLinkName(page.menu) }}">
+  <h3 class="section-title">{{ page.title }}</h3>
+  {% if page.content %}
+    <div class="content user-content">
+      {{ page.content }}
+      {% if header.sidenote %}
+        <div class="sidenote">
+          {{ header.sidenote }}
+        </div>
+      {% endif %}
     </div>
-  </div>
+  {% endif %}
 </div>

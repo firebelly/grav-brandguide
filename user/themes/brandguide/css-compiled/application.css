@@ -397,13 +397,13 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   src: url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff") format("woff");
   font-weight: 900;
   font-style: normal; }
-.h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .subpage-title, .user-content h1, .modular-container .modular-title {
+.h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .childpage.title-section h3, .user-content h1, .modular-container .modular-title {
   font: 700 42px/40px "worchesteref", serif; }
 
-.h2, .subpage-content .content .nested-title, .user-content h2, .page-nav {
+.h2, .page-section .section-title, .subpage-content .content .nested-title, .user-content h2, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
-.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .page-section .page-small-title, .user-content h3, .section-intro h3, .page-nav .label {
+.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .page-section .page-small-title, .page-section .nested-title, .user-content h3, .section-intro h3, .page-nav .label {
   letter-spacing: .15em;
   text-transform: uppercase;
   font: 700 12px/20px "Replica Pro", "Helvetica", sans-serif; }
@@ -796,6 +796,19 @@ a.logo {
       max-width: 50%;
       flex-basis: 50%;
       padding-bottom: 50%; }
+  @media screen and (min-width: 480px) {
+    .colorpalettes.single-color .color {
+      width: 100%; } }
+  @media screen and (min-width: 768px) {
+    .colorpalettes.single-color .color {
+      width: 100%; }
+      .colorpalettes.single-color .color .swatch-wrapper {
+        float: left;
+        width: 100%;
+        max-width: 500px;
+        margin-right: 20px; }
+      .colorpalettes.single-color .color .color-specs {
+        float: left; } }
 
 body.color .subnested-modular {
   margin-top: 40px; }
@@ -815,21 +828,37 @@ body.color .subnested-modular {
   border-bottom: 1px solid #000;
   padding-bottom: 20px; }
 .page-section .childpage {
-  background-position: top;
+  background-position: bottom;
   background-repeat: repeat-x;
   background-size: 4px 1px;
   background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
   background-image: -webkit-linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
   padding: 100px 0 100px 10%; }
-  .page-section .childpage:first-of-type {
+  .page-section .childpage:last-of-type {
     background: none; }
   .page-section .childpage > .subpage-content > .nested-modular > .content > h3 {
     display: none; }
   @media screen and (min-width: 768px) {
     .page-section .childpage {
       padding-left: 20%; } }
-.page-section .subpage-title {
+  .page-section .childpage.title-section {
+    background: none;
+    padding-bottom: 0; }
+    .page-section .childpage.title-section h3 {
+      margin: 0; }
+      @media screen and (max-width: 480px) {
+        .page-section .childpage.title-section h3 {
+          font-size: 28px;
+          line-height: 30px; } }
+  @media screen and (min-width: 768px) {
+    .page-section .childpage.full-width {
+      padding-left: 0; } }
+.page-section .section-title {
   margin-top: 0; }
+  @media screen and (max-width: 480px) {
+    .page-section .section-title {
+      font-size: 18px;
+      line-height: 20px; } }
 
 .subpage-content {
   position: relative; }

@@ -14,5 +14,3 @@ colors:
         color: '#F4F2ED'
         colorLabel: 'Design Undertone 04'
 ---
-
-### Undertones

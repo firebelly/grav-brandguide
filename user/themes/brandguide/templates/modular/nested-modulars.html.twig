@@ -1,16 +1,24 @@
-<div class="nested-modular">
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
+
+<div class="subpage-content" id="{{  _self.pageLinkName(page.menu) }}">
+  <h3 class="section-title">{{ page.title }}</h3>
   <div class="content user-content">
-    <h3 class="nested-title">{{ page.title }}</h3>
-    {{ page.content }}
-    <div class="sidenote">
-      {{ page.sidenote }}
-    </div>
-  </div>
-  <div class="subnested-modulars">  
-    {% for module in page.children %}
-      <div class="subnested-modular">
-        {{ module.content }}
+    {% if page.content %}
+      {{ page.content }}
+    {% endif %}
+    {% if header.sidenote %}
+      <div class="sidenote">
+        {{ header.sidenote }}
       </div>
-    {% endfor %}
+    {% endif %}
   </div>
+  {% if page.children %}
+    <div class="subnested-modulars">
+      {% for module in page.children %}
+        <div class="subnested-modular">
+          {{ module.content }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>

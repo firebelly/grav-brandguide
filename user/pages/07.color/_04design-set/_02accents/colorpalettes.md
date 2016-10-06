@@ -11,5 +11,3 @@ colors:
         color: '#FAB38B'
         colorLabel: 'Design Orange 01'
 ---
-
-### Accents

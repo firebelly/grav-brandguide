@@ -1,6 +1,6 @@
 ---
 title: 'Design Set'
-sidenote: "2 / 3 <br>\r\n— <br>\r\nUndertones and <br>\r\nAccents"
+sidenote: "3 / 3 <br>\r\n— <br>\r\nUndertones and <br>\r\nAccents"
 colors:
     -
         color: '#3c383e'

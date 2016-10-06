@@ -1,0 +1,19 @@
+title: Single Color
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        content:
+          fields:
+            header.color:
+              type: colorpicker
+              label: Color
+            header.colorLabel:
+              type: text
+              label: Color Label
+            header.sidenote:
+              type: textarea
+              label: Sidenote

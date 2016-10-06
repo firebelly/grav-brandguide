@@ -32,5 +32,3 @@ colors:
         color: '#C5C7D2'
         colorLabel: 'Natural Violet 02'
 ---
-
-### Accents

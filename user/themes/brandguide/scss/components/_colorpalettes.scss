@@ -132,6 +132,29 @@
       }
     }
   }
+
+  // Single Color modifications
+  &.single-color {
+    .color {
+      @include media-sm {
+        width: 100%;
+      }
+      @include media-md {
+        width: 100%;
+
+        .swatch-wrapper {
+          float: left;
+          width: 100%;
+          max-width: 500px;
+          margin-right: #{$vertical-beat * 2};
+        }
+
+        .color-specs {
+          float: left;
+        }
+      }
+    }
+  }
 }
 
 // Color page
