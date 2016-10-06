@@ -1,5 +1,0 @@
----
-title: 'FLOR Core'
----
-
-test

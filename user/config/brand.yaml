@@ -44,4 +44,5 @@ colors:
   -
     colorName: Tertiary
     colorValue: '#fab28a'
-septenaryColor: '#a0dae3'
+septenaryColor: '#c9dddf'
+octonaryColor: '#c2c4cf'

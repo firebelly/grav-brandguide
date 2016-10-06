@@ -63,3 +63,6 @@ form:
         septenaryColor:
           type: colorpicker
           label: Septenary Background Color
+        octonaryColor:
+          type: colorpicker
+          label: Octonary Background Color

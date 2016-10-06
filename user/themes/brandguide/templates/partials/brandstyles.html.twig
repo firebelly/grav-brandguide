@@ -24,7 +24,10 @@ body {
   background: {{ config.brand.senaryColor  }};
 }
 .background-septenary {
-  background: {{ config.brand.senaryColor  }};
+  background: {{ config.brand.septenaryColor  }};
+}
+.background-octonary {
+  background: {{ config.brand.octonaryColor  }};
 }
 
 /* Hover overridees */
@@ -47,7 +50,10 @@ body {
   background: {{ config.brand.senaryColor  }} !important;
 }
 .background-septenary-override {
-  background: {{ config.brand.senaryColor  }} !important;
+  background: {{ config.brand.octonaryColor  }} !important;
+}
+.background-octonary-override {
+  background: {{ config.brand.octonaryColor  }} !important;
 }
 
 @media screen and (min-width:768px) {
@@ -106,6 +112,14 @@ body {
   .section-intro.background-septenary .wrapper {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} 80%, transparent 80%, transparent 100%);
+  }
+  .section-intro.background-octonary {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} 50%, transparent 50%, transparent 100%);
+  }
+  .section-intro.background-octonary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} 80%, transparent 80%, transparent 100%);
   }
 }
 </style>

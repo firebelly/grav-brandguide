@@ -75,6 +75,13 @@ form:
                           label: Senary
                           disabled: true
                           config-default@: brand.senaryColor
+                        brandColorOctonary:
+                          type: colorpicker
+                          size: small
+                          style: vertical
+                          label: Octonary
+                          disabled: true
+                          config-default@: brand.octonaryColor
 
             seclectBrandColorSection:
               type: section
@@ -93,3 +100,4 @@ form:
                     quinary: Quinary
                     senary: Senary
                     septenary: Septenary
+                    octonary: Octonary

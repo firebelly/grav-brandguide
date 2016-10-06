@@ -3,12 +3,14 @@
     <h3 class="nested-title">{{ page.title }}</h3>
     {{ page.content }}
     <div class="sidenote">
-      {{ page.header.sidenote }}
+      {{ page.sidenote }}
     </div>
   </div>
   <div class="subnested-modulars">  
     {% for module in page.children %}
-      {{ module.content }}
+      <div class="subnested-modular">
+        {{ module.content }}
+      </div>
     {% endfor %}
   </div>
 </div>

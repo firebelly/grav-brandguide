@@ -9,27 +9,26 @@
 
   .color {
     width: 100%;
+    margin-bottom: #{$vertical-beat * 2};
 
-    p {
-      &::before {
+    .color-label {
+      font: 400 12px/20px $font-sans;
+      &::after {
         height: 1px;
         content: '';
         width: 10px;
         display: block;
         background: $black;
-        margin-bottom: 12px;
+        margin: $vertical-beat 0;
       }
-      &:first-of-type {
-        &::before {
-          display: none;
-        }
-      }
-      span {
-        display: block;
-      }
+    }
+
+    p {
+      margin: 0;
       .label {
-        @extend .h3;
-        font-size: 7px;
+        text-transform: uppercase;
+        margin-right: $vertical-beat;
+        font: 400 12px/20px $font-sans;
       }
       .value {
         font-size: 12px;
@@ -54,24 +53,93 @@
     cursor: pointer;
     position: relative;
     padding-bottom: 100%;
-    margin-bottom: #{$vertical-beat * 2};
+    margin-bottom: $vertical-beat;
+    .plus {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: $vertical-beat;
+      right: $vertical-beat;
+      border: 1px solid $black;
+      transition: border .2s ease-out;
+      &::before,
+      &::after {
+        left: 4px;
+        top: 9px;
+        height: 1px;
+        width: 10px;
+        content: '';
+        background: $black;
+        position: absolute;
+        transition: background .2s ease-out;
+      }
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
     .copy-text {
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 50%;
+      left: 50%;
       opacity: 0;
       color: $white;
       text-align: center;
       position: absolute;
+      display: inline-block;
       font-family: $font-mono;
-      background: rgba(0,0,0,.1);
+      transform: translate(-50%,-50%);
       transition: opacity .2s ease-out;
     }
     &:hover {
       .copy-text {
         opacity: 1;
       }
+      .plus {
+        border-color: $white;
+        &::before,
+        &::after {
+          background: $white;
+        }
+      }
+    }
+  }
+
+  // Colorways modifactions
+  &.colorways {
+  
+    .color {
+      @include media-sm {
+        width: 50%;
+        float: left;
+        padding-left: #{$vertical-beat * 2};
+      }
+      @include media-md {
+        width: 50%;
+      }
+      @include media-xl {
+        width: 25%;
+      }
+    }
+
+    .colorway-swatch {
+      display: flex;
+      flex-wrap: wrap;
+      cursor: default;
+      .colorway-color {
+        height: 0;
+        max-width: 50%;
+        flex-basis: 50%;
+        padding-bottom: 50%;
+      }
+    }
+  }
+}
+
+// Color page
+body.color {
+  .subnested-modular {
+    margin-top: #{$vertical-beat * 4};
+    > .content {
+      margin-bottom: $vertical-beat;
     }
   }
 }

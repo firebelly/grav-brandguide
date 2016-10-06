@@ -103,7 +103,7 @@ var FB = (function($) {
   }
 
   function _initColorPalettes() {
-    $('.colorpalettes .color').each(function() {
+    $('.colorpalettes:not(.colorways) .color').each(function() {
       var hex = $(this).find('.hex .value').text().replace('#', '');
       var rgb = _hexToRgb(hex);
       var cmyk = _rgbToCmyk(rgb);

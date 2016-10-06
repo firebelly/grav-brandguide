@@ -8,4 +8,4 @@ sectionBrandColor: primary
 [![](Primary-Vertical---Yellow.png)](Primary%20Vertical%20-%20Yellow.eps)
 [![](Primary-Vertical---Gray.png)](Primary%20Vertical%20-%20Gray.eps)
 
-<a class="button" href="/test">download assets</a>
+<a class="button" href="/test">download set</a>

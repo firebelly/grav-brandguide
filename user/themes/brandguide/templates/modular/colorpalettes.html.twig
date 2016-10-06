@@ -1,13 +1,16 @@
-<div class="content">
-  {{ content }}
-</div>
+{% if page.content %}
+  <div class="content">
+    {{ page.content }}
+  </div>
+{% endif %}
 <div class="colorpalettes">
   {% for color in header.colors %}
     <div class="color">
-      <div class="swatch" style="background-color:{{ color.color }}" data-clipboard-text="{{ color.color }}"><span class="copy-text">copy to clipboard</span></div>
-      <p class="cmyk"><span class="label">CMYK:</span> <span class="value"></span></p>
-      <p class="rgb"><span class="label">RGB:</span> <span class="value"></span></p>
-      <p class="hex"><span class="label">Hex:</span> <span class="value">{{ color.color }}</span></p>
+      <div class="swatch" style="background-color:{{ color.color }}" data-clipboard-text="{{ color.color }}"><span aria-hidden="true" class="copy-text">copy to clipboard</span><span aria-hidden="true" class="plus"></span></div>
+      <p class="color-label">{{ color.colorLabel }}</p>
+      <p class="cmyk"><span class="label">CMYK</span> <span class="value"></span></p>
+      <p class="rgb"><span class="label">RGB</span> <span class="value"></span></p>
+      <p class="hex"><span class="label">Hex</span> <span class="value">{{ color.color }}</span></p>
     </div>
   {% endfor %}
 </div>
