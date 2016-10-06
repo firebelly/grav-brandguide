@@ -1,0 +1,48 @@
+title: Colorways
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        content:
+          fields:
+            uploads:
+              type: ignore
+            header.colorways:
+              name: colorways
+              type: list
+              label: Colorways
+              fields:
+                .label:
+                  type: display
+                  content: Colorway
+                  size: large
+                .colorwayLabel:
+                  type: text
+                  label: Colorway Label
+                .colorOne:
+                  type: colorpicker
+                  label: Color 1
+                .colorOneLabel:
+                  type: text
+                  label: Color 1 Label
+                .colorTwo:
+                  type: colorpicker
+                  label: Color 2
+                .colorTwoLabel:
+                  type: text
+                  label: Color 2 Label
+                .colorThree:
+                  type: colorpicker
+                  label: Color 3
+                .colorThreeLabel:
+                  type: text
+                  label: Color 3 Label
+                .colorFour:
+                  type: colorpicker
+                  label: Color 4
+                .colorFourLabel:
+                  type: text
+                  label: Color 4 Label

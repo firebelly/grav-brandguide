@@ -1,0 +1,22 @@
+{% if page.content %}
+  <div class="content">
+    {{ page.content }}
+  </div>
+{% endif %}
+<div class="colorpalettes colorways">
+  {% for colorway in header.colorways %}
+    <div class="color colorway">
+      <div class="swatch colorway-swatch">
+        <span class="colorway-color" style="background-color:{{ colorway.colorOne }}"></span>
+        <span class="colorway-color" style="background-color:{{ colorway.colorTwo }}"></span>
+        <span class="colorway-color" style="background-color:{{ colorway.colorThree }}"></span>
+        <span class="colorway-color" style="background-color:{{ colorway.colorFour }}"></span>
+      </div>
+      <p class="color-label">{{ colorway.colorwayLabel }}</p>
+      <p class="colorway-label">{{ colorway.colorOneLabel }}</p>
+      <p class="colorway-label">{{ colorway.colorTwoLabel }}</p>
+      <p class="colorway-label">{{ colorway.colorThreeLabel }}</p>
+      <p class="colorway-label">{{ colorway.colorFourLabel }}</p>
+    </div>
+  {% endfor %}
+</div>

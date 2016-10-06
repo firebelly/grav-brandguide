@@ -1,0 +1,33 @@
+title: Single Color
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        assets:
+          type: tab
+          title: Assets
+          fields:
+            header.assets:
+              name: assets
+              type: list
+              label: Assets
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .file:
+                  label: Choose media
+                  type: pagemediaselect
+
+        content:
+          fields:
+            header.color:
+              type: colorpicker
+              label: Color
+            header.sidenote:
+              type: textarea
+              label: Sidenote
