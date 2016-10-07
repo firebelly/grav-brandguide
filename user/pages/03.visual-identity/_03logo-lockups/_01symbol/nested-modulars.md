@@ -1,5 +1,5 @@
 ---
-title: Primary
+title: Symbol
 sidenote: "1  /  3<br>\r\n—<br>\r\nMinimal FLOR Awareness,<br>\r\nMaximum Presence<br>"
 sectionBrandColor: primary
 content:

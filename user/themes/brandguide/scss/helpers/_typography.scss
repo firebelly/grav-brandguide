@@ -22,9 +22,18 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Flor Mono';
+    src: url('../fonts/flormonospacev3.01-regular-webfont.woff2') format('woff2'),
+         url('../fonts/flormonospacev3.01-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $font-regular: 'worchesteref', serif;
 $font-sans: 'Replica Pro', 'Helvetica', sans-serif;
 $font-mono: 'Pitch', 'Courier New', mono;
+$flor-mono: 'Flor Mono';
 
 .h1 {
   font: 700 42px/40px $font-regular;

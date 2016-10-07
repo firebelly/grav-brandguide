@@ -24,7 +24,7 @@
   <div class="wrapper">
     <h2 class="page-small-title">{{ page.title }}</h2>
     {% for childpage in page.children %}
-      <div class="childpage {{ childpage.header.body_classes }}">
+      <div class="childpage {{ childpage.header.body_classes }} {{ childpage.template|replace({'modular/': ''}) }} {{  _self.pageLinkName(childpage.menu) }}">
         {{ childpage.content }}
       </div>
     {% endfor %}

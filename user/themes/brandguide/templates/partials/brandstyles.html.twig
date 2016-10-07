@@ -63,7 +63,7 @@ body {
   }
   .section-intro.background-primary .wrapper {
     background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} 80%, transparent 80%, transparent 100%);
+    background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
   }
   .section-intro.background-secondary {
     background-color: transparent;
@@ -71,7 +71,7 @@ body {
   }
   .section-intro.background-secondary .wrapper {
     background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} 80%, transparent 80%, transparent 100%);
+    background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
   }
   .section-intro.background-tertiary {
     background-color: transparent;
@@ -79,7 +79,7 @@ body {
   }
   .section-intro.background-tertiary .wrapper {
     background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} 80%, transparent 80%, transparent 100%);
+    background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
   }
   .section-intro.background-quaternary {
     background-color: transparent;
@@ -87,7 +87,7 @@ body {
   }
   .section-intro.background-quaternary .wrapper {
     background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} 80%, transparent 80%, transparent 100%);
+    background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
   }
   .section-intro.background-quinary {
     background-color: transparent;
@@ -95,7 +95,7 @@ body {
   }
   .section-intro.background-quinary .wrapper {
     background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} 80%, transparent 80%, transparent 100%);
+    background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
   }
   .section-intro.background-senary {
     background-color: transparent;
@@ -103,7 +103,7 @@ body {
   }
   .section-intro.background-senary .wrapper {
     background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} 80%, transparent 80%, transparent 100%);
+    background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
   }
   .section-intro.background-septenary {
     background-color: transparent;
@@ -111,7 +111,7 @@ body {
   }
   .section-intro.background-septenary .wrapper {
     background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} 80%, transparent 80%, transparent 100%);
+    background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
   }
   .section-intro.background-octonary {
     background-color: transparent;
@@ -119,7 +119,42 @@ body {
   }
   .section-intro.background-octonary .wrapper {
     background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} 80%, transparent 80%, transparent 100%);
+    background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  }
+}
+
+@media screen and (min-width:1180px) {
+  .section-intro.background-primary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
+  }
+  .section-intro.background-secondary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
+  }
+  .section-intro.background-tertiary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
+  }
+  .section-intro.background-quaternary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
+  }
+  .section-intro.background-quinary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
+  }
+  .section-intro.background-senary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
+  }
+  .section-intro.background-septenary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
+  }
+  .section-intro.background-octonary .wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
   }
 }
 </style>

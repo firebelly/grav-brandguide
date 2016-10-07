@@ -1,6 +1,6 @@
 {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
 
-<div class="subpage-content" id="{{  _self.pageLinkName(page.menu) }}">
+<div class="subpage-content {{  _self.pageLinkName(page.menu) }}" id="{{  _self.pageLinkName(page.menu) }}">
   <h3 class="section-title">{{ page.title }}</h3>
   <div class="content user-content">
     {% if page.content %}
@@ -15,9 +15,7 @@
   {% if page.children %}
     <div class="subnested-modulars">
       {% for module in page.children %}
-        <div class="subnested-modular">
           {{ module.content }}
-        </div>
       {% endfor %}
     </div>
   {% endif %}

@@ -1,0 +1,16 @@
+// Flor Mono
+
+body.flor.mono {
+  
+}
+
+.childpage.flor-mono-characters {
+  line-height: 1;
+  padding-left: 0;
+  font-size: 6.5vw;
+  font-family: $flor-mono; 
+
+  @include media-md {
+    padding-left: 0;
+  }
+}

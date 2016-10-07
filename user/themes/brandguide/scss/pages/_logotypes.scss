@@ -1,7 +1,7 @@
 // Logotypes
 
-#logotypes {
-  .modular-row {
+.logotypes {
+  .user-content {
     margin-bottom: 50px;
     @include media-md {
       margin-bottom: 0;
@@ -21,23 +21,23 @@
       }
     }
   }
-  ._primary-vertical {
+  .primary-vertical {
     img {
       max-width: 60px;
     }
   }
-  ._primary-horizontal {
+  .primary-horizontal {
     img {
       max-width: 240px;
     }
   }
-  ._secondary-vertical,
-  ._tertiary {
+  .secondary-vertical,
+  .tertiary {
     img {
       max-width: 144px;
     }
   }
-  ._secondary-horizontal {
+  .secondary-horizontal {
     img {
       max-width: 216px;
     }

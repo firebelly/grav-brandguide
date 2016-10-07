@@ -30,10 +30,10 @@ a.logo {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 1200px;
   padding: $global-padding;
 
   @include media-md {
+    max-width: 1180px;
     padding: #{$global-padding * 2};
   }
 }

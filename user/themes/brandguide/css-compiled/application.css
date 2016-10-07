@@ -397,13 +397,18 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   src: url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff") format("woff");
   font-weight: 900;
   font-style: normal; }
-.h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .childpage.title-section h3, .user-content h1, .modular-container .modular-title {
+@font-face {
+  font-family: 'Flor Mono';
+  src: url("../fonts/flormonospacev3.01-regular-webfont.woff2") format("woff2"), url("../fonts/flormonospacev3.01-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+.h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .childpage.title-section h3, .childpage.half-image .section-title, .childpage.nested-modulars > .subpage-content > .section-title {
   font: 700 42px/40px "worchesteref", serif; }
 
-.h2, .page-section .section-title, .subpage-content .content .nested-title, .user-content h2, .page-nav {
+.h2, .page-section .section-title, .subpage-content .content .nested-title, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
-.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .page-section .page-small-title, .page-section .nested-title, .user-content h3, .section-intro h3, .page-nav .label {
+.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .page-section .page-small-title, .page-section .nested-title, .section-intro h3, .page-nav .label {
   letter-spacing: .15em;
   text-transform: uppercase;
   font: 700 12px/20px "Replica Pro", "Helvetica", sans-serif; }
@@ -512,10 +517,10 @@ a.logo {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 1200px;
   padding: 50px; }
   @media screen and (min-width: 768px) {
     .wrapper {
+      max-width: 1180px;
       padding: 100px; } }
 
 .header {
@@ -833,14 +838,14 @@ body.color .subnested-modular {
   background-size: 4px 1px;
   background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
   background-image: -webkit-linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
-  padding: 100px 0 100px 10%; }
+  padding: 50px 0 50px 10%; }
   .page-section .childpage:last-of-type {
     background: none; }
   .page-section .childpage > .subpage-content > .nested-modular > .content > h3 {
     display: none; }
   @media screen and (min-width: 768px) {
     .page-section .childpage {
-      padding-left: 20%; } }
+      padding: 100px 0 100px 20%; } }
   .page-section .childpage.title-section {
     background: none;
     padding-bottom: 0; }
@@ -850,15 +855,30 @@ body.color .subnested-modular {
         .page-section .childpage.title-section h3 {
           font-size: 28px;
           line-height: 30px; } }
-  @media screen and (min-width: 768px) {
-    .page-section .childpage.full-width {
-      padding-left: 0; } }
+  .page-section .childpage.full-width {
+    padding-left: 0; }
+    @media screen and (min-width: 768px) {
+      .page-section .childpage.full-width {
+        padding-left: 0; } }
 .page-section .section-title {
   margin-top: 0; }
   @media screen and (max-width: 480px) {
     .page-section .section-title {
       font-size: 18px;
       line-height: 20px; } }
+
+@media screen and (max-width: 480px) {
+  .childpage.half-image .section-title {
+    font-size: 28px;
+    line-height: 30px; } }
+@media screen and (min-width: 768px) {
+  .childpage.half-image .content {
+    float: left;
+    width: 40%;
+    padding-right: 10%; }
+  .childpage.half-image .section-image {
+    float: left;
+    width: 60%; } }
 
 .subpage-content {
   position: relative; }
@@ -886,12 +906,6 @@ body.color .subnested-modular {
         padding-right: 0;
         margin-right: 12.5%; } }
 
-.user-content h1 {
-  margin-bottom: 0; }
-.user-content h2 {
-  margin-bottom: 0; }
-.user-content h3 {
-  margin-bottom: 0; }
 .user-content p {
   margin-top: 0;
   max-width: 580px; }
@@ -916,12 +930,11 @@ body.color .subnested-modular {
     .section-intro .page-title {
       width: 15%; }
     .section-intro .intro-image {
-      right: 20%;
       width: 510px;
       display: block;
       position: absolute;
-      transform: translateX(40%);
-      top: 45px; }
+      top: 45px;
+      right: 95px; }
     .section-intro .page-content {
       max-width: none;
       position: relative;
@@ -938,6 +951,11 @@ body.color .subnested-modular {
         background: #000;
         position: absolute;
         transform: translateX(-36px); } }
+
+@media screen and (max-width: 480px) {
+  .childpage.nested-modulars > .subpage-content > .section-title {
+    font-size: 28px;
+    line-height: 30px; } }
 
 .nested-modular {
   padding: 40px 0;
@@ -1042,31 +1060,40 @@ body.color .subnested-modular {
   .homepage .feature {
     min-height: 50vh; } }
 
-#logotypes .modular-row {
+.logotypes .user-content {
   margin-bottom: 50px; }
   @media screen and (min-width: 768px) {
-    #logotypes .modular-row {
+    .logotypes .user-content {
       margin-bottom: 0;
       padding-right: 50px; } }
-  #logotypes .modular-row p {
+  .logotypes .user-content p {
     margin: 0; }
-  #logotypes .modular-row a {
+  .logotypes .user-content a {
     margin: 0 20px 20px 0;
     display: inline-block; }
-    #logotypes .modular-row a img {
+    .logotypes .user-content a img {
       vertical-align: top; }
-    #logotypes .modular-row a.button {
+    .logotypes .user-content a.button {
       margin-top: 40px; }
-#logotypes ._primary-vertical img {
+.logotypes .primary-vertical img {
   max-width: 60px; }
-#logotypes ._primary-horizontal img {
+.logotypes .primary-horizontal img {
   max-width: 240px; }
-#logotypes ._secondary-vertical img,
-#logotypes ._tertiary img {
+.logotypes .secondary-vertical img,
+.logotypes .tertiary img {
   max-width: 144px; }
-#logotypes ._secondary-horizontal img {
+.logotypes .secondary-horizontal img {
   max-width: 216px; }
-#logotypes#tertiary .modular-container {
+.logotypes#tertiary .modular-container {
   width: 100%; }
+
+.childpage.flor-mono-characters {
+  line-height: 1;
+  padding-left: 0;
+  font-size: 6.5vw;
+  font-family: "Flor Mono"; }
+  @media screen and (min-width: 768px) {
+    .childpage.flor-mono-characters {
+      padding-left: 0; } }
 
 /*# sourceMappingURL=application.css.map */
