@@ -23,6 +23,7 @@ var FB = (function($) {
 
     _initNav();
     _initColorPalettes();
+    _initPhotoGrid();
     _initPageNav();
 
     // Esc handlers
@@ -89,6 +90,23 @@ var FB = (function($) {
       if (this.hash) {
         _scrollBody($('#'+this.hash.substr(1)));
       }
+    });
+  }
+
+  function _initPhotoGrid() {
+    $('.isotope-grid').each(function() {
+      // Initi on imagesloaded
+      var $grid = $(this).imagesLoaded(function() {
+        $grid.addClass('-loaded');
+        $grid.isotope({
+          itemSelector: '.photo',
+          // transitionDuration: 0,
+          masonry: {
+            columnWidth: '.grid-sizer',
+            gutter: '.gutter-sizer'
+          }
+        });
+      });
     });
   }
 

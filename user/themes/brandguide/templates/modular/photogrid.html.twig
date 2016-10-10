@@ -1,0 +1,24 @@
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
+
+<div class="subpage-content {{  _self.pageLinkName(page.menu) }}" id="{{  _self.pageLinkName(page.menu) }}">
+  <h3 class="section-title">{{ page.title }}</h3>
+  {% if page.content %}
+    <div class="content user-content">
+      {{ page.content }}
+      {% if header.sidenote %}
+        <div class="sidenote">
+          {{ header.sidenote }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="isotope-grid">
+    <div class="grid-sizer"></div>
+    <div class="gutter-sizer"></div>
+    {% for photo in page.media.images %}
+      <div class="photo">
+        {{ photo }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

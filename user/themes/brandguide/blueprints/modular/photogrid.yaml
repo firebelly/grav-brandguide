@@ -1,4 +1,4 @@
-title: Default Modular
+title: Photo Grid
 '@extends': default
 
 form:
@@ -40,16 +40,8 @@ form:
 
         content:
           fields:
-            uploads:
-              label: Page Media (first one will be displayed next to your content)
             header.sidenote:
               type: textarea
-              label: Sidenote            
-            header.sectionBrandColor:
-              type: select
-              label: Section Brand Color
-              options:
-                primary: Primary
-                secondary: Secondary
-                tertiary: Tertiary
-                quaternary: Quaternary
+              label: Sidenote
+            uploads:
+              label: Page Media (first one will be displayed next to your content)

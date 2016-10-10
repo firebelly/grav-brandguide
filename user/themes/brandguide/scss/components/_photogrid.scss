@@ -1,0 +1,34 @@
+// Photogrid
+
+.isotope-grid {
+  opacity: 0;
+  @include clearfix;
+  transition: opacity .2s ease-out;
+  &.-loaded {
+    opacity: 1;
+  }
+  @include media-md {
+    width: calc(100% + #{$vertical-beat * 2});
+  }
+
+  .gutter-sizer {
+    width: 0;
+    @include media-md {
+      width: 20px;
+    }
+  }
+
+  .photo,
+  .grid-sizer {
+    width: 100%;
+    margin-bottom: #{$vertical-beat * 2};
+    @include media-md {
+      width: calc(50% - 20px);
+      float: left;
+    }
+
+    @include media-lg {
+      width: calc(33.3333% - 20px);
+    }
+  }
+}

@@ -820,6 +820,41 @@ body.color .subnested-modular {
   body.color .subnested-modular > .content {
     margin-bottom: 10px; }
 
+.isotope-grid {
+  opacity: 0;
+  *zoom: 1;
+  transition: opacity .2s ease-out; }
+  .isotope-grid:before, .isotope-grid:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .isotope-grid:after {
+    clear: both; }
+  .isotope-grid.-loaded {
+    opacity: 1; }
+  @media screen and (min-width: 768px) {
+    .isotope-grid {
+      width: calc(100% + 20px); } }
+  .isotope-grid .gutter-sizer {
+    width: 0; }
+    @media screen and (min-width: 768px) {
+      .isotope-grid .gutter-sizer {
+        width: 20px; } }
+  .isotope-grid .photo,
+  .isotope-grid .grid-sizer {
+    width: 100%;
+    margin-bottom: 20px; }
+    @media screen and (min-width: 768px) {
+      .isotope-grid .photo,
+      .isotope-grid .grid-sizer {
+        width: calc(50% - 20px);
+        float: left; } }
+    @media screen and (min-width: 975px) {
+      .isotope-grid .photo,
+      .isotope-grid .grid-sizer {
+        width: calc(33.3333% - 20px); } }
+
 .page-section .page-title {
   margin: 0 0 100px; }
   @media screen and (max-width: 480px) {
