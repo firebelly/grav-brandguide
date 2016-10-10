@@ -76,6 +76,31 @@
     }
   }
 }
+.childpage.font-specs {
+  padding-left: 0;
+
+  .user-content {
+    h3 {
+      @include h2;
+      margin: 0 0 .5em;
+    }
+  }
+
+  @include media-md {
+    padding-left: 0;
+    .content,
+    .section-image {
+      width: 50%;
+      float: left;
+    }
+    .content {
+      padding-right: $column;
+    }
+  }
+  @include media-lg {
+    padding-left: 0;
+  }
+}
 
 // Subpage content
 .subpage-content {
@@ -293,12 +318,10 @@
   }
 
   .colorbar {
-    margin-right: $global-padding;
     height: #{$global-padding * 2};
-    transition: background .2s ease-out;
-    @include media-md {
-      width: 72%;
-      margin-right: 0;
+    transition: background .2s ease-out, background-image .2s ease-out;
+    .wrapper {
+      height: 100%;
     }
   }
 }
