@@ -8,7 +8,13 @@ body.flor.mono {
   line-height: 1;
   padding-left: 0;
   font-size: 6.5vw;
-  font-family: $flor-mono; 
+  font-family: $flor-mono;
+  p {
+    margin: 1em 0 0;
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
 
   @include media-md {
     padding-left: 0;

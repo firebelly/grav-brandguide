@@ -1,9 +1,8 @@
 {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
 
-<div class="subpage-content template-half-image {{  _self.pageLinkName(page.menu) }}" id="{{  _self.pageLinkName(page.menu) }}">
+<div class="subpage-content {{  _self.pageLinkName(page.menu) }}" id="{{  _self.pageLinkName(page.menu) }}">
   {% if page.content %}
     <div class="content user-content">
-      <h3 class="section-title">{{ page.title }}</h3>
       {{ page.content }}
     </div>
   {% endif %}

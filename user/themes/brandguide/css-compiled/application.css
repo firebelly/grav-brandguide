@@ -405,7 +405,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 .h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .childpage.title-section h3, .childpage.half-image .section-title, .childpage.nested-modulars > .subpage-content > .section-title {
   font: 700 42px/40px "worchesteref", serif; }
 
-.h2, .page-section .section-title, .subpage-content .content .nested-title, .page-nav {
+.h2, .page-section .section-title, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
 .h3, .button, .header h2, .main-nav .nav-list > li ol li a, .page-section .page-small-title, .page-section .nested-title, .section-intro h3, .page-nav .label {
@@ -880,6 +880,27 @@ body.color .subnested-modular {
     float: left;
     width: 60%; } }
 
+.childpage.font-specs {
+  padding-left: 0; }
+  .childpage.font-specs .user-content h3 {
+    margin: 0 0 .5em; }
+    @media screen and (max-width: 480px) {
+      .childpage.font-specs .user-content h3 {
+        font-size: 18px;
+        line-height: 20px; } }
+  @media screen and (min-width: 768px) {
+    .childpage.font-specs {
+      padding-left: 0; }
+      .childpage.font-specs .content,
+      .childpage.font-specs .section-image {
+        width: 50%;
+        float: left; }
+      .childpage.font-specs .content {
+        padding-right: 5%; } }
+  @media screen and (min-width: 975px) {
+    .childpage.font-specs {
+      padding-left: 0; } }
+
 .subpage-content {
   position: relative; }
   .subpage-content .modular-container {
@@ -1039,13 +1060,10 @@ body.color .subnested-modular {
     .page-nav .next {
       padding-left: 50px; } }
 .page-nav .colorbar {
-  margin-right: 50px;
   height: 100px;
-  transition: background .2s ease-out; }
-  @media screen and (min-width: 768px) {
-    .page-nav .colorbar {
-      width: 72%;
-      margin-right: 0; } }
+  transition: background .2s ease-out, background-image .2s ease-out; }
+  .page-nav .colorbar .wrapper {
+    height: 100%; }
 
 .homepage .intro-section p {
   margin: 0; }
@@ -1092,6 +1110,10 @@ body.color .subnested-modular {
   padding-left: 0;
   font-size: 6.5vw;
   font-family: "Flor Mono"; }
+  .childpage.flor-mono-characters p {
+    margin: 1em 0 0; }
+    .childpage.flor-mono-characters p:first-of-type {
+      margin-top: 0; }
   @media screen and (min-width: 768px) {
     .childpage.flor-mono-characters {
       padding-left: 0; } }
