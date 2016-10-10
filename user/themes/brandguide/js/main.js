@@ -114,14 +114,17 @@ var FB = (function($) {
     });
 
     // Click to Copy
-    var clipboard = new Clipboard('.swatch');
+    var clipboard = new Clipboard('.swatch'),
+    clipboardTimer;
 
     clipboard.on('success', function(e) {
+      clearTimeout(clipboardTimer);
+
       var value = e.text;
       $('body').append('<div class="copy-message"><span class="copied-value">' + value + '</span> copied!</div>');
       $('.copy-message').addClass('-active');
 
-      setTimeout(function() {
+      clipboardTimer = setTimeout(function() {
         $('.copy-message.-active').remove();
       }, 3000);
     });
