@@ -12,13 +12,13 @@
       {% endif %}
     </div>
   {% endif %}
-  <div class="isotope-grid">
+  <div class="isotope-grid lightbox">
     <div class="grid-sizer"></div>
     <div class="gutter-sizer"></div>
     {% for photo in page.media.images %}
-      <div class="photo">
+      <a class="photo chocolat-image" href="{{ photo.url }}">
         {{ photo }}
-      </div>
+      </a>
     {% endfor %}
   </div>
 </div>

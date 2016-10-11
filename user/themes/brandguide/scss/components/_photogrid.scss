@@ -31,4 +31,136 @@
       width: calc(33.3333% - 20px);
     }
   }
+
+  .photo {
+    display: block;
+    position: relative;
+    &:hover {
+      .click-overlay {
+        opacity: 1;
+      }
+    }
+
+    img {
+      vertical-align: top;
+    }
+    .click-overlay {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      color: $white;
+      position: absolute;
+      background: rgba(0,0,0,.5);
+      transition: opacity .2s ease-out;
+    }
+
+    .expand-text {
+      left: 0;
+      top: 50%;
+      width: 100%;
+      display: block;
+      text-align: center;
+      position: absolute;
+      font-family: $font-mono;
+      padding: 0 $vertical-beat;
+      transform: translateY(-50%);
+    }
+
+    .expand-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: $vertical-beat;
+      right: $vertical-beat;
+      border: 1px solid $white;
+      .expand-arrow {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform-origin: left;
+        transform: rotate(-45deg) translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+// Lightbox overrides
+.chocolat-overlay {
+  opacity: .97;
+  background: $black;
+}
+.chocolat-wrapper {
+  padding: 0;
+  z-index: 20;
+  @include media-md {
+    padding: 0 100px;
+  }
+
+  .chocolat-bottom {
+    display: none;
+  }
+
+  .chocolat-content {
+    position: relative;
+  }
+
+  .chocolat-close {
+    position: absolute;
+    background-image: none;
+    width: #{$vertical-beat * 2};
+    height: #{$vertical-beat * 2};
+    right: -#{$vertical-beat * 3};
+    @extend .close-button;
+  }
+
+  .lightbox-nav {
+    left: 0;
+    top: 100%;
+    width: 130px;
+    color: $white;
+    @include clearfix;
+    text-align: left;
+    position: absolute;
+    margin-top: $vertical-beat;
+    padding-right: $vertical-beat;
+    @include media-md {
+      top: 0;
+      left: auto;
+      right: 100%;
+      margin-top: 0;
+      text-align: right;
+    }
+
+    div {
+      top: auto;
+      left: auto;
+      width: auto;
+      right: auto;
+      @extend .h3;
+      height: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+      background: none;
+      position: relative;
+      &.active {
+        display: inline-block;
+      }
+    }
+  }
+
+  .chocolat-left {
+    margin-right: #{$vertical-beat * 2};
+    &::after {
+      top: 3px;
+      width: 1px;
+      content: '';
+      height: 1em;
+      display: block;
+      background: $white;
+      position: absolute;
+      right: -$vertical-beat;
+    }
+  }
 }

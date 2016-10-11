@@ -24,6 +24,7 @@ var FB = (function($) {
     _initNav();
     _initColorPalettes();
     _initPhotoGrid();
+    _initLightbox();
     _initPageNav();
 
     // Esc handlers
@@ -90,23 +91,6 @@ var FB = (function($) {
       if (this.hash) {
         _scrollBody($('#'+this.hash.substr(1)));
       }
-    });
-  }
-
-  function _initPhotoGrid() {
-    $('.isotope-grid').each(function() {
-      // Initi on imagesloaded
-      var $grid = $(this).imagesLoaded(function() {
-        $grid.addClass('-loaded');
-        $grid.isotope({
-          itemSelector: '.photo',
-          // transitionDuration: 0,
-          masonry: {
-            columnWidth: '.grid-sizer',
-            gutter: '.gutter-sizer'
-          }
-        });
-      });
     });
   }
 
@@ -197,6 +181,42 @@ var FB = (function($) {
     result.k = Math.round( result.k * 100 );
  
     return result;
+  }
+
+  function _initPhotoGrid() {
+    $('.isotope-grid').each(function() {
+      // Initi on imagesloaded
+      var $grid = $(this).imagesLoaded(function() {
+        $grid.addClass('-loaded');
+        $grid.isotope({
+          itemSelector: '.photo',
+          // transitionDuration: 0,
+          masonry: {
+            columnWidth: '.grid-sizer',
+            gutter: '.gutter-sizer'
+          }
+        });
+      });
+    });
+  }
+
+  function _initLightbox() {
+    $('.lightbox').Chocolat({
+      afterMarkup: function () {
+        console.log(this);
+        this.elems.close.appendTo(this.elems.content);
+        this.elems.content.append('<div class="lightbox-nav"></div>');
+        this.elems.left.appendTo(this.elems.content.find('.lightbox-nav'));
+        this.elems.right.appendTo(this.elems.content.find('.lightbox-nav'));
+        this.elems.left.text('prev');
+        this.elems.right.text('next');
+      }
+    });
+
+    // Add supurfilous markup to lightbox images
+    $('.photo').each(function() {
+      $(this).append('<div class="click-overlay"><span class="expand-text">View Larger Image</span><span class="expand-icon"><span class="expand-arrow"></span></span></div>');
+    });
   }
 
   function _initPageNav() {
