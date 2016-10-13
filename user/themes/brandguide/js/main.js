@@ -23,7 +23,7 @@ var FB = (function($) {
 
     _initNav();
     _initColorPalettes();
-    _initPhotoGrid();
+    _initIsotope();
     _initLightbox();
     _initPageNav();
 
@@ -183,14 +183,27 @@ var FB = (function($) {
     return result;
   }
 
-  function _initPhotoGrid() {
+  function _initIsotope() {
     $('.isotope-grid').each(function() {
       // Initi on imagesloaded
       var $grid = $(this).imagesLoaded(function() {
         $grid.addClass('-loaded');
         $grid.isotope({
           itemSelector: '.photo',
-          // transitionDuration: 0,
+          masonry: {
+            columnWidth: '.grid-sizer',
+            gutter: '.gutter-sizer'
+          }
+        });
+      });
+    });
+
+    $('.in-use-grid').each(function() {
+      // Initi on imagesloaded
+      var $grid = $(this).imagesLoaded(function() {
+        $grid.addClass('-loaded');
+        $grid.isotope({
+          itemSelector: '.photo',
           masonry: {
             columnWidth: '.grid-sizer',
             gutter: '.gutter-sizer'
@@ -214,7 +227,7 @@ var FB = (function($) {
     });
 
     // Add supurfilous markup to lightbox images
-    $('.photo').each(function() {
+    $('.lightbox .photo').each(function() {
       $(this).append('<div class="click-overlay"><span class="expand-text">View Larger Image</span><span class="expand-icon"><span class="expand-arrow"></span></span></div>');
     });
   }

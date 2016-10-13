@@ -1,0 +1,57 @@
+title: In Use Image Grid
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        assets:
+          type: tab
+          title: Assets
+          fields:
+            header.assets:
+              name: assets
+              type: list
+              label: Assets
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .file:
+                  label: Choose media
+                  type: pagemediaselect
+
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/text
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/text
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+
+        content:
+          fields:
+            header.useImages:
+              label: Image Sizes
+              type: list
+              fields:
+                .imageSize:
+                  type: select
+                  label: Image Width
+                  options:
+                    fullWidth: 100%
+                    sixty: 60%
+                    forty: 40%
+                    twenty: 20%
+            header.sidenote:
+              type: textarea
+              label: Sidenote

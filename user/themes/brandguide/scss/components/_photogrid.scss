@@ -30,6 +30,10 @@
     @include media-lg {
       width: calc(33.3333% - 20px);
     }
+
+    img {
+      vertical-align: top;
+    }
   }
 
   .photo {

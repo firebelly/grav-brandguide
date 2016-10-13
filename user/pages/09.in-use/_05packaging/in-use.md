@@ -1,5 +1,9 @@
 ---
 title: Packaging
+useImages:
+    -
+        imageSize: fullWidth
+sidenote: '5 / 5'
 sectionBrandColor: primary
 ---
 

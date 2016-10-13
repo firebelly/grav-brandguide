@@ -1,5 +1,9 @@
 ---
 title: Advertisement
+useImages:
+    -
+        imageSize: fullWidth
+sidenote: '4 / 5'
 sectionBrandColor: primary
 ---
 

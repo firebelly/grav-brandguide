@@ -1,5 +1,11 @@
 ---
 title: Catalog
+useImages:
+    -
+        imageSize: fullWidth
+    -
+        imageSize: sixty
+sidenote: '3 / 5'
 sectionBrandColor: primary
 ---
 

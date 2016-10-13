@@ -1083,6 +1083,9 @@ body.color .subnested-modular {
       .isotope-grid .photo,
       .isotope-grid .grid-sizer {
         width: calc(33.3333% - 20px); } }
+    .isotope-grid .photo img,
+    .isotope-grid .grid-sizer img {
+      vertical-align: top; }
   .isotope-grid .photo {
     display: block;
     position: relative; }
@@ -1489,5 +1492,45 @@ body.color .subnested-modular {
   @media screen and (min-width: 768px) {
     .childpage.flor-mono-characters {
       padding-left: 0; } }
+
+.in-use .image-grid {
+  opacity: 0;
+  *zoom: 1;
+  transition: opacity .2s ease-out; }
+  .in-use .image-grid:before, .in-use .image-grid:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .in-use .image-grid:after {
+    clear: both; }
+  .in-use .image-grid.-loaded {
+    opacity: 1; }
+  @media screen and (min-width: 768px) {
+    .in-use .image-grid {
+      width: calc(100% + 20px); } }
+  .in-use .image-grid .gutter-sizer {
+    width: 0; }
+    @media screen and (min-width: 768px) {
+      .in-use .image-grid .gutter-sizer {
+        width: 20px; } }
+  .in-use .image-grid .photo,
+  .in-use .image-grid .grid-sizer {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px; }
+    .in-use .image-grid .photo img,
+    .in-use .image-grid .grid-sizer img {
+      vertical-align: top; }
+  @media screen and (min-width: 768px) {
+    .in-use .image-grid .size-fullWidth {
+      width: calc(100% - 20px); }
+    .in-use .image-grid .size-sixty {
+      width: calc(60% - 20px); }
+    .in-use .image-grid .size-forty {
+      width: calc(40% - 20px); }
+    .in-use .image-grid .size-twenty,
+    .in-use .image-grid .grid-sizer {
+      width: calc(20% - 20px); } }
 
 /*# sourceMappingURL=application.css.map */

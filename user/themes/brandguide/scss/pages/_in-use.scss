@@ -1,0 +1,50 @@
+// In Use Page
+body.in.use {
+}
+
+.in-use {
+  .image-grid {
+    opacity: 0;
+    @include clearfix;
+    transition: opacity .2s ease-out;
+    &.-loaded {
+      opacity: 1;
+    }
+    @include media-md {
+      width: calc(100% + #{$vertical-beat * 2});
+    }
+
+    .gutter-sizer {
+      width: 0;
+      @include media-md {
+        width: 20px;
+      }
+    }
+
+    .photo,
+    .grid-sizer {
+      width: 100%;
+      float: left;
+      margin-bottom: #{$vertical-beat * 2};
+      img {
+        vertical-align: top;
+      }
+    }
+
+    @include media-md {
+      .size-fullWidth {
+        width: calc(100% - 20px);
+      }
+      .size-sixty {
+        width: calc(60% - 20px);
+      }
+      .size-forty {
+        width: calc(40% - 20px);
+      }
+      .size-twenty,
+      .grid-sizer {
+        width: calc(20% - 20px);
+      }
+    }
+  }
+}

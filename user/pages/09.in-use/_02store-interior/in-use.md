@@ -1,5 +1,11 @@
 ---
 title: 'Store Interior'
+useImages:
+    -
+        imageSize: fullWidth
+    -
+        imageSize: forty
+sidenote: '2 / 5'
 sectionBrandColor: primary
 ---
 
