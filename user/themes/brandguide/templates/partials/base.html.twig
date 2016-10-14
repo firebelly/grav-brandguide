@@ -26,12 +26,12 @@
         {% do assets.addJs('theme://js/libs/clipboard.js', {'priority':20, 'group':'bottom'}) %}
         {% do assets.addJs('theme://js/libs/imagesloaded.min.js', {'priority':20, 'group':'bottom'}) %}
         {% do assets.addJs('theme://js/libs/isotope.min.js', {'priority':20, 'group':'bottom'}) %}
-        {% do assets.addJs('theme://js/libs/chocolat.js', {'priority':20, 'group':'bottom'}) %}\
+        {% do assets.addJs('theme://js/libs/chocolat.js', {'priority':20, 'group':'bottom'}) %}
         {% do assets.addJs('theme://js/main.js', {'priority':10, 'group':'bottom'}) %}
     {% endblock %}
     {{ assets.js() }}
 
-{% endblock head%}
+{% endblock %}
 </head>
 <body id="top" class="{{ page.header.body_classes }} {{ page.header.title|lower }}">
 
