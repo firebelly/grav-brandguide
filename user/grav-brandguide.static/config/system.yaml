@@ -1,4 +1,4 @@
 debugger:
-  enabled: true
+  enabled: false
 assets:
   js_pipeline: false

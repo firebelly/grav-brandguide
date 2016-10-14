@@ -66,3 +66,6 @@ form:
         octonaryColor:
           type: colorpicker
           label: Octonary Background Color
+        nonaryColor:
+          type: colorpicker
+          label: Nonary Background Color

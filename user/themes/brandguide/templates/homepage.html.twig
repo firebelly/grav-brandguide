@@ -1,17 +1,7 @@
 {% extends 'partials/base.html.twig' %}
 
-{% block content %}
-  <div class="intro-section">
-    <div class="wrapper">
-      {{ page.content }}
-    </div>
-  </div>
-    
+{% block content %}    
   {% for module in page.collection() %}
-      <div class="feature module background-{{ module.header.sectionBrandColor }}" id="{{ _self.pageLinkName(module.menu) }}">
-        <div class="wrapper">
-          {{ module.content }}
-        </div>
-      </div>
+    {{ module.content }}
   {% endfor %}
 {% endblock %}

@@ -44,4 +44,4 @@ form:
               type: textarea
               label: Sidenote
             uploads:
-              label: Page Media (first one will be displayed next to your content)
+              label: Page Media

@@ -41,7 +41,7 @@ form:
         content:
           fields:
             uploads:
-              label: Page Media (first one will be displayed next to your content)
+              label: Page Media
             header.sidenote:
               type: textarea
               label: Sidenote            
@@ -53,3 +53,8 @@ form:
                 secondary: Secondary
                 tertiary: Tertiary
                 quaternary: Quaternary
+                quinary: Quinary
+                senary: Senary
+                septenary: Septenary
+                octonary: Octonary
+                nonary: Nonary

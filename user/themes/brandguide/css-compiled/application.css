@@ -752,6 +752,9 @@ a.logo {
   font-size: 50px;
   display: block; }
 
+.site-main {
+  padding-top: 50px; }
+
 .wrapper {
   margin: 0 auto;
   padding: 50px; }
@@ -1525,11 +1528,44 @@ body.color .subnested-modular {
 @media screen and (min-width: 768px) {
   .homepage .intro-section img {
     max-width: 400px; } }
-.homepage .feature h1 {
-  margin-top: 0; }
-@media screen and (min-width: 768px) {
-  .homepage .feature {
-    min-height: 50vh; } }
+.homepage .feature {
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    .homepage .feature {
+      margin-right: 150px; } }
+  .homepage .feature h1 {
+    margin-top: 0; }
+  .homepage .feature .wrapper {
+    z-index: 1;
+    height: 100%;
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      .homepage .feature .wrapper {
+        min-height: 75vh; } }
+  .homepage .feature .feature-foreground {
+    width: 100%;
+    max-width: 510px;
+    position: absolute; }
+  .homepage .feature .feature-background {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    position: absolute;
+    width: 50%;
+    background-size: cover; }
+  .homepage .feature:nth-of-type(even) .feature-background {
+    right: 0;
+    left: auto;
+    width: 60%; }
+  .homepage .feature.brand-values .feature-background {
+    background-image: url("../assets/feature_FLOR-Box-02.jpg"); }
+  .homepage .feature.brand-values .feature-foreground {
+    left: calc((100% * 10 / 22) - 152px); }
+  .homepage .feature.visual-identity .feature-background {
+    background-image: url("../assets/feature_FLOR-Catalogs-02.jpg"); }
+  .homepage .feature.typography .feature-background {
+    background-image: url("../assets/feature_SomethingConcrete_SP15.jpg"); }
 
 .logotypes .user-content {
   margin-bottom: 50px; }

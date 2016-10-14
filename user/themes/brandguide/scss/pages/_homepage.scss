@@ -17,12 +17,65 @@
   }
 
   .feature {
+    position: relative;
+    @include media-md {
+      margin-right: #{$global-padding * 3};
+    }
+    
     h1 {
       margin-top: 0;
     }
 
-    @include media-md {
-      min-height: 50vh;
+    .wrapper {
+      z-index: 1;
+      height: 100%;
+      position: relative;
+      @include media-md {
+        min-height: 75vh;
+      }
+    }
+
+    .feature-foreground {
+      width: 100%;
+      max-width: 510px;
+      position: absolute;
+    }
+
+    .feature-background {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      position: absolute;
+      width: #{$column * 10};
+      background-size: cover;
+    }
+    &:nth-of-type(even) {
+      .feature-background {
+        right: 0;
+        left: auto;
+        width: #{$column * 12}
+      }
+    }
+
+    // Specific features
+    &.brand-values {
+      .feature-background {
+        background-image: url('../assets/feature_FLOR-Box-02.jpg');
+      }
+      .feature-foreground {
+        left: calc((100% * 10 / 22) - 152px);
+      }
+    }
+    &.visual-identity {
+      .feature-background {
+        background-image: url('../assets/feature_FLOR-Catalogs-02.jpg');
+      }
+    }
+    &.typography {
+      .feature-background {
+        background-image: url('../assets/feature_SomethingConcrete_SP15.jpg');
+      }
     }
   }
 }

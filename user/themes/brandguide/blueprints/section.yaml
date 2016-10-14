@@ -51,6 +51,13 @@ form:
                           label: Septenary
                           disabled: true
                           config-default@: brand.septenaryColor
+                        brandColorNonary:
+                          type: colorpicker
+                          size: small
+                          style: vertical
+                          label: Nonary
+                          disabled: true
+                          config-default@: brand.nonaryColor
                     column2:
                       type: column
                       fields:
@@ -101,3 +108,4 @@ form:
                     senary: Senary
                     septenary: Septenary
                     octonary: Octonary
+                    nonary: Nonary

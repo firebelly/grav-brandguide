@@ -4,37 +4,24 @@ title: Features
 form:
   fields:
     tabs:
-      fields:
-        advanced:
-          fields:
-            columns:
-              fields:
-                column1:
-                  fields:
-                    name:
-                      default: modular/features
-                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-            overrides:
-              fields:
-                header.template:
-                  default: modular/features
-                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-        features:
-          type: tab
-          title: Features
-          fields:
-            header.features:
-              name: features
-              type: list
-              label: Features
 
-              fields:
-                .icon:
-                  type: text
-                  label: Icon
-                .header:
-                  type: text
-                  label: Header
-                .text:
-                  type: text
-                  label: Text
+      fields:
+        content:
+          fields:
+            uploads:
+              label: Foreground Image
+            header.sidenote:
+              type: ignore
+            header.sectionBrandColor:
+              type: select
+              label: Section Brand Color
+              options:
+                primary: Primary
+                secondary: Secondary
+                tertiary: Tertiary
+                quaternary: Quaternary
+                quinary: Quinary
+                senary: Senary
+                septenary: Septenary
+                octonary: Octonary
+                nonary: Nonary

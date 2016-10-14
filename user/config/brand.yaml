@@ -1,5 +1,5 @@
 myfield: '#edd342'
-primaryColor: '#ffffff'
+primaryColor: '#353d38'
 secondColor: '#f1bd19'
 tertiaryColor: '#d0d0c2'
 primaryLogo:
@@ -46,3 +46,4 @@ colors:
     colorValue: '#fab28a'
 septenaryColor: '#c9dddf'
 octonaryColor: '#c2c4cf'
+nonaryColor: '#847778'
