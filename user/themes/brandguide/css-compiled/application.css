@@ -712,6 +712,14 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   .close-button::after, .chocolat-wrapper .chocolat-close::after {
     transform: rotate(45deg); }
 
+.checkmark {
+  width: 12px;
+  height: 6px;
+  display: block;
+  border: solid #fff;
+  border-width: 0 0 1px 1px;
+  transform: rotate(-45deg); }
+
 .button {
   display: inline-block;
   text-decoration: none;
@@ -936,6 +944,8 @@ a.logo {
     clear: both; }
   @media screen and (min-width: 480px) {
     .colorpalettes {
+      display: flex;
+      flex-wrap: wrap;
       margin-left: -20px;
       width: calc(100% + 20px); } }
   .colorpalettes .color {
@@ -961,12 +971,22 @@ a.logo {
         font-family: "Pitch", "Courier New", mono; }
     @media screen and (min-width: 480px) {
       .colorpalettes .color {
-        width: 50%;
+        max-width: 50%;
         float: left;
+        flex-basis: 50%;
         padding-left: 20px; } }
     @media screen and (min-width: 768px) {
       .colorpalettes .color {
-        width: 20%; } }
+        max-width: 33.333%;
+        flex-basis: 33.333%; } }
+    @media screen and (min-width: 975px) {
+      .colorpalettes .color {
+        max-width: 25%;
+        flex-basis: 25%; } }
+    @media screen and (min-width: 1200px) {
+      .colorpalettes .color {
+        max-width: 20%;
+        flex-basis: 20%; } }
   .colorpalettes .swatch {
     height: 0;
     width: 100%;
@@ -974,6 +994,15 @@ a.logo {
     position: relative;
     padding-bottom: 100%;
     margin-bottom: 10px; }
+    .colorpalettes .swatch::before {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      background: transparent;
+      transition: background .2s ease-out; }
     .colorpalettes .swatch .plus {
       width: 20px;
       height: 20px;
@@ -993,7 +1022,8 @@ a.logo {
         transition: background .2s ease-out; }
       .colorpalettes .swatch .plus::after {
         transform: rotate(90deg); }
-    .colorpalettes .swatch .copy-text {
+    .colorpalettes .swatch .copy-text,
+    .colorpalettes .swatch .copied-message {
       top: 50%;
       left: 50%;
       opacity: 0;
@@ -1004,12 +1034,24 @@ a.logo {
       font-family: "Pitch", "Courier New", mono;
       transform: translate(-50%, -50%);
       transition: opacity .2s ease-out; }
-    .colorpalettes .swatch:hover .copy-text {
+    .colorpalettes .swatch:not(.copied):hover::before {
+      background: rgba(0, 0, 0, 0.1); }
+    .colorpalettes .swatch:not(.copied):hover .copy-text {
       opacity: 1; }
-    .colorpalettes .swatch:hover .plus {
+    .colorpalettes .swatch:not(.copied):hover .plus {
       border-color: #fff; }
-      .colorpalettes .swatch:hover .plus::before, .colorpalettes .swatch:hover .plus::after {
+      .colorpalettes .swatch:not(.copied):hover .plus::before, .colorpalettes .swatch:not(.copied):hover .plus::after {
         background: #fff; }
+    .colorpalettes .swatch.copied::before {
+      background: rgba(0, 0, 0, 0.6); }
+    .colorpalettes .swatch.copied .copied-message {
+      opacity: 1; }
+    .colorpalettes .swatch.copied .plus {
+      border-color: #fff; }
+      .colorpalettes .swatch.copied .plus::before, .colorpalettes .swatch.copied .plus::after {
+        background: #fff; }
+  .colorpalettes .copied-message .checkmark {
+    margin: 0 auto 10px; }
   @media screen and (min-width: 480px) {
     .colorpalettes.colorways .color {
       width: 50%;

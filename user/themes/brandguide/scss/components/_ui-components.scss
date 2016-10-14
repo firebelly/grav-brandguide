@@ -32,6 +32,7 @@
   }
 }
 
+// Symbols
 .arrow {
   width: 25px;
   height: 20px;
@@ -112,6 +113,15 @@
   &::after {
     transform: rotate(45deg);
   }
+}
+
+.checkmark {
+  width: 12px;
+  height: 6px;
+  display: block;
+  border: solid $white;
+  border-width: 0 0 1px 1px;
+  transform: rotate(-45deg);
 }
 
 .button {

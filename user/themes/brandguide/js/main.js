@@ -120,14 +120,13 @@ var FB = (function($) {
     clipboardTimer;
 
     clipboard.on('success', function(e) {
-      clearTimeout(clipboardTimer);
-
-      var value = e.text;
-      $('body').append('<div class="copy-message"><span class="copied-value">' + value + '</span> copied!</div>');
-      $('.copy-message').addClass('-active');
+      var $swatch = $(e.trigger);
+      $swatch.append('<span class="copied-message"><span class="checkmark"></span>Copied!</span>');
+      $swatch.addClass('copied');
 
       clipboardTimer = setTimeout(function() {
-        $('.copy-message.-active').remove();
+        $swatch.removeClass('copied');
+        $swatch.find('.copied-message').remove();
       }, 3000);
     });
   }
