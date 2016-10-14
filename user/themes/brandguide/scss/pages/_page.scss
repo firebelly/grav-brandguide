@@ -101,6 +101,21 @@
     padding-left: 0;
   }
 }
+.childpage.paragraph-styles {
+  img {
+    max-width: 246px;  
+  }
+  @include media-md {
+    p {
+      @include clearfix;
+    }  
+    img {
+      float: left;
+      margin-right: #{$vertical-beat * 2};
+      width: calc(50% - #{$vertical-beat * 2});
+    }
+  }
+}
 
 // Subpage content
 .subpage-content {

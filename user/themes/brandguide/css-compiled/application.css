@@ -1276,6 +1276,23 @@ body.color .subnested-modular {
     .childpage.font-specs {
       padding-left: 0; } }
 
+.childpage.paragraph-styles img {
+  max-width: 246px; }
+@media screen and (min-width: 768px) {
+  .childpage.paragraph-styles p {
+    *zoom: 1; }
+    .childpage.paragraph-styles p:before, .childpage.paragraph-styles p:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      overflow: hidden; }
+    .childpage.paragraph-styles p:after {
+      clear: both; }
+  .childpage.paragraph-styles img {
+    float: left;
+    margin-right: 20px;
+    width: calc(50% - 20px); } }
+
 .subpage-content {
   position: relative; }
   .subpage-content .modular-container {
