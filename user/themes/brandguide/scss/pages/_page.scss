@@ -153,7 +153,7 @@
   }
 
   .page-content {
-    max-width: 200px;
+    max-width: 400px;
     > p:first-of-type {
       margin-top: 0;
     }
@@ -178,6 +178,17 @@
       width: #{$column * 3};
     }
 
+    .page-content {
+      max-width: none;
+      position: relative;
+      width: #{$column * 8};
+      p {
+        padding-right: $column;
+      }
+    }
+  }
+
+  @include min-screen(944px) {
     .intro-image {
       width: 510px;
       display: block;
@@ -187,13 +198,21 @@
     }
 
     .page-content {
-      max-width: none;
-      position: relative;
       width: #{$column * 5};
+    }
+  }
+
+  @include min-screen($breakpoint-wrapper) {
+    .intro-image {
+      width: 510px;
+      display: block;
+      position: absolute;
+      top: #{$global-padding - 5px};
+      right: #{($global-padding * 2) - 5px};
+    }
+
+    .page-content {
       margin-left: #{$column * 4};
-      p {
-        padding-right: $column;
-      }
       &::before {
         top: 6px;
         height: 1px;

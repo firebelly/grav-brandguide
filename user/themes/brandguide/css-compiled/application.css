@@ -1312,7 +1312,7 @@ body.color .subnested-modular {
   .section-intro .page-title {
     max-width: 200px; }
   .section-intro .page-content {
-    max-width: 200px; }
+    max-width: 400px; }
     .section-intro .page-content > p:first-of-type {
       margin-top: 0; }
   .section-intro .intro-image {
@@ -1325,6 +1325,13 @@ body.color .subnested-modular {
       position: relative; }
     .section-intro .page-title {
       width: 15%; }
+    .section-intro .page-content {
+      max-width: none;
+      position: relative;
+      width: 40%; }
+      .section-intro .page-content p {
+        padding-right: 5%; } }
+  @media screen and (min-width: 944px) {
     .section-intro .intro-image {
       width: 510px;
       display: block;
@@ -1332,12 +1339,16 @@ body.color .subnested-modular {
       top: 45px;
       right: 95px; }
     .section-intro .page-content {
-      max-width: none;
-      position: relative;
-      width: 25%;
+      width: 25%; } }
+  @media screen and (min-width: 1180px) {
+    .section-intro .intro-image {
+      width: 510px;
+      display: block;
+      position: absolute;
+      top: 45px;
+      right: 95px; }
+    .section-intro .page-content {
       margin-left: 20%; }
-      .section-intro .page-content p {
-        padding-right: 5%; }
       .section-intro .page-content::before {
         top: 6px;
         height: 1px;
