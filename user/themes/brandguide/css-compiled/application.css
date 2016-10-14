@@ -1072,19 +1072,21 @@ a.logo {
       max-width: 50%;
       flex-basis: 50%;
       padding-bottom: 50%; }
-  @media screen and (min-width: 480px) {
-    .colorpalettes.single-color .color {
-      width: 100%; } }
-  @media screen and (min-width: 768px) {
-    .colorpalettes.single-color .color {
-      width: 100%; }
-      .colorpalettes.single-color .color .swatch-wrapper {
-        float: left;
-        width: 100%;
-        max-width: 500px;
-        margin-right: 20px; }
-      .colorpalettes.single-color .color .color-specs {
-        float: left; } }
+  .colorpalettes.single-color {
+    display: block; }
+    @media screen and (min-width: 480px) {
+      .colorpalettes.single-color .color {
+        max-width: 100%; } }
+    @media screen and (min-width: 768px) {
+      .colorpalettes.single-color .color {
+        max-width: 100%; }
+        .colorpalettes.single-color .color .swatch-wrapper {
+          float: left;
+          width: 100%;
+          max-width: 500px;
+          margin-right: 20px; }
+        .colorpalettes.single-color .color .color-specs {
+          float: left; } }
 
 body.color .subnested-modular {
   margin-top: 40px; }

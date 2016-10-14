@@ -185,12 +185,13 @@
 
   // Single Color modifications
   &.single-color {
+    display: block;
     .color {
       @include media-sm {
-        width: 100%;
+        max-width: 100%;
       }
       @include media-md {
-        width: 100%;
+        max-width: 100%;
 
         .swatch-wrapper {
           float: left;
