@@ -18,7 +18,7 @@
   
   .childpage {
     @include dots($black, 4px, bottom);
-    padding: $global-padding 0 $global-padding #{$column * 2};
+    padding: $global-padding 0 $global-padding $global-padding;
     &:last-of-type {
       background: none;
     }
@@ -156,6 +156,13 @@
   p {
     margin-top: 0;
     max-width: 580px;
+  }
+  img {
+    width: 100%;
+    max-width: 100%;
+    @include media-md {
+      width: auto;
+    }
   }
 }
 

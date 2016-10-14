@@ -1213,7 +1213,7 @@ body.color .subnested-modular {
   background-size: 4px 1px;
   background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
   background-image: -webkit-linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
-  padding: 50px 0 50px 10%; }
+  padding: 50px 0 50px 50px; }
   .page-section .childpage:last-of-type {
     background: none; }
   .page-section .childpage > .subpage-content > .nested-modular > .content > h3 {
@@ -1322,6 +1322,12 @@ body.color .subnested-modular {
 .user-content p {
   margin-top: 0;
   max-width: 580px; }
+.user-content img {
+  width: 100%;
+  max-width: 100%; }
+  @media screen and (min-width: 768px) {
+    .user-content img {
+      width: auto; } }
 
 .section-intro {
   width: 100%;
