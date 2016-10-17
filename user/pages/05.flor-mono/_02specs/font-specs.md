@@ -1,5 +1,5 @@
 ---
-title: Specefications
+title: Specifications
 sidenote: ''
 sectionBrandColor: primary
 ---

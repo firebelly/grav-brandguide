@@ -147,19 +147,13 @@
     }
   }
   ol {
-    counter-reset: item;
     font-family: $font-mono;
     > li {
       font-size: 10px;
-      counter-increment: item;
+      list-style: none;
     }
     ol li {
       list-style: none;
-      &::before {
-        margin-left: -24px;
-        content: counters(item, ".");
-        padding-right: $global-padding;
-      }
     }
   }
   .nav-list {
@@ -168,36 +162,55 @@
     will-change: opacity, transform;
     padding-left: #{$global-padding / 2};
     margin-bottom: #{$global-padding * 2};
-    list-style-type: decimal-leading-zero;
     transform: translateY(-#{$global-padding * 3});
     transition: opacity .3s ease-out 0s, transform .5s ease-out 0s;
     @include media-lg {
-      columns: 2;
-      column-rule: 1px solid $black;
       margin-top: #{$global-padding * 3};
+      columns: 2;
+      column-width: 215px;
+      column-rule: 1px solid $black;
       column-gap: #{$global-padding * 2};
+      -webkit-columns: 2;
+      -webkit-column-width: 215px;
+      -webkit-column-rule: 1px solid $black;
+      -webkit-column-gap: #{$global-padding * 2};
+      -moz-columns: 2;
+      -moz-column-width: 215px;
+      -moz-column-rule: 1px solid $black;
+      -moz-column-gap: #{$global-padding * 2};
     }
     @include media-xl {
+      columns: 3;
+      -webkit-columns: 3;
+      -moz-columns: 3;      
+    }
+    @include min-screen(1390px) {
       columns: 4;
+      -webkit-columns: 4;
+      -moz-columns: 4;
     }
 
     > li {
       break-inside: avoid;
       margin-bottom: 10px;
+      @include media-md {
+        padding-bottom: $global-padding;
+      }
+      @include media-xl {
+        padding-bottom: #{$global-padding * 2};
+      }
+
       > a {
         @include h1;
         display: block;
-        word-break: break-all;
-        padding-left: #{$global-padding / 2};
-        @include media-lg {        
-          padding-left: $global-padding;
+        @include media-md {        
           &::after {
-            width: 4px;
+            width: 6px;
             content: '';
-            height: 1px;
+            height: 2px;
             display: block;
             background: $black;
-            margin: 5px 0 6px -52px;
+            margin: 25px 0 25px 0;
           }
         }
       }
@@ -212,6 +225,9 @@
         li {
           a {          
             @extend .h3;
+            br {
+              display: none;
+            }
           }
         }
       }
