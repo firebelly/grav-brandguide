@@ -1615,7 +1615,7 @@ body.color .subnested-modular {
 .childpage.flor-mono-characters {
   line-height: 1;
   padding-left: 0;
-  font-size: 6.5vw;
+  font-size: 7.5vw;
   font-family: "Flor Mono"; }
   .childpage.flor-mono-characters p {
     margin: 1em 0 0; }
@@ -1624,6 +1624,9 @@ body.color .subnested-modular {
   @media screen and (min-width: 768px) {
     .childpage.flor-mono-characters {
       padding-left: 0; } }
+  @media screen and (min-width: 1450px) {
+    .childpage.flor-mono-characters {
+      font-size: 108px; } }
 
 .in-use .image-grid {
   opacity: 0;

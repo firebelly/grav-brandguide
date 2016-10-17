@@ -7,7 +7,7 @@ body.flor.mono {
 .childpage.flor-mono-characters {
   line-height: 1;
   padding-left: 0;
-  font-size: 6.5vw;
+  font-size: 7.5vw;
   font-family: $flor-mono;
   p {
     margin: 1em 0 0;
@@ -18,5 +18,9 @@ body.flor.mono {
 
   @include media-md {
     padding-left: 0;
+  }
+
+  @include min-screen(1450px) {
+    font-size: 108px;
   }
 }
