@@ -1,0 +1,27 @@
+title: Voice & Tone
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        content:
+          fields:
+            header.keywordsAndNots:
+              type: list
+              label: Keywords and Nots
+              fields:
+                .keyword:
+                  type: text
+                  label: keyword
+                .not:
+                  type: text
+                  label: not
+            header.sidenote:
+              type: textarea
+              label: Sidenote
+            uploads:
+              type: ignore
+            header.sectionBrandColor:
+              type: ignore

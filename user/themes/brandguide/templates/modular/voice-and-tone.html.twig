@@ -1,0 +1,22 @@
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
+
+<div class="subpage-content {{  _self.pageLinkName(page.menu) }}" id="{{  _self.pageLinkName(page.menu) }}">
+  {% if page.content %}
+    <h3 class="section-title">{{ page.title }}</h3>
+    <div class="content user-content">
+      <div class="half -left">
+        {{ page.content }}
+        {% if header.sidenote %}
+          <div class="sidenote">
+            {{ header.sidenote }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="half -right keywordsAndNots">
+        {% for keyValue in header.keywordsAndNots %}
+          <p><span class="keyword">{{ keyValue["keyword"] }}</span> <span class="not">{{ keyValue["not"] }}</span></p>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>

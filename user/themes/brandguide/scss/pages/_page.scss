@@ -76,6 +76,44 @@
     }
   }
 }
+.childpage.voice-and-tone {
+  @include media-lg {
+    .half {
+      float: left;
+      &.-left {
+        width: 40%;
+        padding-right: $global-padding;
+      }
+      &.-right {
+        width: 60%;
+      }
+    }
+  }
+
+  .keywordsAndNots {
+    p {
+      display: flex;
+      margin-bottom: .5em;
+    }
+  }
+
+  .keyword {
+    @include h2;
+    flex-basis: 40%;
+    text-align: right;
+    margin: 0 $global-padding 0 0;
+  }
+  .not {
+    @extend .h3;
+    line-height: 28px;
+    @include media-sm {
+      line-height: 30px;
+    }
+    @include media-md {
+      line-height: 40px;
+    }
+  }
+}
 .childpage.font-specs {
   padding-left: 0;
 
@@ -153,9 +191,15 @@
 }
 
 .user-content {
+  h3 {
+    @extend .h3;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   p {
     margin-top: 0;
     max-width: 580px;
+    margin-bottom: 2em;
   }
   img {
     width: 100%;

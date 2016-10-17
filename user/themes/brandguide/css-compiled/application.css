@@ -589,10 +589,10 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 .h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .childpage.title-section h3, .childpage.half-image .section-title, .childpage.nested-modulars > .subpage-content > .section-title {
   font: 700 42px/40px "worchesteref", serif; }
 
-.h2, .page-section .section-title, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .page-nav {
+.h2, .page-section .section-title, .childpage.voice-and-tone .keyword, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
-.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .section-intro h3, .page-nav .label, .homepage .feature .feature-title {
+.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .childpage.voice-and-tone .not, .user-content h3, .section-intro h3, .page-nav .label, .homepage .feature .feature-title {
   letter-spacing: .15em;
   text-transform: uppercase;
   font: 700 12px/20px "Replica Pro", "Helvetica", sans-serif; }
@@ -1316,6 +1316,34 @@ body.color .subnested-modular {
     float: left;
     width: 60%; } }
 
+@media screen and (min-width: 975px) {
+  .childpage.voice-and-tone .half {
+    float: left; }
+    .childpage.voice-and-tone .half.-left {
+      width: 40%;
+      padding-right: 50px; }
+    .childpage.voice-and-tone .half.-right {
+      width: 60%; } }
+.childpage.voice-and-tone .keywordsAndNots p {
+  display: flex;
+  margin-bottom: .5em; }
+.childpage.voice-and-tone .keyword {
+  flex-basis: 40%;
+  text-align: right;
+  margin: 0 50px 0 0; }
+  @media screen and (max-width: 480px) {
+    .childpage.voice-and-tone .keyword {
+      font-size: 18px;
+      line-height: 20px; } }
+.childpage.voice-and-tone .not {
+  line-height: 28px; }
+  @media screen and (min-width: 480px) {
+    .childpage.voice-and-tone .not {
+      line-height: 30px; } }
+  @media screen and (min-width: 768px) {
+    .childpage.voice-and-tone .not {
+      line-height: 40px; } }
+
 .childpage.font-specs {
   padding-left: 0; }
   .childpage.font-specs .user-content h3 {
@@ -1380,9 +1408,13 @@ body.color .subnested-modular {
         padding-right: 0;
         margin-right: 12.5%; } }
 
+.user-content h3 {
+  margin-top: 0;
+  margin-bottom: 0; }
 .user-content p {
   margin-top: 0;
-  max-width: 580px; }
+  max-width: 580px;
+  margin-bottom: 2em; }
 .user-content img {
   width: 100%;
   max-width: 100%; }
