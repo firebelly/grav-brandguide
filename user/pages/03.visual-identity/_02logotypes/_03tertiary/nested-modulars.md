@@ -1,6 +1,6 @@
 ---
 title: Tertiary
-sidenote: "3 / 3<br>\r\n—<br>\r\nMedium FLOR Awareness,\r\nDesign & Core \r\nConcept Reflective"
+sidenote: "3 / 3<br>\r\n—<br>\r\nMedium FLOR Awareness,<br>\r\nDesign & Core<br>\r\nConcept Reflective"
 content:
     items: '@self.modular'
     order:

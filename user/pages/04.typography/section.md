@@ -9,4 +9,6 @@ content:
 ---
 
 ### Type Hierarchy
-Typography plays an important role in establishing the tone of FLOR’s brand expression. The FLOR system uses a new, custom-designed display font called “FLOR Mono” that will be used for logo and messaging across all media. It is built from the square, our key piece of creative rug design. Each letter fits tightly in a struc- tured grid forming large words, including the FLOR logo variations.
+Typography plays a critical role in establishing the tone of FLOR’s brand expression. The system is built around four typefaces, including a new custom display font, all strategically picked to complement and balance one another. 
+
+Predefined paragraph styles and baselines will help maintain consistency and clarity in all brand pieces and communications.

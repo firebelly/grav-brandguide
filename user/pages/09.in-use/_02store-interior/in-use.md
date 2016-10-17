@@ -9,5 +9,4 @@ sidenote: '2 / 5'
 sectionBrandColor: primary
 ---
 
-Ximin cum est, ellenis ped quaectem re, sit laborem alique mi, ut doluptio. Ibusdan imusae voluptatus.
-Ucil ium et offictet fugit, cus, occus nossequi cum explici licabo. Nem voluptatio mintia sumquia.
+In-store displays, such as the Sustainability wall, can include elements such as an accent word set in FLOR Mono, customer-friendly messaging, featured product, and additional signage. Three-dimensional grid marks can be used as shelving for additional inspirational materials as well. 

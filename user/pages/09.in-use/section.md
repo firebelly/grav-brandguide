@@ -8,8 +8,5 @@ content:
         dir: desc
 ---
 
-### inline title
-
-Obis rehenis ius et am volut pellabore rempore pellaborero cus, ommoluptas pore qui alitate stotasp elitatatum velenis et omniassum arum ne verem venditem faces modisimodi ut omnis molorrum es mod quam expero odis et hil moluptatem fuga. 
-
-Xerro odiciam quiscim iliquid eossedis et ut is et la sus explit lacepre, od quodita tionsequis estecturessi officidebit, nos deles doleste cus exerio.
+### Bringing the Brand to Life
+The FLOR brand system was intentionally built to provide a rich variety of elements—key messages and core benefits, logo variations, colors, photography and type—that can be used in different combinations to accommodate for every possible use case, including store displays, catalogs, take-home print pieces, packaging, advertisements, etc. 

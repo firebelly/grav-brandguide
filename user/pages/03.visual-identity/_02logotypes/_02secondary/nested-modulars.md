@@ -1,6 +1,6 @@
 ---
 title: Secondary
-sidenote: "2 / 3\r\n—\r\nHigh FLOR \r\nAwareness, Interior \r\nConcept Words, Purchase Presence,\r\nDesign Reflective"
+sidenote: "2 / 3<br>\r\n—<br>\r\nHigh FLOR<br>\r\nAwareness, Interior<br>\r\nConcept Words,<br>\r\nPurchase Presence,<br>\r\nDesign Reflective"
 content:
     items: '@self.modular'
     order:

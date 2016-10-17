@@ -1,6 +1,7 @@
 ---
-title: 'Pitch'
-sidenote: "3 / 3 <br>— <br>Diagrammatical, <br>Numerical + <br>Specification <br>Use Cases"
+title: Pitch
+sidenote: "3 / 3<br>\r\n—<br>\r\nDiagrammatical,<br>\r\nNumerical<br>\r\n+ Specification<br>\r\nUse Cases"
+sectionBrandColor: primary
 ---
 
-Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+Pragmatic and diagrammatical, Pitch is ideal for smaller, technical details and numerical specifications (such as price or sizing information). It shares certain geometric characteristics with Replica to ensure unity and cohesion across the type system. 

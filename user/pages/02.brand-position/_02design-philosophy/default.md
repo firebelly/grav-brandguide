@@ -1,6 +1,7 @@
 ---
 title: 'Design Philosophy'
-sidenote: "2  /  5<br>\r\n—<br>\r\nGood Design exists at the intersection of beauty, function and intelligence."
+sidenote: "2  /  5<br>\r\n—<br>\r\nGood Design<br>\r\nexists at the<br>\r\nintersection<br>\r\nof beauty,<br>\r\nfunction and<br>\r\nintelligence"
+sectionBrandColor: primary
 ---
 
 ### Good design is intentional,

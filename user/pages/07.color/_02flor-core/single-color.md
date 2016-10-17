@@ -6,4 +6,4 @@ sidenote: "1 / 3 <br>\r\n— <br>\r\nPrimary"
 body_classes: single-color
 ---
 
-Rum laccupt atecestem hilibusdae velit archili amentur aliation endipsum fugia se preperum hiliquam, voluptio. Santur rem fugitio rerspel icipsam, alias mi, od que eos audigentur rem harcid elestium sequo et untio ex et recatemqui iuscipi tiorion serspel.
+FLOR’s signature yellow remains the centerpiece of the brand palette—the color values have been set to balance brightness with natural tones, ensuring optimal clarity and precision in every use case.

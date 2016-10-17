@@ -1,6 +1,7 @@
 ---
 title: 'Voice & Tone'
-sidenote: "5 / 5<br>\r\n—<br>\r\nThe voice <br>\r\nand tone we <br>\r\nuse are as <br>\r\nimportant as <br>\r\nthe words <br>\r\nwe choose."
+sidenote: "5 / 5<br>\r\n—<br>\r\nThe voice and<br>\r\ntone we use<br>\r\nare as<br>\r\nimportant as<br>\r\nthe words<br>\r\nwe choose"
+sectionBrandColor: primary
 ---
 
 ### Our voice is an extension of our brand. 

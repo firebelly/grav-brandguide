@@ -14,5 +14,4 @@ images:
 sectionBrandColor: primary
 ---
 
-Test cum est, ellenis ped quaectem re, sit laborem alique mi, ut doluptio. Ibusdan imusae voluptatus.
-Ucil ium et offictet fugit, cus, occus nossequi cum explici licabo. Nem voluptatio mintia sumquia.
+Designed to introduce FLOR to incoming visitors as well as passerby, the store exterior functions as a glimpse into the design process, incorporating diagrammatical marks, accent colors that complement inspirational imagery and in situ product images, and the tagline lock-up best suited to the space. 

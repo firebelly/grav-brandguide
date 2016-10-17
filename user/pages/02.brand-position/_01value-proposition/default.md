@@ -1,16 +1,14 @@
 ---
 title: 'Value Proposition'
-sidenote: "1 / 5<br>\r\n—<br>\r\nWe’re in the <br>\r\nbusiness of <br>\r\nselling design.<br>"
+sidenote: "1 / 5<br>\r\n—<br>\r\nWe’re in the<br>\r\nbusiness of<br>\r\nselling design<br>"
+sectionBrandColor: primary
 assets:
     -
         title: test
-        file: dur-howdy.png
     -
         title: test2
-        file: liz-out.jpg
     -
         title: test3
-        file: dur-howdy.png
 img_link: dur-howdy.png
 image_align: left
 custom_file:

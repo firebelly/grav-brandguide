@@ -1,6 +1,7 @@
 ---
 title: 'Worchester EF'
-sidenote: "1 / 3 <br>— <br>Principal Type.<br> Headline + Body<br> Use Cases"
+sidenote: "1 / 3<br>\r\n—<br>\r\nPrincipal Type.<br>\r\nHeadline + Body<br>\r\nUse Cases"
+sectionBrandColor: primary
 ---
 
-Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+The primary type in the FLOR system, Worchester EF is friendly by design. A humanist type, it is highly readable and approachable, balancing warmth and easy confidence with a sense of play. At large sizes, in Demi-Bold weight, it commands attention and interest. As body copy, it remains legible and user-friendly. It comes in a variety of bold weights, and along with italics, can be used for emphasis.

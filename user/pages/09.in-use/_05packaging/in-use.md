@@ -7,4 +7,4 @@ sidenote: '5 / 5'
 sectionBrandColor: primary
 ---
 
-FLOR rugs and squares come into clear focus, absent human interaction and emphasizing quality, craft and details, as well as the product’s pure potential.
+Product packaging, as a deeper level point of interaction, features staggered logo lock-up and includes both Interface co-branding and tagline. 

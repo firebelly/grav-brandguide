@@ -4,4 +4,6 @@ sectionBrandColor: senary
 ---
 
 ### Built from the square
-Typography plays an important role in establishing the tone of FLOR’s brand expression. The FLOR system uses a new, custom-designed display font called “FLOR Mono” that will be used for logo and messaging across all media. It is built from the square, our key piece of creative rug design. Each letter fits tightly in a struc- tured grid forming large words, including the FLOR logo variations.
+The FLOR type system is built around a custom-designed display font called “FLOR Mono,” which appears in the logo. It is built from the square, the key element to FLOR’s creative rug design process.
+
+Each letter fits snugly into a structured, staggered grid, as seen in FLOR logo variations and accent words. 

@@ -3,8 +3,8 @@ title: 'Brand Position'
 sectionBrandColor: tertiary
 ---
 
-## Made<br> to Move
+## Good Design<br> is Smart Design.
 
-Focused on movement and creativity, the identity system builds in flexibility for mutable messaging and styles, demonstrating infinite design possibilities within a supportive, principled framework. 
+Every aspect of the FLOR brand system embodies who we are as a company and what we offer—an extraordinary design experience and gorgeous, responsibly-made custom rugs.
 
-The visual brand is playful and confident. It conveys simplicity and invites interaction. It is the design experience, made visual. 
+We help people create the foundation for a beautiful home, a beautiful life and a beautiful planet.

@@ -1,11 +1,24 @@
 ---
-title: 'Key Messaging'
-sidenote: "4 / 5<br>\r\n— <br>\r\nOur offering<br>\r\nembodies <br>\r\nour values"
+title: 'Core Benefits'
+sidenote: "4 / 5<br>\r\n—<br>\r\nFLOR Squares<br>\r\nare as functional<br>\r\nas they are<br>\r\nsmart and<br>\r\nbeautiful"
+sectionBrandColor: primary
 visible: true
 ---
 
-### Needed title to start this section
+### Adaptable
+Put it together, take it apart. Your FLOR rug will evolve alongside your life.
 
-Bring us your ideas, or find inspiration at one of our hands-on home and rug design studios. 
+### Replaceable
+Modular design means you can rearrange or swap out any squares at will.
 
-Experiment with color. Play with pattern. Collaborate with a FLOR Design Consultant to create your own gorgeous rug, one sustainable FLOR Square at a time.
+### Durable
+Our rugs are made with ultra durable nylon—live on your rug, not around it. 
+
+### Washable
+Spot cleaning is simple: Pick up the soiled square, wash, dry and replace.
+
+### Recyclable
+Give your old squares a new life through our Return & Recycle Program.
+
+### Lovable
+Nontoxic and hypoallergenic, FLOR Squares are safe for you and your family.

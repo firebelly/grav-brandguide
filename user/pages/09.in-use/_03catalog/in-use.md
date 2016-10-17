@@ -9,4 +9,4 @@ sidenote: '3 / 5'
 sectionBrandColor: primary
 ---
 
-Vitatquibus rem diti alis molorio que custis con cus des ne ium dunt. Etustis nimporehent. Andenis es minciduntiis id ex expliae molorest aut occus siminci.
+Catalog covers can feature either the vertical Interface or tagline lock-up, depending on the audience (trade vs. consumer). In-situ product imagery, featuring seasonally-appropriate designs, should inform the undertone selected for the background fill. 

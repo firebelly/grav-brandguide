@@ -1,6 +1,6 @@
 ---
 title: Symbol
-sidenote: "1  /  3<br>\r\n—<br>\r\nMinimal FLOR Awareness,<br>\r\nMaximum Presence<br>"
+sidenote: "1  /  3<br>\r\n—<br>\r\nMaximum Readability,<br>\r\nSpace Responsive"
 sectionBrandColor: primary
 content:
     items: '@self.modular'
