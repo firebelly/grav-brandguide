@@ -17,6 +17,10 @@
   }
 
   .feature {
+    z-index: 1;
+    height: 70vh;
+    min-height: 660px;
+    position: relative;
     position: relative;
     @include media-md {
       margin-right: #{$global-padding * 3};
@@ -26,19 +30,16 @@
       margin-top: 0;
     }
 
-    .wrapper {
-      z-index: 1;
-      height: 100%;
-      position: relative;
-      @include media-md {
-        min-height: 75vh;
-      }
+    .feature-title {
+      @extend .h3;
+      position: absolute;
     }
 
     .feature-foreground {
+      z-index: 1;
       width: 100%;
-      max-width: 510px;
       position: absolute;
+      top: #{$global-padding - 5};
     }
 
     .feature-background {
@@ -47,14 +48,14 @@
       bottom: 0;
       z-index: 1;
       position: absolute;
-      width: #{$column * 10};
+      width: #{$column * 9};
       background-size: cover;
     }
     &:nth-of-type(even) {
       .feature-background {
         right: 0;
         left: auto;
-        width: #{$column * 12}
+        width: #{$column * 11}
       }
     }
 
@@ -64,17 +65,40 @@
         background-image: url('../assets/feature_FLOR-Box-02.jpg');
       }
       .feature-foreground {
-        left: calc((100% * 10 / 22) - 152px);
+        max-width: 510px;
+        left: calc((100% * 9 / 20) - 205px);
+      }
+      .feature-title {
+        top: 385px;
+        color: $gray-light;
+        left: calc((100% * 9 / 20) + 250px)
       }
     }
     &.visual-identity {
       .feature-background {
         background-image: url('../assets/feature_FLOR-Catalogs-02.jpg');
       }
+      .feature-foreground {
+        max-width: 597px;
+        left: calc((100% * 9 / 20) - 405px); 
+      }
+      .feature-title {
+        top: 385px;
+        left: calc((100% * 9 / 20) - 350px);
+      }
     }
     &.typography {
       .feature-background {
         background-image: url('../assets/feature_SomethingConcrete_SP15.jpg');
+      }
+      .feature-foreground {
+        max-width: 510px;
+        left: calc((100% * 9 / 20) - 205px);
+      }
+      .feature-title {
+        top: 385px;
+        color: $gray;
+        left: calc((100% * 9 / 20) + 250px)
       }
     }
   }

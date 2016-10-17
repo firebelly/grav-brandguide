@@ -592,7 +592,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 .h2, .page-section .section-title, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
-.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .section-intro h3, .page-nav .label {
+.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .section-intro h3, .page-nav .label, .homepage .feature .feature-title {
   letter-spacing: .15em;
   text-transform: uppercase;
   font: 700 12px/20px "Replica Pro", "Helvetica", sans-serif; }
@@ -1529,43 +1529,61 @@ body.color .subnested-modular {
   .homepage .intro-section img {
     max-width: 400px; } }
 .homepage .feature {
+  z-index: 1;
+  height: 70vh;
+  min-height: 660px;
+  position: relative;
   position: relative; }
   @media screen and (min-width: 768px) {
     .homepage .feature {
       margin-right: 150px; } }
   .homepage .feature h1 {
     margin-top: 0; }
-  .homepage .feature .wrapper {
-    z-index: 1;
-    height: 100%;
-    position: relative; }
-    @media screen and (min-width: 768px) {
-      .homepage .feature .wrapper {
-        min-height: 75vh; } }
-  .homepage .feature .feature-foreground {
-    width: 100%;
-    max-width: 510px;
+  .homepage .feature .feature-title {
     position: absolute; }
+  .homepage .feature .feature-foreground {
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: 45px; }
   .homepage .feature .feature-background {
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 1;
     position: absolute;
-    width: 50%;
+    width: 45%;
     background-size: cover; }
   .homepage .feature:nth-of-type(even) .feature-background {
     right: 0;
     left: auto;
-    width: 60%; }
+    width: 55%; }
   .homepage .feature.brand-values .feature-background {
     background-image: url("../assets/feature_FLOR-Box-02.jpg"); }
   .homepage .feature.brand-values .feature-foreground {
-    left: calc((100% * 10 / 22) - 152px); }
+    max-width: 510px;
+    left: calc((100% * 9 / 20) - 205px); }
+  .homepage .feature.brand-values .feature-title {
+    top: 385px;
+    color: #e9eef1;
+    left: calc((100% * 9 / 20) + 250px); }
   .homepage .feature.visual-identity .feature-background {
     background-image: url("../assets/feature_FLOR-Catalogs-02.jpg"); }
+  .homepage .feature.visual-identity .feature-foreground {
+    max-width: 597px;
+    left: calc((100% * 9 / 20) - 405px); }
+  .homepage .feature.visual-identity .feature-title {
+    top: 385px;
+    left: calc((100% * 9 / 20) - 350px); }
   .homepage .feature.typography .feature-background {
     background-image: url("../assets/feature_SomethingConcrete_SP15.jpg"); }
+  .homepage .feature.typography .feature-foreground {
+    max-width: 510px;
+    left: calc((100% * 9 / 20) - 205px); }
+  .homepage .feature.typography .feature-title {
+    top: 385px;
+    color: #bfbbbd;
+    left: calc((100% * 9 / 20) + 250px); }
 
 .logotypes .user-content {
   margin-bottom: 50px; }
