@@ -30,16 +30,63 @@
       margin-top: 0;
     }
 
+    .-inner {
+      position: relative;
+      margin: 0 0 #{$global-padding * 3};
+      padding-top: #{$global-padding - 5};
+    }
+
+    .explore-link,
     .feature-title {
+      margin: 0;
       @extend .h3;
       position: absolute;
+      left: 100% * 15 / 20;
+      transform-origin: left;
+    }
+    .explore-link {
+      text-decoration: none;
+      top: #{100px + ($global-padding - 20)};
+      transform: rotate(-90deg) translateX(-100%);
+      .explore-arrow {
+        top: 100%;
+        width: 100%;
+        position: absolute;
+        padding-top: #{$vertical-beat * 1.5};
+        &::after {
+          top: 100%;
+          content: '';
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          border-style: solid;
+          left: calc(50% - 10px);
+          transform: rotate(45deg);
+          border-width: 0 1px 1px 0;
+        }
+      }
+      &:hover {
+        .explore-arrow::after {
+          animation: exploreHover 1s linear infinite;
+        }
+      }
+    }
+    .feature-title {
+      bottom: 0;
+      margin-bottom: -5px;
+      transform: rotate(-90deg);
     }
 
     .feature-foreground {
+      top: 0;
       z-index: 1;
       width: 100%;
-      position: absolute;
-      top: #{$global-padding - 5};
+      max-width: 510px;
+      position: relative;
+      left: calc((100% * 9 / 20) - 205px);
+      img {
+        vertical-align: top;
+      }
     }
 
     .feature-background {
@@ -52,53 +99,17 @@
       background-size: cover;
     }
     &:nth-of-type(even) {
+      .explore-link,
+      .feature-title {
+        left: calc((100% * 9 / 20) - 405px); 
+      }
+      .feature-foreground {
+        left: calc((100% * 9 / 20) - 305px); 
+      }
       .feature-background {
         right: 0;
         left: auto;
         width: #{$column * 11}
-      }
-    }
-
-    // Specific features
-    &.brand-values {
-      .feature-background {
-        background-image: url('../assets/feature_FLOR-Box-02.jpg');
-      }
-      .feature-foreground {
-        max-width: 510px;
-        left: calc((100% * 9 / 20) - 205px);
-      }
-      .feature-title {
-        top: 385px;
-        color: $gray-light;
-        left: calc((100% * 9 / 20) + 250px)
-      }
-    }
-    &.visual-identity {
-      .feature-background {
-        background-image: url('../assets/feature_FLOR-Catalogs-02.jpg');
-      }
-      .feature-foreground {
-        max-width: 597px;
-        left: calc((100% * 9 / 20) - 405px); 
-      }
-      .feature-title {
-        top: 385px;
-        left: calc((100% * 9 / 20) - 350px);
-      }
-    }
-    &.typography {
-      .feature-background {
-        background-image: url('../assets/feature_SomethingConcrete_SP15.jpg');
-      }
-      .feature-foreground {
-        max-width: 510px;
-        left: calc((100% * 9 / 20) - 205px);
-      }
-      .feature-title {
-        top: 385px;
-        color: $gray;
-        left: calc((100% * 9 / 20) + 250px)
       }
     }
   }

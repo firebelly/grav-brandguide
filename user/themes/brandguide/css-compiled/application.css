@@ -592,7 +592,8 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 .h2, .page-section .section-title, .childpage.voice-and-tone .keyword, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
-.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .childpage.voice-and-tone .not, .user-content h3, .section-intro h3, .page-nav .label, .homepage .feature .feature-title {
+.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .childpage.voice-and-tone .not, .user-content h3, .section-intro h3, .page-nav .label, .homepage .feature .explore-link,
+.homepage .feature .feature-title {
   letter-spacing: .15em;
   text-transform: uppercase;
   font: 700 12px/20px "Replica Pro", "Helvetica", sans-serif; }
@@ -619,6 +620,13 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   .one-third {
     float: left;
     width: 33.3333%; } }
+@keyframes exploreHover {
+  0%, 50% {
+    transform: rotate(45deg) translate3d(0, 0, 0); }
+  25% {
+    transform: rotate(45deg) translate3d(15%, 15%, 0); }
+  75% {
+    transform: rotate(45deg) translate3d(-15%, -15%, 0); } }
 .copy-message {
   top: 50%;
   left: 50%;
@@ -1585,13 +1593,50 @@ body.color .subnested-modular {
       margin-right: 150px; } }
   .homepage .feature h1 {
     margin-top: 0; }
+  .homepage .feature .-inner {
+    position: relative;
+    margin: 0 0 150px;
+    padding-top: 45px; }
+  .homepage .feature .explore-link,
   .homepage .feature .feature-title {
-    position: absolute; }
+    margin: 0;
+    position: absolute;
+    left: 75%;
+    transform-origin: left; }
+  .homepage .feature .explore-link {
+    text-decoration: none;
+    top: 130px;
+    transform: rotate(-90deg) translateX(-100%); }
+    .homepage .feature .explore-link .explore-arrow {
+      top: 100%;
+      width: 100%;
+      position: absolute;
+      padding-top: 15px; }
+      .homepage .feature .explore-link .explore-arrow::after {
+        top: 100%;
+        content: '';
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        border-style: solid;
+        left: calc(50% - 10px);
+        transform: rotate(45deg);
+        border-width: 0 1px 1px 0; }
+    .homepage .feature .explore-link:hover .explore-arrow::after {
+      animation: exploreHover 1s linear infinite; }
+  .homepage .feature .feature-title {
+    bottom: 0;
+    margin-bottom: -5px;
+    transform: rotate(-90deg); }
   .homepage .feature .feature-foreground {
+    top: 0;
     z-index: 1;
     width: 100%;
-    position: absolute;
-    top: 45px; }
+    max-width: 510px;
+    position: relative;
+    left: calc((100% * 9 / 20) - 205px); }
+    .homepage .feature .feature-foreground img {
+      vertical-align: top; }
   .homepage .feature .feature-background {
     top: 0;
     left: 0;
@@ -1600,36 +1645,15 @@ body.color .subnested-modular {
     position: absolute;
     width: 45%;
     background-size: cover; }
+  .homepage .feature:nth-of-type(even) .explore-link,
+  .homepage .feature:nth-of-type(even) .feature-title {
+    left: calc((100% * 9 / 20) - 405px); }
+  .homepage .feature:nth-of-type(even) .feature-foreground {
+    left: calc((100% * 9 / 20) - 305px); }
   .homepage .feature:nth-of-type(even) .feature-background {
     right: 0;
     left: auto;
     width: 55%; }
-  .homepage .feature.brand-values .feature-background {
-    background-image: url("../assets/feature_FLOR-Box-02.jpg"); }
-  .homepage .feature.brand-values .feature-foreground {
-    max-width: 510px;
-    left: calc((100% * 9 / 20) - 205px); }
-  .homepage .feature.brand-values .feature-title {
-    top: 385px;
-    color: #e9eef1;
-    left: calc((100% * 9 / 20) + 250px); }
-  .homepage .feature.visual-identity .feature-background {
-    background-image: url("../assets/feature_FLOR-Catalogs-02.jpg"); }
-  .homepage .feature.visual-identity .feature-foreground {
-    max-width: 597px;
-    left: calc((100% * 9 / 20) - 405px); }
-  .homepage .feature.visual-identity .feature-title {
-    top: 385px;
-    left: calc((100% * 9 / 20) - 350px); }
-  .homepage .feature.typography .feature-background {
-    background-image: url("../assets/feature_SomethingConcrete_SP15.jpg"); }
-  .homepage .feature.typography .feature-foreground {
-    max-width: 510px;
-    left: calc((100% * 9 / 20) - 205px); }
-  .homepage .feature.typography .feature-title {
-    top: 385px;
-    color: #bfbbbd;
-    left: calc((100% * 9 / 20) + 250px); }
 
 .logotypes .user-content {
   margin-bottom: 50px; }

@@ -8,20 +8,33 @@ form:
       fields:
         content:
           fields:
-            uploads:
-              label: Foreground Image
             header.sidenote:
               type: ignore
-            header.sectionBrandColor:
-              type: select
-              label: Section Brand Color
-              options:
-                primary: Primary
-                secondary: Secondary
-                tertiary: Tertiary
-                quaternary: Quaternary
-                quinary: Quinary
-                senary: Senary
-                septenary: Septenary
-                octonary: Octonary
-                nonary: Nonary
+            header.pageLink:
+              type: pages
+              label: Page Link
+              show_all: false
+              show_modular: false
+              show_root: false
+            header.backgroundImage:
+              type: filepicker
+              folder: '@self'
+              label: Background Image
+              preview_images: true
+              acccept:
+                - .png
+                - .jpg
+            header.foregroundImage:
+              type: filepicker
+              folder: '@self'
+              label: Foreground Image
+              preview_images: true
+              acccept:
+                - .png
+                - .jpg
+            header.sectionBackgroundColor:
+              type: colorpicker
+              label: Section Background Color
+            header.sectionTextColor:
+              type: colorpicker
+              label: Section Text Color
