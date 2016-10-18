@@ -1604,19 +1604,25 @@ body.color .subnested-modular {
   .homepage .feature h1 {
     margin-top: 0; }
   .homepage .feature .-inner {
+    z-index: 1;
+    *zoom: 1;
     position: relative;
     margin: 0 0 150px;
-    padding-top: 45px; }
+    padding: 45px 100px 0; }
+    .homepage .feature .-inner:before, .homepage .feature .-inner:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      overflow: hidden; }
+    .homepage .feature .-inner:after {
+      clear: both; }
   .homepage .feature .explore-link,
   .homepage .feature .feature-title {
-    margin: 0;
-    position: absolute;
-    left: 75%;
-    transform-origin: left; }
+    margin: 0; }
   .homepage .feature .explore-link {
-    text-decoration: none;
-    top: 130px;
-    transform: rotate(-90deg) translateX(-100%); }
+    float: right;
+    position: relative;
+    text-decoration: none; }
     .homepage .feature .explore-link .explore-arrow {
       top: 100%;
       width: 100%;
@@ -1635,9 +1641,7 @@ body.color .subnested-modular {
     .homepage .feature .explore-link:hover .explore-arrow::after {
       animation: exploreHover 1s linear infinite; }
   .homepage .feature .feature-title {
-    bottom: 0;
-    margin-bottom: -5px;
-    transform: rotate(-90deg); }
+    float: left; }
   .homepage .feature .feature-foreground {
     top: 0;
     z-index: 1;
@@ -1664,6 +1668,19 @@ body.color .subnested-modular {
     right: 0;
     left: auto;
     width: 55%; }
+  @media screen and (min-width: 1295px) {
+    .homepage .feature .explore-link,
+    .homepage .feature .feature-title {
+      position: absolute;
+      left: calc((100% * 9 / 20) + 405px);
+      transform-origin: left; }
+    .homepage .feature .explore-link {
+      top: 130px;
+      transform: rotate(-90deg) translateX(-100%); }
+    .homepage .feature .feature-title {
+      bottom: 0;
+      margin-bottom: -5px;
+      transform: rotate(-90deg); } }
 
 .logotypes .user-content {
   margin-bottom: 50px; }

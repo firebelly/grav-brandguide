@@ -31,23 +31,22 @@
     }
 
     .-inner {
+      z-index: 1;
+      @include clearfix;
       position: relative;
       margin: 0 0 #{$global-padding * 3};
-      padding-top: #{$global-padding - 5};
+      padding: #{$global-padding - 5} #{$global-padding * 2} 0;
     }
 
     .explore-link,
     .feature-title {
       margin: 0;
       @extend .h3;
-      position: absolute;
-      left: 100% * 15 / 20;
-      transform-origin: left;
     }
     .explore-link {
+      float: right;
+      position: relative;
       text-decoration: none;
-      top: #{100px + ($global-padding - 20)};
-      transform: rotate(-90deg) translateX(-100%);
       .explore-arrow {
         top: 100%;
         width: 100%;
@@ -72,9 +71,7 @@
       }
     }
     .feature-title {
-      bottom: 0;
-      margin-bottom: -5px;
-      transform: rotate(-90deg);
+      float: left;
     }
 
     .feature-foreground {
@@ -110,6 +107,24 @@
         right: 0;
         left: auto;
         width: #{$column * 11}
+      }
+    }
+
+    @include min-screen(1295px) {
+      .explore-link,
+      .feature-title {
+        position: absolute;
+        left: calc((100% * 9 / 20) + 405px);
+        transform-origin: left;
+      }
+      .explore-link {
+        top: #{100px + ($global-padding - 20)};
+        transform: rotate(-90deg) translateX(-100%);
+      }
+      .feature-title {
+        bottom: 0;
+        margin-bottom: -5px;
+        transform: rotate(-90deg);
       }
     }
   }
