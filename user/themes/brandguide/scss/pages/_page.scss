@@ -49,8 +49,10 @@
   }
 
   .section-title {
-    @include h2;
+    @include h1;
     margin-top: 0;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   .nested-title {
@@ -297,12 +299,21 @@
 .childpage.nested-modulars {
   > .subpage-content > .section-title {
     @include h1;
+    @include media-md {
+      margin-left: -#{$column * 5};
+    }
   }
 }
 
 .nested-modular,
 .subnested-modulars {
   @extend .grid;
+}
+
+.subnested-modulars {
+  .section-title {
+    @include h2;
+  }
 }
 
 .nested-modular {

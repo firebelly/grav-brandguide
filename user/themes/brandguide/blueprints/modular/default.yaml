@@ -44,17 +44,4 @@ form:
               label: Page Media
             header.sidenote:
               type: textarea
-              label: Sidenote            
-            header.sectionBrandColor:
-              type: select
-              label: Section Brand Color
-              options:
-                primary: Primary
-                secondary: Secondary
-                tertiary: Tertiary
-                quaternary: Quaternary
-                quinary: Quinary
-                senary: Senary
-                septenary: Septenary
-                octonary: Octonary
-                nonary: Nonary
+              label: Sidenote

@@ -586,10 +586,10 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   src: url("../fonts/flormonospacev3.01-regular-webfont.woff2") format("woff2"), url("../fonts/flormonospacev3.01-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-.h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .childpage.title-section h3, .childpage.half-image .section-title, .childpage.nested-modulars > .subpage-content > .section-title {
+.h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .childpage.title-section h3, .page-section .section-title, .childpage.half-image .section-title, .childpage.nested-modulars > .subpage-content > .section-title {
   font: 700 42px/40px "worchesteref", serif; }
 
-.h2, .page-section .section-title, .childpage.voice-and-tone .keyword, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .page-nav {
+.h2, .childpage.voice-and-tone .keyword, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .subnested-modulars .section-title, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
 .h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .childpage.voice-and-tone .not, .user-content h3, .section-intro h3, .page-nav .label, .homepage .feature .explore-link,
@@ -1305,11 +1305,13 @@ body.color .subnested-modular {
       .page-section .childpage.full-width {
         padding-left: 0; } }
 .page-section .section-title {
-  margin-top: 0; }
+  margin-top: 0;
+  letter-spacing: 0;
+  text-transform: none; }
   @media screen and (max-width: 480px) {
     .page-section .section-title {
-      font-size: 18px;
-      line-height: 20px; } }
+      font-size: 28px;
+      line-height: 30px; } }
 
 @media screen and (max-width: 480px) {
   .childpage.half-image .section-title {
@@ -1487,6 +1489,14 @@ body.color .subnested-modular {
   .childpage.nested-modulars > .subpage-content > .section-title {
     font-size: 28px;
     line-height: 30px; } }
+@media screen and (min-width: 768px) {
+  .childpage.nested-modulars > .subpage-content > .section-title {
+    margin-left: -25%; } }
+
+@media screen and (max-width: 480px) {
+  .subnested-modulars .section-title {
+    font-size: 18px;
+    line-height: 20px; } }
 
 .nested-modular {
   padding: 40px 0;
