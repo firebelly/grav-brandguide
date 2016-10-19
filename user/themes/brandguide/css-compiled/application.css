@@ -729,13 +729,14 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   transform: rotate(-45deg); }
 
 .button {
+  will-change: color;
   display: inline-block;
   text-decoration: none;
   border: 1px solid #000;
-  transition: background .2s ease-out;
+  transition: color .2s ease-out;
   padding: 15px 15px 12.5px; }
   .button:hover, .button:focus {
-    background: rgba(0, 0, 0, 0.1); }
+    color: #757C78; }
 
 *, *::before, *::after {
   box-sizing: inherit; }
@@ -1722,32 +1723,31 @@ body.color .subnested-modular {
     .feature:nth-of-type(even) .feature-title {
       left: calc((100% * 9 / 20) - 405px); } }
 
-.logotypes .user-content {
-  margin-bottom: 50px; }
-  @media screen and (min-width: 768px) {
-    .logotypes .user-content {
-      margin-bottom: 0;
-      padding-right: 50px; } }
-  .logotypes .user-content p {
-    margin: 0; }
-  .logotypes .user-content a {
-    margin: 0 20px 20px 0;
-    display: inline-block; }
-    .logotypes .user-content a img {
-      vertical-align: top; }
-    .logotypes .user-content a.button {
-      margin-top: 40px; }
-.logotypes .primary-vertical img {
-  max-width: 60px; }
-.logotypes .primary-horizontal img {
-  max-width: 240px; }
-.logotypes .secondary-vertical img,
-.logotypes .tertiary img {
-  max-width: 144px; }
-.logotypes .secondary-horizontal img {
-  max-width: 216px; }
-.logotypes#tertiary .modular-container {
-  width: 100%; }
+/* Visual Identity Page*/
+@media screen and (min-width: 768px) {
+  body.visual.identity .subnested-modulars .subnested-modulars {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: calc(100% + 150px); } }
+body.visual.identity .subnested-modulars .subnested-modulars .subpage-content p {
+  max-width: none; }
+body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
+  margin-right: 30px; }
+@media screen and (min-width: 768px) {
+  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
+    float: left;
+    margin-right: 150px; } }
+
+/* Logotypes*/
+.logotypes .user-content p {
+  margin: 0; }
+.logotypes .user-content a {
+  margin: 0 20px 20px 0;
+  display: inline-block; }
+  .logotypes .user-content a.button {
+    margin-top: 40px; }
 
 .childpage.flor-mono-characters {
   line-height: 1;

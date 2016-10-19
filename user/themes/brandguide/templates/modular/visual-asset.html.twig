@@ -1,0 +1,17 @@
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
+
+<div class="subpage-content {{  _self.pageLinkName(page.menu) }}" id="{{  _self.pageLinkName(page.menu) }}">
+  {% if page.content %}
+    <div class="content user-content">
+      {{ page.content }}
+      {% if header.sidenote %}
+        <div class="sidenote">
+          {{ header.sidenote }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if header.downloadFile %}
+  <a href="{{ header.downloadFile }}" class="button">Download Set</a>
+  {% endif %}
+</div>

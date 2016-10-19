@@ -1,0 +1,18 @@
+title: Visual Asset
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        content:
+          fields:
+            uploads:
+              label: Page Media
+            header.downloadFile:
+              label: Asset Download Zip
+              type: pagemediaselect
+            header.sidenote:
+              type: textarea
+              label: Sidenote

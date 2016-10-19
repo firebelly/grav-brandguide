@@ -1,0 +1,42 @@
+/* Visual Identity Page*/
+
+body.visual.identity {
+  .subnested-modulars .subnested-modulars {
+    @include media-md {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      width: calc(100% + #{$global-padding * 3});
+    }
+    .subpage-content {
+      p {
+        max-width: none;
+      }
+      .sidenote {
+        margin-right: #{$vertical-beat * 3};
+      }
+      @include media-md {
+        float: left;
+        margin-right: #{$global-padding * 3};
+      }
+    }
+  }
+}
+
+/* Logotypes*/
+
+.logotypes {
+  .user-content {
+    p {
+      margin: 0;
+    }
+    a {
+      margin: 0 20px 20px 0;
+      display: inline-block;
+      &.button {
+        margin-top: #{$vertical-beat * 4};
+      }
+    }
+  }
+}
