@@ -5,6 +5,8 @@ useImages:
         imageSize: fullWidth
     -
         imageSize: forty
+    -
+        imageSize: twenty
 sidenote: '2 / 5'
 sectionBrandColor: primary
 ---

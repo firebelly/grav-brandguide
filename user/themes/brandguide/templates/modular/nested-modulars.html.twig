@@ -2,13 +2,14 @@
 
 <div class="subpage-content {{  _self.pageLinkName(page.menu) }}" id="{{  _self.pageLinkName(page.menu) }}">
   <h3 class="section-title">{{ page.title }}</h3>
-  <div class="content user-content">
+  <div class="content user-content {% if page.content is empty %}{{ 'no-content' }}{% endif %}">
     {% if page.content %}
       {{ page.content }}
     {% endif %}
     {% if header.sidenote %}
       <div class="sidenote">
         {{ header.sidenote }}
+        poops
       </div>
     {% endif %}
   </div>

@@ -57,6 +57,7 @@
 
   .nested-title {
     @extend .h3;
+    margin-top: 0;
   }
 }
 
@@ -156,12 +157,14 @@
   }
   .content {
     position: relative;
-    margin-bottom: #{$vertical-beat * 4};
     .nested-title {
       @extend .h2;
       letter-spacing: 0;
       text-transform: none;
-      margin-bottom: #{$vertical-beat * 3};
+      margin: 0 0 #{$vertical-beat * 3};
+    }
+    &:not(.no-content) {
+      margin-bottom: $global-padding;
     }
   }
   .sidenote {
@@ -302,6 +305,9 @@
 .subnested-modulars {
   .section-title {
     @include h2;
+  }
+  .subpage-content {
+    margin-bottom: $global-padding;
   }
 }
 
