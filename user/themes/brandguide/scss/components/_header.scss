@@ -160,7 +160,6 @@
     opacity: 0;
     margin-top: $global-padding;
     will-change: opacity, transform;
-    padding-left: #{$global-padding / 2};
     margin-bottom: #{$global-padding * 2};
     transform: translateY(-#{$global-padding * 3});
     transition: opacity .3s ease-out 0s, transform .5s ease-out 0s;

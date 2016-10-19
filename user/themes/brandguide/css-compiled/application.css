@@ -896,7 +896,6 @@ a.logo {
     opacity: 0;
     margin-top: 50px;
     will-change: opacity, transform;
-    padding-left: 25px;
     margin-bottom: 100px;
     transform: translateY(-150px);
     transition: opacity .3s ease-out 0s, transform .5s ease-out 0s; }
