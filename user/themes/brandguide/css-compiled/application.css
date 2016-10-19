@@ -592,8 +592,8 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 .h2, .childpage.voice-and-tone .keyword, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .subnested-modulars .section-title, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
-.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .childpage.voice-and-tone .not, .user-content h3, .section-intro h3, .page-nav .label, .homepage .feature .explore-link,
-.homepage .feature .feature-title {
+.h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .childpage.voice-and-tone .not, .user-content h3, .section-intro h3, .page-nav .label, .feature .explore-link,
+.feature .feature-title {
   letter-spacing: .15em;
   text-transform: uppercase;
   font: 700 12px/20px "Replica Pro", "Helvetica", sans-serif; }
@@ -1592,43 +1592,44 @@ body.color .subnested-modular {
 @media screen and (min-width: 768px) {
   .homepage .intro-section img {
     max-width: 400px; } }
-.homepage .feature {
+
+.feature {
   z-index: 1;
-  height: 70vh;
-  min-height: 660px;
+  overflow: hidden;
   position: relative;
   position: relative; }
   @media screen and (min-width: 768px) {
-    .homepage .feature {
+    .feature {
       margin-right: 150px; } }
-  .homepage .feature h1 {
+  .feature h1 {
     margin-top: 0; }
-  .homepage .feature .-inner {
+  .feature .-inner {
     z-index: 1;
     *zoom: 1;
     position: relative;
-    margin: 0 0 150px;
-    padding: 45px 100px 0; }
-    .homepage .feature .-inner:before, .homepage .feature .-inner:after {
+    padding: 45px 0; }
+    .feature .-inner:before, .feature .-inner:after {
       content: "\0020";
       display: block;
       height: 0;
       overflow: hidden; }
-    .homepage .feature .-inner:after {
+    .feature .-inner:after {
       clear: both; }
-  .homepage .feature .explore-link,
-  .homepage .feature .feature-title {
+  .feature .explore-link,
+  .feature .feature-title {
     margin: 0; }
-  .homepage .feature .explore-link {
+  .feature .explore-link {
     float: right;
     position: relative;
-    text-decoration: none; }
-    .homepage .feature .explore-link .explore-arrow {
+    text-decoration: none;
+    margin-right: 50px; }
+    .feature .explore-link .explore-arrow {
+      left: 0;
       top: 100%;
       width: 100%;
       position: absolute;
-      padding-top: 15px; }
-      .homepage .feature .explore-link .explore-arrow::after {
+      padding-top: 5px; }
+      .feature .explore-link .explore-arrow::after {
         top: 100%;
         content: '';
         width: 15px;
@@ -1638,49 +1639,82 @@ body.color .subnested-modular {
         left: calc(50% - 10px);
         transform: rotate(45deg);
         border-width: 0 1px 1px 0; }
-    .homepage .feature .explore-link:hover .explore-arrow::after {
+    .feature .explore-link:hover .explore-arrow::after {
       animation: exploreHover 1s linear infinite; }
-  .homepage .feature .feature-title {
-    float: left; }
-  .homepage .feature .feature-foreground {
+  .feature .feature-title {
+    float: left;
+    margin-left: 50px; }
+  .feature .feature-foreground {
     top: 0;
+    left: 0;
     z-index: 1;
     width: 100%;
-    max-width: 510px;
     position: relative;
-    left: calc((100% * 9 / 20) - 205px); }
-    .homepage .feature .feature-foreground img {
+    max-width: 510px;
+    margin-bottom: 45px; }
+    .feature .feature-foreground img {
       vertical-align: top; }
-  .homepage .feature .feature-background {
+  .feature .feature-background {
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 1;
+    display: none;
     position: absolute;
     width: 45%;
     background-size: cover; }
-  .homepage .feature:nth-of-type(even) .explore-link,
-  .homepage .feature:nth-of-type(even) .feature-title {
-    left: calc((100% * 9 / 20) - 405px); }
-  .homepage .feature:nth-of-type(even) .feature-foreground {
-    left: calc((100% * 9 / 20) - 305px); }
-  .homepage .feature:nth-of-type(even) .feature-background {
-    right: 0;
-    left: auto;
-    width: 55%; }
+  @media screen and (min-width: 710px) {
+    .feature {
+      height: 70vh;
+      min-height: 660px; }
+      .feature .-inner {
+        margin: 0 0 150px;
+        padding: 45px 0 0; }
+      .feature .explore-link,
+      .feature .feature-title {
+        top: 100%;
+        position: absolute; }
+      .feature .explore-link {
+        margin-right: 0;
+        transform: translateX(-100%);
+        left: calc((100% * 9 / 20) + 305px); }
+        .feature .explore-link .explore-arrow {
+          padding-top: 5px; }
+      .feature .feature-title {
+        margin-left: 0;
+        left: calc((100% * 9 / 20) - 200px); }
+      .feature .feature-foreground {
+        margin-bottom: 0;
+        left: calc((100% * 9 / 20) - 205px);
+        padding-bottom: 45px; }
+      .feature .feature-background {
+        display: block; }
+      .feature:nth-of-type(even) .feature-foreground {
+        left: calc((100% * 9 / 20) - 305px); }
+      .feature:nth-of-type(even) .feature-background {
+        right: 0;
+        left: auto;
+        width: 55%; } }
   @media screen and (min-width: 1295px) {
-    .homepage .feature .explore-link,
-    .homepage .feature .feature-title {
-      position: absolute;
+    .feature .explore-link,
+    .feature .feature-title {
+      top: auto;
+      float: none;
       left: calc((100% * 9 / 20) + 405px);
       transform-origin: left; }
-    .homepage .feature .explore-link {
-      top: 130px;
+    .feature .explore-link {
+      top: 140px;
       transform: rotate(-90deg) translateX(-100%); }
-    .homepage .feature .feature-title {
+    .feature .feature-title {
       bottom: 0;
       margin-bottom: -5px;
-      transform: rotate(-90deg); } }
+      transform: rotate(-90deg); }
+    .feature .feature-foreground {
+      margin-bottom: 0;
+      padding-bottom: 0; }
+    .feature:nth-of-type(even) .explore-link,
+    .feature:nth-of-type(even) .feature-title {
+      left: calc((100% * 9 / 20) - 405px); } }
 
 .logotypes .user-content {
   margin-bottom: 50px; }
