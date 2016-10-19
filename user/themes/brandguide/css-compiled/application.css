@@ -894,6 +894,7 @@ a.logo {
       list-style: none; }
   .main-nav .nav-list {
     opacity: 0;
+    padding-left: 0;
     margin-top: 50px;
     will-change: opacity, transform;
     margin-bottom: 100px;
