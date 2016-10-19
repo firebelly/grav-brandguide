@@ -1328,31 +1328,18 @@ body.color .subnested-modular {
 
 @media screen and (min-width: 975px) {
   .childpage.voice-and-tone .half {
+    width: 50%;
     float: left; }
     .childpage.voice-and-tone .half.-left {
-      width: 40%;
-      padding-right: 50px; }
-    .childpage.voice-and-tone .half.-right {
-      width: 60%; } }
+      padding-right: 50px; } }
 .childpage.voice-and-tone .keywordsAndNots p {
-  display: flex;
   margin-bottom: .5em; }
-.childpage.voice-and-tone .keyword {
-  flex-basis: 40%;
-  text-align: right;
-  margin: 0 50px 0 0; }
-  @media screen and (max-width: 480px) {
-    .childpage.voice-and-tone .keyword {
-      font-size: 18px;
-      line-height: 20px; } }
-.childpage.voice-and-tone .not {
-  line-height: 28px; }
-  @media screen and (min-width: 480px) {
-    .childpage.voice-and-tone .not {
-      line-height: 30px; } }
-  @media screen and (min-width: 768px) {
-    .childpage.voice-and-tone .not {
-      line-height: 40px; } }
+.childpage.voice-and-tone .keywordsAndNots span {
+  display: block; }
+@media screen and (max-width: 480px) {
+  .childpage.voice-and-tone .keyword {
+    font-size: 18px;
+    line-height: 20px; } }
 
 .childpage.font-specs {
   padding-left: 0; }

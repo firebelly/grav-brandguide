@@ -81,39 +81,28 @@
 .childpage.voice-and-tone {
   @include media-lg {
     .half {
+      width: 50%;
       float: left;
       &.-left {
-        width: 40%;
         padding-right: $global-padding;
-      }
-      &.-right {
-        width: 60%;
       }
     }
   }
 
   .keywordsAndNots {
     p {
-      display: flex;
       margin-bottom: .5em;
+    }
+    span {
+      display: block;
     }
   }
 
   .keyword {
     @include h2;
-    flex-basis: 40%;
-    text-align: right;
-    margin: 0 $global-padding 0 0;
   }
   .not {
     @extend .h3;
-    line-height: 28px;
-    @include media-sm {
-      line-height: 30px;
-    }
-    @include media-md {
-      line-height: 40px;
-    }
   }
 }
 .childpage.font-specs {
