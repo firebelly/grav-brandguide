@@ -38,4 +38,4 @@ Catalog stories can be both informative *and* colorful—feel free to let our pe
 
 ### Our goal is to inspire positive action. 
 
-Use inclusive, 1st person pronouns (we, our, us) and direct address (you) to help build confidence and trust while empowering fans to take an active role in their design experience. We want them to feel confident in their creative abilities, proud of their purchase decisions and excited to share their designs.
+Use inclusive, 1st person pronouns (we, our, us) and direct address (you) to help build confidence and trust while empowering fans to take an active role in their design experience. We want them to feel confident in their creative abilities, proud of their purchase decisions, and excited to share their designs.

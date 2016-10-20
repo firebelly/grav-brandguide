@@ -9,5 +9,6 @@ colors:
         colorLabel: 'Design Blue'
     -
         color: '#FAB38B'
-        colorLabel: 'Design Orange 01'
+        colorLabel: 'Design Coral'
 ---
+
