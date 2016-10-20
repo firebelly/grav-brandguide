@@ -18,4 +18,4 @@ In order to maintain the modularity of FLOR Mono, tracking should always be set 
 
 ### Leading Set Solid
 
-In order to maintain the modularity of FLOR Mono, it should always be set solid. Meaning the leading will always equal the font size — 72pt font size / 72pt leading.
+In order to maintain the modularity of FLOR Mono, it should always be set solid, meaning the leading will always equal the font size — 72pt font size / 72pt leading.

@@ -10,7 +10,7 @@ Your home is the setting for your life’s story. FLOR gives you the freedom and
 
 ### smart design without sacrifice
 
-No limits, no waste, no compromise. Design by the square to create the rug that fits your space, reflects your taste and stands up to your life.  
+No limits, no waste, no compromise. Design by the square to create the rug that fits your space, reflects your taste, and stands up to your life.  
 
 ### creativity with a conscience
 
