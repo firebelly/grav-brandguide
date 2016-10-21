@@ -14,3 +14,41 @@
     }
   }
 }
+
+.type-specs {
+  @include dots($black, 4px, top);
+  padding-top: #{$global-padding * 2};
+  p {
+    max-width: none;
+  }
+
+  .-large {
+    display: none;
+  }
+
+  @include media-md {
+    .-small {
+      display: none;
+    }
+    .-large {
+      display: block;
+    }
+  }
+}
+
+.subnested-modulars .subpage-content.type-specs {
+  .sidenote {
+    margin-top: 0;
+  }
+}
+
+.worchester-ef {
+  .subnested-modulars .subpage-content.type-specs {
+    .sidenote {
+      margin-top: #{$vertical-beat};
+      @include media-md {
+        margin-top: #{$vertical-beat * 7};
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'-'})|replace({'&':'and'}) }}{% endmacro %}
+
+<div class="subpage-content {{  _self.pageLinkName(page.menu) }}" id="{{  _self.pageLinkName(page.menu) }}">
+    <div class="content user-content">
+      {% if page.content %}
+        {{ page.content }}
+      {% endif %}
+      <div class="-small">
+        {{ page.media[header.imageSmall] }}
+      </div>
+      <div class="-large">
+        {{ page.media[header.imageLarge] }}
+      </div>
+      {% if header.sidenote %}
+        <div class="sidenote">
+          {{ header.sidenote }}
+        </div>
+      {% endif %}
+    </div>
+</div>

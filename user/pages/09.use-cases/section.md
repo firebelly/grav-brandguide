@@ -1,5 +1,5 @@
 ---
-title: 'In Use'
+title: 'Use Cases'
 sectionBrandColor: octonary
 content:
     items: '@self.modular'

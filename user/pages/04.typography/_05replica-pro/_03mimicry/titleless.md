@@ -9,4 +9,4 @@ contentThirdTitle: ''
 contentThird: ''
 ---
 
-![](replica-flor-mimicry.jpg)
+![](replica-mimicry.svg?resize=362)

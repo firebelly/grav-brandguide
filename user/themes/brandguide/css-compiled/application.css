@@ -764,10 +764,9 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   box-sizing: inherit; }
 
 body {
-  color: #363d39;
-  background: #fff;
+  color: #353d38;
+  background: #faf9f6;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
   font: normal 14px/20px "WorchesterEF-Regular", serif; }
 
 .main-nav {
@@ -779,6 +778,9 @@ img {
 
 a {
   color: inherit; }
+
+* {
+  -webkit-tap-highlight-color: transparent; }
 
 .site-main {
   padding-top: 50px; }
@@ -1455,6 +1457,14 @@ body.color .subnested-modular {
     .section-intro .wrapper {
       min-height: 75vh;
       position: relative; }
+      .section-intro .wrapper::before {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: calc(100% - 300px); }
     .section-intro .page-title {
       width: 15%; }
     .section-intro .page-content {
@@ -1473,6 +1483,8 @@ body.color .subnested-modular {
     .section-intro .page-content {
       width: 25%; } }
   @media screen and (min-width: 1180px) {
+    .section-intro .wrapper::before {
+      width: calc(80% - 64px); }
     .section-intro .intro-image {
       width: 510px;
       display: block;
@@ -1520,7 +1532,8 @@ body.color .subnested-modular {
 .page-nav .wrapper {
   padding-top: 0;
   *zoom: 1;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  position: relative; }
   .page-nav .wrapper:before, .page-nav .wrapper:after {
     content: "\0020";
     display: block;
@@ -1530,7 +1543,19 @@ body.color .subnested-modular {
     clear: both; }
   @media screen and (min-width: 768px) {
     .page-nav .wrapper {
-      display: flex; } }
+      display: flex; }
+      .page-nav .wrapper::before {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: calc(100% - 300px); } }
+  @media screen and (min-width: 1180px) {
+    .page-nav .wrapper::before {
+      width: calc(80% - 64px); } }
 .page-nav .nav-button {
   width: 50%;
   float: left;
@@ -1779,6 +1804,32 @@ body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .s
 .brand-typefaces .pitch-intro .section-title {
   font-weight: normal;
   font-family: "Pitch Semibold", "Courier New", mono; }
+
+.type-specs {
+  background-position: top;
+  background-repeat: repeat-x;
+  background-size: 4px 1px;
+  background-image: linear-gradient(to right, #353d38 10%, rgba(255, 255, 255, 0) 0%);
+  background-image: -webkit-linear-gradient(to right, #353d38 10%, rgba(255, 255, 255, 0) 0%);
+  padding-top: 100px; }
+  .type-specs p {
+    max-width: none; }
+  .type-specs .-large {
+    display: none; }
+  @media screen and (min-width: 768px) {
+    .type-specs .-small {
+      display: none; }
+    .type-specs .-large {
+      display: block; } }
+
+.subnested-modulars .subpage-content.type-specs .sidenote {
+  margin-top: 0; }
+
+.worchester-ef .subnested-modulars .subpage-content.type-specs .sidenote {
+  margin-top: 10px; }
+  @media screen and (min-width: 768px) {
+    .worchester-ef .subnested-modulars .subpage-content.type-specs .sidenote {
+      margin-top: 70px; } }
 
 .childpage.flor-mono-characters {
   line-height: 1;

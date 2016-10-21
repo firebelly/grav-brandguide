@@ -2,7 +2,6 @@
 
 body {
   color: {{ config.brand.primaryTextColor }};
-  /*background: {{ config.brand.primaryColor }};*/
 }
 
 .background-primary {
@@ -68,90 +67,81 @@ body {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-primary .wrapper,
-  .colorbar.background-primary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-primary .wrapper::before,
+  .colorbar.background-primary .wrapper::before {
+    background-color: {{ config.brand.primaryColor }};
   }
   .section-intro.background-secondary,
   .colorbar.background-secondary {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-secondary .wrapper,
-  .colorbar.background-secondary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-secondary .wrapper::before,
+  .colorbar.background-secondary .wrapper::before {
+    background-color: {{ config.brand.secondaryColor }};
   }
   .section-intro.background-tertiary,
   .colorbar.background-tertiary {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-tertiary .wrapper,
-  .colorbar.background-tertiary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-tertiary .wrapper::before,
+  .colorbar.background-tertiary .wrapper::before {
+    background-color: {{ config.brand.tertiaryColor }};
   }
   .section-intro.background-quaternary,
   .colorbar.background-quaternary {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-quaternary .wrapper,
-  .colorbar.background-quaternary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-quaternary .wrapper::before,
+  .colorbar.background-quaternary .wrapper::before {
+    background-color: {{ config.brand.quaternaryColor }};
   }
   .section-intro.background-quinary,
   .colorbar.background-quinary {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-quinary .wrapper,
-  .colorbar.background-quinary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-quinary .wrapper::before,
+  .colorbar.background-quinary .wrapper::before {
+    background-color: {{ config.brand.quinaryColor }};
   }
   .section-intro.background-senary,
   .colorbar.background-senary {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-senary .wrapper,
-  .colorbar.background-senary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-senary .wrapper::before,
+  .colorbar.background-senary .wrapper::before {
+    background-color: {{ config.brand.senaryColor }};
   }
   .section-intro.background-septenary,
   .colorbar.background-septenary {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-septenary .wrapper,
-  .colorbar.background-septenary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-septenary .wrapper::before,
+  .colorbar.background-septenary .wrapper::before {
+    background-color: {{ config.brand.septenaryColor }};
   }
   .section-intro.background-octonary,
   .colorbar.background-octonary {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-octonary .wrapper,
-  .colorbar.background-octonary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-octonary .wrapper::before,
+  .colorbar.background-octonary .wrapper::before {
+    background-color: {{ config.brand.octonaryColor }};
   }
   .section-intro.background-nonary,
   .colorbar.background-nonary {
     background-color: transparent;
     background-image: linear-gradient(to right, {{ config.brand.nonaryColor }}, {{ config.brand.nonaryColor }} 50%, transparent 50%, transparent 100%);
   }
-  .section-intro.background-nonary .wrapper,
-  .colorbar.background-nonary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.nonaryColor }}, {{ config.brand.nonaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%);
+  .section-intro.background-nonary .wrapper::before,
+  .colorbar.background-nonary .wrapper::before {
+    background-color: {{ config.brand.nonaryColor }};
   }
 
   /* Override */
@@ -160,185 +150,82 @@ body {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-primary-override .wrapper,
-  .colorbar.background-primary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-primary-override .wrapper::before,
+  .colorbar.background-primary-override .wrapper::before {
+    background-color: {{ config.brand.primaryColor }}!important;
   }
   .section-intro.background-secondary-override,
   .colorbar.background-secondary-override {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-secondary-override .wrapper,
-  .colorbar.background-secondary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-secondary-override .wrapper::before,
+  .colorbar.background-secondary-override .wrapper::before {
+    background-color: {{ config.brand.secondaryColor }}!important;
   }
   .section-intro.background-tertiary-override,
   .colorbar.background-tertiary-override {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-tertiary-override .wrapper,
-  .colorbar.background-tertiary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-tertiary-override .wrapper::before,
+  .colorbar.background-tertiary-override .wrapper::before {
+    background-color: {{ config.brand.tertiaryColor }}!important;
   }
   .section-intro.background-quaternary-override,
   .colorbar.background-quaternary-override {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-quaternary-override .wrapper,
-  .colorbar.background-quaternary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-quaternary-override .wrapper::before,
+  .colorbar.background-quaternary-override .wrapper::before {
+    background-color: {{ config.brand.quaternaryColor }}!important;
   }
   .section-intro.background-quinary-override,
   .colorbar.background-quinary-override {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-quinary-override .wrapper,
-  .colorbar.background-quinary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-quinary-override .wrapper::before,
+  .colorbar.background-quinary-override .wrapper::before {
+    background-color: {{ config.brand.quinaryColor }}!important;
   }
   .section-intro.background-senary-override,
   .colorbar.background-senary-override {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-senary-override .wrapper,
-  .colorbar.background-senary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-senary-override .wrapper::before,
+  .colorbar.background-senary-override .wrapper::before {
+    background-color: {{ config.brand.senaryColor }}!important;
   }
   .section-intro.background-septenary-override,
   .colorbar.background-septenary-override {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-septenary-override .wrapper,
-  .colorbar.background-septenary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-septenary-override .wrapper::before,
+  .colorbar.background-septenary-override .wrapper::before {
+    background-color: {{ config.brand.septenaryColor }}!important;
   }
   .section-intro.background-octonary-override,
   .colorbar.background-octonary-override {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-octonary-override .wrapper,
-  .colorbar.background-octonary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-octonary-override .wrapper::before,
+  .colorbar.background-octonary-override .wrapper::before {
+    background-color: {{ config.brand.octonaryColor }}!important;
   }
   .section-intro.background-nonary-override,
   .colorbar.background-nonary-override {
     background-color: transparent!important;
     background-image: linear-gradient(to right, {{ config.brand.nonaryColor }}, {{ config.brand.nonaryColor }} 50%, transparent 50%, transparent 100%)!important;
   }
-  .section-intro.background-nonary-override .wrapper,
-  .colorbar.background-nonary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.nonaryColor }}, {{ config.brand.nonaryColor }} calc(100% - 300px), transparent calc(100% - 300px), transparent 100%)!important;
+  .section-intro.background-nonary-override .wrapper::before,
+  .colorbar.background-nonary-override .wrapper::before {
+    background-color: {{ config.brand.nonaryColor }}!important;
   }
 }
 
-@media screen and (min-width:1180px) {
-  .section-intro.background-primary .wrapper,
-  .colorbar.background-primary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-  .section-intro.background-secondary .wrapper,
-  .colorbar.background-secondary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-  .section-intro.background-tertiary .wrapper,
-  .colorbar.background-tertiary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-  .section-intro.background-quaternary .wrapper,
-  .colorbar.background-quaternary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-  .section-intro.background-quinary .wrapper,
-  .colorbar.background-quinary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-  .section-intro.background-senary .wrapper,
-  .colorbar.background-senary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-  .section-intro.background-septenary .wrapper,
-  .colorbar.background-septenary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-  .section-intro.background-octonary .wrapper,
-  .colorbar.background-octonary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.octonaryColor }}, {{ config.brand.octonaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-  .section-intro.background-nonary .wrapper,
-  .colorbar.background-nonary .wrapper {
-    background-color: transparent;
-    background-image: linear-gradient(to right, {{ config.brand.nonaryColor }}, {{ config.brand.nonaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%);
-  }
-
-  /* Override */
-  .section-intro.background-primary-override .wrapper,
-  .colorbar.background-primary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.primaryColor }}, {{ config.brand.primaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-  .section-intro.background-secondary-override .wrapper,
-  .colorbar.background-secondary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.secondaryColor }}, {{ config.brand.secondaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-  .section-intro.background-tertiary-override .wrapper,
-  .colorbar.background-tertiary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.tertiaryColor }}, {{ config.brand.tertiaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-  .section-intro.background-quaternary-override .wrapper,
-  .colorbar.background-quaternary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.quaternaryColor }}, {{ config.brand.quaternaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-  .section-intro.background-quinary-override .wrapper,
-  .colorbar.background-quinary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.quinaryColor }}, {{ config.brand.quinaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-  .section-intro.background-senary-override .wrapper,
-  .colorbar.background-senary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.senaryColor }}, {{ config.brand.senaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-  .section-intro.background-septenary-override .wrapper,
-  .colorbar.background-septenary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.septenaryColor }}, {{ config.brand.septenaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-  .section-intro.background-nonary-override .wrapper,
-  .colorbar.background-nonary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.nonaryColor }}, {{ config.brand.nonaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-  .section-intro.background-nonary-override .wrapper,
-  .colorbar.background-nonary-override .wrapper {
-    background-color: transparent!important;
-    background-image: linear-gradient(to right, {{ config.brand.nonaryColor }}, {{ config.brand.nonaryColor }} calc(80% - 64px), transparent calc(80% - 64px), transparent 100%) !important;
-  }
-}
 </style>

@@ -241,6 +241,15 @@
     .wrapper {
       min-height: 75vh;
       position: relative;
+      &::before {      
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: calc(100% - 300px);
+      }
     }
 
     .page-title {
@@ -272,6 +281,12 @@
   }
 
   @include min-screen($breakpoint-wrapper) {
+    .wrapper {
+      &::before {
+        width: calc(80% - 64px);
+      }
+    }
+
     .intro-image {
       width: 510px;
       display: block;
@@ -345,8 +360,24 @@
     padding-top: 0;
     @include clearfix;
     padding-bottom: 0;
+    position: relative;
     @include media-md {
       display: flex;
+      &::before {      
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: calc(100% - 300px);
+      }
+    }
+    @include min-screen($breakpoint-wrapper) {
+      &::before {
+        width: calc(80% - 64px);
+      }
     }
   }
 

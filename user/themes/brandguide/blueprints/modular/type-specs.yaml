@@ -1,0 +1,29 @@
+title: Type Spec
+'@extends': default
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        content:
+          fields:
+            uploads:
+              label: Page Media
+            header.imageSmall:
+              type: filepicker
+              folder: '@self'
+              label: Large-screen Image
+              preview_images: true
+              acccept:
+                - .svg
+            header.imageLarge:
+              type: filepicker
+              folder: '@self'
+              label: Large-screen Image
+              preview_images: true
+              acccept:
+                - .svg
+            header.sidenote:
+              type: textarea
+              label: Sidenote

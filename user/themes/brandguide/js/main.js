@@ -51,12 +51,12 @@ var FB = (function($) {
 
   } // end init()
 
-  function _scrollBody(element, duration=250, delay=0,offset=0) {
+  function _scrollBody(element) {
 
     element.velocity("scroll", {
-      duration: duration,
-      delay: delay,
-      offset: -offset
+      duration: 250,
+      delay: 0,
+      offset: 0
     }, "easeOutSine");
   }
 
