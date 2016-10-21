@@ -10,10 +10,13 @@
   width: $global-padding;
   padding: $global-padding 0;
   .logo {
+    width: 22px;
+    margin: 0 auto;
+    display: block;
     line-height: 1;
     text-decoration: none;
     img {
-      width: 20px;
+      width: 100%;
       position: relative;
       vertical-align: baseline;
     }
@@ -65,7 +68,7 @@
   border-radius: 50%;
   border: 1px solid $black;
   font-family: $font-regular;
-  margin-bottom: #{$global-padding / 2};
+  margin-bottom: $vertical-beat;
   transition: transform .2s ease-out, background .2s ease-out;
   &::before,
   &::after {
