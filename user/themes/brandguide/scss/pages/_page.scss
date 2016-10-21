@@ -300,8 +300,9 @@
 .childpage.nested-modulars {
   > .subpage-content > .section-title {
     @include h1;
+    margin-bottom: $global-padding;
     @include media-md {
-      margin-left: -#{$column * 5};
+      margin-bottom: #{$global-padding * 2};
     }
   }
 }
@@ -314,6 +315,7 @@
 .subnested-modulars {
   .section-title {
     @include h2;
+    margin-bottom: #{$vertical-beat};
   }
   .subpage-content {
     margin-bottom: $global-padding;

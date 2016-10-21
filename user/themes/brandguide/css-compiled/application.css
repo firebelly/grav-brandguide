@@ -1125,9 +1125,6 @@ body.color .subnested-modular {
   margin-top: 40px; }
   body.color .subnested-modular > .content {
     margin-bottom: 10px; }
-@media screen and (min-width: 768px) {
-  body.color .childpage.title-section {
-    margin-left: -20%; } }
 @media screen and (max-width: 480px) {
   body.color .childpage:not(.title-section) .section-title {
     font-size: 18px;
@@ -1505,18 +1502,22 @@ body.color .subnested-modular {
         position: absolute;
         transform: translateX(-36px); } }
 
-@media screen and (max-width: 480px) {
-  .childpage.nested-modulars > .subpage-content > .section-title {
-    font-size: 28px;
-    line-height: 30px; } }
-@media screen and (min-width: 768px) {
-  .childpage.nested-modulars > .subpage-content > .section-title {
-    margin-left: -25%; } }
+.childpage.nested-modulars > .subpage-content > .section-title {
+  margin-bottom: 50px; }
+  @media screen and (max-width: 480px) {
+    .childpage.nested-modulars > .subpage-content > .section-title {
+      font-size: 28px;
+      line-height: 30px; } }
+  @media screen and (min-width: 768px) {
+    .childpage.nested-modulars > .subpage-content > .section-title {
+      margin-bottom: 100px; } }
 
-@media screen and (max-width: 480px) {
-  .subnested-modulars .section-title {
-    font-size: 18px;
-    line-height: 20px; } }
+.subnested-modulars .section-title {
+  margin-bottom: 10px; }
+  @media screen and (max-width: 480px) {
+    .subnested-modulars .section-title {
+      font-size: 18px;
+      line-height: 20px; } }
 .subnested-modulars .subpage-content {
   margin-bottom: 50px; }
 

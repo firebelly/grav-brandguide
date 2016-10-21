@@ -220,12 +220,6 @@ body.color {
     }
   }
 
-  .childpage.title-section {
-    @include media-md {
-      margin-left: -#{$column * 4};
-    }
-  }
-
   .childpage:not(.title-section) {
     .section-title {
       @include h2;
