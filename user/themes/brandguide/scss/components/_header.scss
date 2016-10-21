@@ -190,6 +190,16 @@
       -moz-columns: 4;
     }
 
+    a {
+      will-change: color;
+      transition: color .2s ease-out;
+      &:hover,
+      &:focus {
+        color: $gray;
+        text-decoration: none;
+      }
+    }
+
     > li {
       break-inside: avoid;
       margin-bottom: 10px;

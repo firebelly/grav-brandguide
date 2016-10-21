@@ -930,6 +930,12 @@ a.logo {
         columns: 4;
         -webkit-columns: 4;
         -moz-columns: 4; } }
+    .main-nav .nav-list a {
+      will-change: color;
+      transition: color .2s ease-out; }
+      .main-nav .nav-list a:hover, .main-nav .nav-list a:focus {
+        color: #bfbbbd;
+        text-decoration: none; }
     .main-nav .nav-list > li {
       break-inside: avoid;
       margin-bottom: 10px; }
