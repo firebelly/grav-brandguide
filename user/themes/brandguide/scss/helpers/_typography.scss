@@ -8,14 +8,14 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'worchesteref';
+    font-family: 'worchesteref-medium';
     src: url('../fonts/elsnerflake_-_worchesteref-medium-webfont.woff2') format('woff2'),
          url('../fonts/elsnerflake_-_worchesteref-medium-webfont.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
-    font-family: 'worchesteref';
+    font-family: 'worchesteref-demibold';
     src: url('../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff2') format('woff2'),
          url('../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff') format('woff');
     font-weight: 900;
@@ -36,11 +36,11 @@ $font-mono: 'Pitch', 'Courier New', mono;
 $flor-mono: 'Flor Mono';
 
 .h1 {
-  font: 700 42px/40px $font-regular;
+  font: normal 42px/40px 'worchesteref-demibold';
 }
 
 .h2 {
-  font: 700 28px/30px $font-regular;
+  font: normal 28px/30px 'worchesteref-demibold';
 }
 
 .h3 {

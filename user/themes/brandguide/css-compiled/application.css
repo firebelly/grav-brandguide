@@ -572,12 +572,12 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   font-weight: normal;
   font-style: normal; }
 @font-face {
-  font-family: 'worchesteref';
+  font-family: 'worchesteref-medium';
   src: url("../fonts/elsnerflake_-_worchesteref-medium-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-medium-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal; }
 @font-face {
-  font-family: 'worchesteref';
+  font-family: 'worchesteref-demibold';
   src: url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff2") format("woff2"), url("../fonts/elsnerflake_-_worchesteref-demibold-webfont.woff") format("woff");
   font-weight: 900;
   font-style: normal; }
@@ -587,10 +587,10 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   font-weight: normal;
   font-style: normal; }
 .h1, .page-section .page-title, .page-section .childpage.title-section h3, .page-section .section-title, .childpage.half-image .section-title, .childpage.nested-modulars > .subpage-content > .section-title {
-  font: 700 42px/40px "worchesteref", serif; }
+  font: normal 42px/40px 'worchesteref-demibold'; }
 
 .h2, .main-nav .nav-list > li > a, body.color .childpage:not(.title-section) .section-title, body.color .childpage.nested-modulars > .subpage-content > .section-title, .childpage.voice-and-tone .keyword, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .subnested-modulars .section-title, .page-nav {
-  font: 700 28px/30px "worchesteref", serif; }
+  font: normal 28px/30px 'worchesteref-demibold'; }
 
 .h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .childpage.voice-and-tone .not, .user-content h3, .section-intro h3, .page-nav .label, .feature .explore-link,
 .feature .feature-title {
