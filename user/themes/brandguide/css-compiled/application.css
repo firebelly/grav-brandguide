@@ -1732,7 +1732,7 @@ body.color .subnested-modular {
   @media screen and (min-width: 710px) {
     .feature {
       height: 70vh;
-      min-height: 660px; }
+      min-height: 740px; }
       .feature .-inner {
         margin: 0 0 150px;
         padding: 45px 0 0; }

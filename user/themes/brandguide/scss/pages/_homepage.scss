@@ -162,7 +162,7 @@ $hugeBp: 1295px;
 
   @include min-screen(#{$imgWidth + 200}) {
     height: 70vh;
-    min-height: 660px;
+    min-height: 740px;
 
     .-inner {
       margin: 0 0 #{$global-padding * 3};
