@@ -9,6 +9,6 @@ content:
         dir: asc
 ---
 
-Primary lockup is vertical with horizontal being a second choice. Vertical most often fits easier at eye level on a streetscape for signage. The horizontal lockup works when a large amount of wide facade space needs to be filled.
+Primary lockup with registered trademark symbol is vertical with horizontal being a second choice. The horizontal lockup works when a large amount of space needs to be filled.
 
-The goal is maximum understanding and readability of the FLOR logo with most effective orientation based on unique space consideration. Store presence and recognition should be well understood.
+The registered trademark symbol should always accompany each lockup of the FLOR logo sets. Its small size is responding to spacing within the design grid.
