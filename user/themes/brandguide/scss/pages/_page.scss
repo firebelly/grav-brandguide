@@ -283,7 +283,7 @@
     .page-content {
       margin-left: #{$column * 4};
       &::before {
-        top: 6px;
+        top: 13px;
         height: 1px;
         width: 72px;
         content: '';

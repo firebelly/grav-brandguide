@@ -1493,7 +1493,7 @@ body.color .subnested-modular {
     .section-intro .page-content {
       margin-left: 20%; }
       .section-intro .page-content::before {
-        top: 6px;
+        top: 13px;
         height: 1px;
         width: 72px;
         content: '';
