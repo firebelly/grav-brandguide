@@ -89,6 +89,7 @@ var FB = (function($) {
 
     $('.main-nav a').on('click', function() {
       if (this.hash) {
+        _hideMobileNav();
         _scrollBody($('#'+this.hash.substr(1)));
       }
     });
