@@ -8,6 +8,6 @@ content:
         dir: asc
 ---
 
-The square lockup is meant to be used in catalogue cover execution. The presence of square lockup signifies the convergence of fundamental FLOR catalogue concepts, including: Color Palettes, Product (squares and swatches), Story, Spaces (example rugs)
+Primary lockup with “An Interface Company” is vertical with horizontal being a second choice. The horizontal lockup works when a large amount of space needs to be filled.
 
-The square represents these elements coming together to create a unified brand, browsing, design inspiration and catalog experience.
+“An Interface Company” is always aligned to the bottom left of the grid module it occupies. It can break away from the lockup — moving modularly along the grid to create interest and play within layouts. “An Interface Company” shouldn’t be typed out using Worchester as the letterforms have been customized and spacing has been refined. Interface should always be set using the Interface logotype. When “An Interface Company” lives separately from the FLOR logotype, it can use a single line layout. 
