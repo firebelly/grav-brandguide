@@ -315,10 +315,13 @@
 .subnested-modulars {
   .section-title {
     @include h2;
-    margin-bottom: #{$vertical-beat};
+    margin-bottom: #{$vertical-beat * 2};
   }
   .subpage-content {
     margin-bottom: $global-padding;
+    .sidenote {
+      margin-top: -#{$vertical-beat * 4};
+    }
   }
 }
 

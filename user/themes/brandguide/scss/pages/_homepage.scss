@@ -19,9 +19,11 @@
 
 // Features
 $imgWidth: 510px;
+$hugeBp: 1295px;
 
 .feature {
   z-index: 1;
+  cursor: pointer;
   overflow: hidden;
   position: relative;
   position: relative;
@@ -38,7 +40,18 @@ $imgWidth: 510px;
     z-index: 1;
     @include clearfix;
     position: relative;
-    padding: 18px 0 $global-padding;
+    padding: #{$vertical-beat * 4} 0 $global-padding;
+  }
+
+  .explore-link,
+  .feature-title {
+    @include min-screen($hugeBp) {
+      &:hover {
+        .explore-arrow::after {
+          animation: exploreHover 1s linear infinite;
+        }
+      }
+    }
   }
 
   .explore-link {
@@ -46,60 +59,65 @@ $imgWidth: 510px;
     position: relative;
     margin: 0 0 0 35px;
     text-decoration: none;
-    .explore-arrow {
-      top: 2px;
-      left: 100%;
-      position: absolute;
-      padding-left: #{$vertical-beat * .5};
-      &::after {
-        top: 0;
-        left: 100%;
-        width: 8px;
-        height: 8px;
-        content: '';
-        position: absolute;
-        border-style: solid;
-        transform: rotate(-45deg);
-        border-width: 0 1px 1px 0;
-      }
-    }
 
     @include min-screen(#{$imgWidth + 200}) {
+      display: none;
       margin-left: 0;
       margin-right: $global-padding;
-      &:hover {
-        .explore-arrow::after {
-          animation: exploreHover 1s linear infinite;
-        }
-      }
-
-      .explore-arrow {
-        left: 0;
-        top: 100%;
-        width: 100%;  
-        padding-top: #{$vertical-beat * .5};
-        &::after {
-          top: 100%;
-          width: 15px;
-          height: 15px;
-          left: calc(50% - 10px);
-          transform: rotate(45deg);
-        }
-      }
     }
   }
 
   .feature-title {  
     @include h2;
-    max-width: 100px;
-    margin: -$vertical-beat 0 #{$vertical-beat * 2} 35px;
+    margin: #{$vertical-beat * 4} 0 #{$vertical-beat * 2} 35px;
+
+    a {
+      text-decoration: none;
+    }
 
     @include min-screen(#{$imgWidth + 200}) {
       @include h3;
       max-width: none;
-
+      left: calc((100% * 9 / 20) + 100px);
+      
       .secondary-color {
         color: inherit!important;
+      }
+    }
+  }
+
+  .explore-arrow {
+    top: 3px;
+    left: 100%;
+    position: absolute;
+    padding-left: #{$vertical-beat * .5};
+    &::after {
+      top: 0;
+      left: 100%;
+      width: 8px;
+      height: 8px;
+      content: '';
+      position: absolute;
+      border-style: solid;
+      transform: rotate(-45deg);
+      border-width: 0 1px 1px 0;
+    }
+
+    @include min-screen(#{$imgWidth + 200}) {
+      top: 6px;
+    }
+
+    @include min-screen($hugeBp) {
+      left: 0;
+      top: 100%;
+      width: 100%;  
+      padding-top: #{$vertical-beat * .5};
+      &::after {
+        top: 100%;
+        width: 15px;
+        height: 15px;
+        left: calc(50% - 10px);
+        transform: rotate(45deg);
       }
     }
   }
@@ -160,13 +178,9 @@ $imgWidth: 510px;
       margin-right: 0;
       transform: translateX(-100%);
       left: calc((100% * 9 / 20) + 305px);
-      .explore-arrow {
-        padding-top: #{$vertical-beat * .5};
-      }
     }
     .feature-title {
       margin-left: 0;
-      left: calc((100% * 9 / 20) - 200px);
     }
 
     .feature-foreground {
@@ -181,6 +195,9 @@ $imgWidth: 510px;
       .feature-foreground {
         left: calc((100% * 9 / 20) - 305px); 
       }
+      .feature-title {
+        left: calc((100% * 9 / 20) - 200px);
+      }
       .feature-background {
         right: 0;
         left: auto;
@@ -189,7 +206,7 @@ $imgWidth: 510px;
     }
   }
 
-  @include min-screen(1295px) {
+  @include min-screen($hugeBp) {
     .explore-link,
     .feature-title {
       top: auto;

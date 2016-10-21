@@ -26,6 +26,7 @@ var FB = (function($) {
     _initIsotope();
     _initLightbox();
     _initPageNav();
+    _initBigClicky();
 
     // Esc handlers
     $(document).keyup(function(e) {
@@ -237,6 +238,23 @@ var FB = (function($) {
       $('.page-nav .colorbar').addClass('background-' + $(this).data('color') + '-override');
     }, function() {
       $('.page-nav .colorbar').removeClass('background-' + $(this).data('color') + '-override');
+    });
+  }
+
+  function _initBigClicky() {
+    $(document).on('click', '.feature', function(e) {
+      if (!$(e.target).is('a')) {
+        e.preventDefault();
+        var link = $(this).find('a');
+        var href = link.attr('href');
+        if (href) {
+          if (e.metaKey || link.attr('target')) {
+            window.open(href);
+          } else {
+            location.href = href;
+          }
+        }
+      }
     });
   }
 

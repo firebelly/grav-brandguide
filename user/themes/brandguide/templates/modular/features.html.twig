@@ -5,7 +5,7 @@
   {{ dump(page.media[header.backgroundImage]) }}
   <div class="-inner">
     <div class="feature-foreground"><span class="small">{{ page.media[header.foregroundSmallImage] }}</span><span class="large">{{ page.media[header.foregroundImage] }}</span></div>
-    <h3 class="feature-title"><span class="secondary-color" style="color:{{ page.header.sectionSecondaryTextColor }};">{{ page.title }}</span></h3>
+    <h3 class="feature-title"><a href="{{ page.header.pageLink }}"><span class="secondary-color" style="color:{{ page.header.sectionSecondaryTextColor }};">{{ page.title }}</span><span class="explore-arrow"></span></a></h3>
     <a class="explore-link" href="{{ page.header.pageLink }}">Explore<span class="explore-arrow"></span></a>
   </div>
 </div>

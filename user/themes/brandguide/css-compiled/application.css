@@ -1498,9 +1498,11 @@ body.color .subnested-modular {
       margin-bottom: 100px; } }
 
 .subnested-modulars .section-title {
-  margin-bottom: 10px; }
+  margin-bottom: 20px; }
 .subnested-modulars .subpage-content {
   margin-bottom: 50px; }
+  .subnested-modulars .subpage-content .sidenote {
+    margin-top: -40px; }
 
 .nested-modular {
   padding: 40px 0;
@@ -1595,6 +1597,7 @@ body.color .subnested-modular {
 
 .feature {
   z-index: 1;
+  cursor: pointer;
   overflow: hidden;
   position: relative;
   position: relative;
@@ -1608,7 +1611,7 @@ body.color .subnested-modular {
     z-index: 1;
     *zoom: 1;
     position: relative;
-    padding: 18px 0 50px; }
+    padding: 40px 0 50px; }
     .feature .-inner:before, .feature .-inner:after {
       content: "\0020";
       display: block;
@@ -1616,53 +1619,62 @@ body.color .subnested-modular {
       overflow: hidden; }
     .feature .-inner:after {
       clear: both; }
+  @media screen and (min-width: 1295px) {
+    .feature .explore-link:hover .explore-arrow::after,
+    .feature .feature-title:hover .explore-arrow::after {
+      animation: exploreHover 1s linear infinite; } }
   .feature .explore-link {
     position: relative;
     margin: 0 0 0 35px;
     text-decoration: none; }
-    .feature .explore-link .explore-arrow {
-      top: 2px;
-      left: 100%;
-      position: absolute;
-      padding-left: 5px; }
-      .feature .explore-link .explore-arrow::after {
-        top: 0;
-        left: 100%;
-        width: 8px;
-        height: 8px;
-        content: '';
-        position: absolute;
-        border-style: solid;
-        transform: rotate(-45deg);
-        border-width: 0 1px 1px 0; }
     @media screen and (min-width: 710px) {
       .feature .explore-link {
+        display: none;
         margin-left: 0;
-        margin-right: 50px; }
-        .feature .explore-link:hover .explore-arrow::after {
-          animation: exploreHover 1s linear infinite; }
-        .feature .explore-link .explore-arrow {
-          left: 0;
-          top: 100%;
-          width: 100%;
-          padding-top: 5px; }
-          .feature .explore-link .explore-arrow::after {
-            top: 100%;
-            width: 15px;
-            height: 15px;
-            left: calc(50% - 10px);
-            transform: rotate(45deg); } }
+        margin-right: 50px; } }
   .feature .feature-title {
-    max-width: 100px;
-    margin: -10px 0 20px 35px; }
+    margin: 40px 0 20px 35px; }
+    .feature .feature-title a {
+      text-decoration: none; }
     @media screen and (min-width: 710px) {
       .feature .feature-title {
         letter-spacing: .15em;
         text-transform: uppercase;
         font: normal 12px/20px "Replica-Bold", sans-serif;
-        max-width: none; }
+        max-width: none;
+        left: calc((100% * 9 / 20) + 100px); }
         .feature .feature-title .secondary-color {
           color: inherit !important; } }
+  .feature .explore-arrow {
+    top: 3px;
+    left: 100%;
+    position: absolute;
+    padding-left: 5px; }
+    .feature .explore-arrow::after {
+      top: 0;
+      left: 100%;
+      width: 8px;
+      height: 8px;
+      content: '';
+      position: absolute;
+      border-style: solid;
+      transform: rotate(-45deg);
+      border-width: 0 1px 1px 0; }
+    @media screen and (min-width: 710px) {
+      .feature .explore-arrow {
+        top: 6px; } }
+    @media screen and (min-width: 1295px) {
+      .feature .explore-arrow {
+        left: 0;
+        top: 100%;
+        width: 100%;
+        padding-top: 5px; }
+        .feature .explore-arrow::after {
+          top: 100%;
+          width: 15px;
+          height: 15px;
+          left: calc(50% - 10px);
+          transform: rotate(45deg); } }
   .feature .feature-foreground {
     top: 0;
     left: 0;
@@ -1707,11 +1719,8 @@ body.color .subnested-modular {
         margin-right: 0;
         transform: translateX(-100%);
         left: calc((100% * 9 / 20) + 305px); }
-        .feature .explore-link .explore-arrow {
-          padding-top: 5px; }
       .feature .feature-title {
-        margin-left: 0;
-        left: calc((100% * 9 / 20) - 200px); }
+        margin-left: 0; }
       .feature .feature-foreground {
         margin-bottom: 0;
         left: calc((100% * 9 / 20) - 205px);
@@ -1720,6 +1729,8 @@ body.color .subnested-modular {
         display: block; }
       .feature:nth-of-type(even) .feature-foreground {
         left: calc((100% * 9 / 20) - 305px); }
+      .feature:nth-of-type(even) .feature-title {
+        left: calc((100% * 9 / 20) - 200px); }
       .feature:nth-of-type(even) .feature-background {
         right: 0;
         left: auto;
