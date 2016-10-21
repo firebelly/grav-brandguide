@@ -729,14 +729,17 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   transform: rotate(-45deg); }
 
 .button {
-  will-change: color;
+  color: #757C78;
   display: inline-block;
   text-decoration: none;
-  border: 1px solid #353d38;
-  transition: color .2s ease-out;
-  padding: 15px 15px 12.5px; }
+  border: 1px solid #757C78;
+  will-change: color, background, border-color;
+  padding: 15px 15px 12.5px;
+  transition: color .2s ease-out, background .2s ease-out, border-color .2s ease-out; }
   .button:hover, .button:focus {
-    color: #757C78; }
+    color: #faf9f6;
+    background: #353d38;
+    border-color: #353d38; }
 
 *, *::before, *::after {
   box-sizing: inherit; }

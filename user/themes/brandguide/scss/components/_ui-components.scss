@@ -126,14 +126,17 @@
 
 .button {
   @extend .h3;
-  will-change: color;
+  color: $black-light;
   display: inline-block;
   text-decoration: none;
-  border: 1px solid $black;
-  transition: color .2s ease-out;
+  border: 1px solid $black-light;
+  will-change: color, background, border-color;
   padding: #{$vertical-beat * 1.5} #{$vertical-beat * 1.5} #{$vertical-beat * 1.25};
+  transition: color .2s ease-out, background .2s ease-out, border-color .2s ease-out;
   &:hover,
   &:focus {
-    color: $black-light;
+    color: $white-alt;
+    background: $black;
+    border-color: $black;
   }
 }
