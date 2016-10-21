@@ -1,4 +1,4 @@
-title: Brandguide
+title: 'FLOR Brand Guide'
 author:
   name: Firebelly
   email: developer@firebellydesign.com
@@ -6,7 +6,7 @@ taxonomies:
   - category
   - tag
 metadata:
-  description: 'Firebelly Brand Guide'
+  description: 'FLOR Brand Guide'
 summary:
   enabled: true
   format: short
