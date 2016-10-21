@@ -1038,7 +1038,7 @@ a.logo {
       position: absolute;
       top: 10px;
       right: 10px;
-      border: 1px solid #353d38;
+      border: 1px solid #000;
       transition: border .2s ease-out; }
       .colorpalettes .swatch .plus::before, .colorpalettes .swatch .plus::after {
         left: 4px;
@@ -1046,7 +1046,7 @@ a.logo {
         height: 1px;
         width: 10px;
         content: '';
-        background: #353d38;
+        background: #000;
         position: absolute;
         transition: background .2s ease-out; }
       .colorpalettes .swatch .plus::after {
@@ -1096,6 +1096,8 @@ a.logo {
     display: flex;
     flex-wrap: wrap;
     cursor: default; }
+    .colorpalettes.colorways .colorway-swatch::before {
+      display: none; }
     .colorpalettes.colorways .colorway-swatch .colorway-color {
       height: 0;
       max-width: 50%;
