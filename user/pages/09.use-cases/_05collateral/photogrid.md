@@ -1,5 +1,5 @@
 ---
-title: Packaging
+title: Collateral
 sidenote: '5 / 5'
 ---
 
