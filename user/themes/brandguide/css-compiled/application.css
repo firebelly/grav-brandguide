@@ -1743,6 +1743,12 @@ body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .s
     margin-right: 150px; } }
 
 /* Logotypes*/
+.brand-typefaces .replica-pro-intro .section-title {
+  font-family: "Replica Pro", "Helvetica", sans-serif; }
+.brand-typefaces .pitch-intro .section-title {
+  font-weight: 500;
+  font-family: "Pitch", "Courier New", mono; }
+
 .childpage.flor-mono-characters {
   line-height: 1;
   padding-left: 0;

@@ -1,0 +1,16 @@
+// Typography Page
+
+.brand-typefaces {
+  .replica-pro-intro {
+    .section-title {
+      font-family: $font-sans;
+    }
+  }
+
+  .pitch-intro {
+    .section-title {
+      font-weight: 500;
+      font-family: $font-mono;
+    }
+  }
+}
