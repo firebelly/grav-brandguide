@@ -1,6 +1,6 @@
 ---
 title: Tagline
-sidenote: "2 / 3<br>\r\n—<br>\r\nBrand introduction,<br>\r\nHigh Impact Moment"
+sidenote: "2 / 3<br>\r\n—<br>\r\nBrand introduction,<br>\r\nhigh impact moment"
 content:
     items: '@self.modular'
     order:

@@ -1,6 +1,6 @@
 ---
 title: 'Secondary Vertical'
-sidenote: "2 × 3<br>\r\n—<br>\r\nSecondary<br>\r\nVertical"
+sidenote: "2 × 3<br>\r\n—<br>\r\nSecondary<br>\r\nvertical"
 sectionBrandColor: primary
 ---
 

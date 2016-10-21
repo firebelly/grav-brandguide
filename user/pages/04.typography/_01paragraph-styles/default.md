@@ -1,6 +1,6 @@
 ---
 title: 'Paragraph Styles'
-sidenote: "1 / 2 <br>\r\n— <br>\r\nPrint-Ready<br> Styles"
+sidenote: "1 / 2 <br>\r\n— <br>\r\nPrint-ready<br> styles"
 sectionBrandColor: primary
 ---
 

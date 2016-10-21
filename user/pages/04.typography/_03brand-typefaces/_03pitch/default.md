@@ -1,6 +1,6 @@
 ---
 title: Pitch
-sidenote: "3 / 3<br>\r\n—<br>\r\nDiagrammatical,<br>\r\nNumerical<br>\r\n+ Specification<br>\r\nUse Cases"
+sidenote: "3 / 3<br>\r\n—<br>\r\nDiagrammatical,<br>\r\nnumerical<br>\r\n+ specification<br>\r\nuse cases"
 sectionBrandColor: primary
 ---
 

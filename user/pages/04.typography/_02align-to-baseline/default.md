@@ -1,6 +1,6 @@
 ---
 title: 'Align to Baseline'
-sidenote: "2 / 2<br>\r\n—<br>\r\nConsistent<br>Alignment"
+sidenote: "2 / 2<br>\r\n—<br>\r\nConsistent<br>alignment"
 sectionBrandColor: primary
 ---
 

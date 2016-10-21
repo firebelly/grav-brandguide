@@ -1,6 +1,6 @@
 ---
 title: Interface
-sidenote: "3 / 3<br>\r\n—<br>\r\nUnified Brand<br>\r\nConcept Reflective"
+sidenote: "3 / 3<br>\r\n—<br>\r\nUnified brand<br>\r\nconcept reflective"
 content:
     items: '@self.modular'
     order:

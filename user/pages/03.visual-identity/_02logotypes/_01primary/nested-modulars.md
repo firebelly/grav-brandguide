@@ -1,6 +1,6 @@
 ---
 title: Primary
-sidenote: "1  /  3<br>\r\n—<br>\r\nMinimal FLOR Awareness,<br>\r\nMaximum Presence<br>"
+sidenote: "1  /  3<br>\r\n—<br>\r\nMinimal flor awareness,<br>\r\nmaximum presence<br>"
 sectionBrandColor: primary
 content:
     items: '@self.modular'

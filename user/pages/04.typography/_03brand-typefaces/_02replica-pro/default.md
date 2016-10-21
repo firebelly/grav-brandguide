@@ -1,6 +1,6 @@
 ---
 title: 'Replica Pro'
-sidenote: "2 / 3<br>\r\n—<br>\r\nInline Title <br>\r\n+ Supporting Detail<br>\r\nUse Cases"
+sidenote: "2 / 3<br>\r\n—<br>\r\nInline title <br>\r\n+ supporting detail<br>\r\nuse cases"
 sectionBrandColor: primary
 ---
 

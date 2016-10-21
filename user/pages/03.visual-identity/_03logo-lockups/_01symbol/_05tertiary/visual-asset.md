@@ -1,6 +1,6 @@
 ---
 title: Tertiary
-sidenote: "2 × 2<br>\r\n—<br>\r\nTertiary"
+sidenote: "2 × 2<br>\r\n—<br>\r\ntertiary"
 sectionBrandColor: primary
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'Worchester EF'
-sidenote: "1 / 3<br>\r\n—<br>\r\nPrincipal Type.<br>\r\nHeadline + Body<br>\r\nUse Cases"
+sidenote: "1 / 3<br>\r\n—<br>\r\nPrincipal type.<br>\r\nheadline + body<br>\r\nuse cases"
 sectionBrandColor: primary
 ---
 

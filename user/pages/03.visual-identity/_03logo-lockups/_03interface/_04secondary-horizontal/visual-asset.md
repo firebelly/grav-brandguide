@@ -1,7 +1,7 @@
 ---
 title: 'Secondary Horizontal'
 downloadFile: interface-secondary-horizontal.svg
-sidenote: "3 x 2<br>\r\n—<br>\r\nSecondary<br>\r\nHorizontal"
+sidenote: "3 x 2<br>\r\n—<br>\r\nSecondary<br>\r\nhorizontal"
 sectionBrandColor: primary
 ---
 
