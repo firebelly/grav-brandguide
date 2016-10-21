@@ -201,7 +201,7 @@
       }
 
       > a {
-        @include h1;
+        @include h2;
         display: block;
         @include media-md {        
           &::after {
@@ -223,6 +223,7 @@
         }
 
         li {
+          margin-bottom: $vertical-beat;
           a {          
             @extend .h3;
             br {

@@ -586,10 +586,10 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   src: url("../fonts/flormonospacev3.01-regular-webfont.woff2") format("woff2"), url("../fonts/flormonospacev3.01-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-.h1, .main-nav .nav-list > li > a, .page-section .page-title, .page-section .childpage.title-section h3, .page-section .section-title, .childpage.half-image .section-title, .childpage.nested-modulars > .subpage-content > .section-title {
+.h1, .page-section .page-title, .page-section .childpage.title-section h3, .page-section .section-title, .childpage.half-image .section-title, .childpage.nested-modulars > .subpage-content > .section-title {
   font: 700 42px/40px "worchesteref", serif; }
 
-.h2, body.color .childpage:not(.title-section) .section-title, body.color .childpage.nested-modulars > .subpage-content > .section-title, .childpage.voice-and-tone .keyword, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .subnested-modulars .section-title, .page-nav {
+.h2, .main-nav .nav-list > li > a, body.color .childpage:not(.title-section) .section-title, body.color .childpage.nested-modulars > .subpage-content > .section-title, .childpage.voice-and-tone .keyword, .childpage.font-specs .user-content h3, .subpage-content .content .nested-title, .subnested-modulars .section-title, .page-nav {
   font: 700 28px/30px "worchesteref", serif; }
 
 .h3, .button, .header h2, .main-nav .nav-list > li ol li a, .chocolat-wrapper .lightbox-nav div, .page-section .page-small-title, .page-section .nested-title, .childpage.voice-and-tone .not, .user-content h3, .section-intro h3, .page-nav .label, .feature .explore-link,
@@ -942,8 +942,8 @@ a.logo {
         display: block; }
         @media screen and (max-width: 480px) {
           .main-nav .nav-list > li > a {
-            font-size: 28px;
-            line-height: 30px; } }
+            font-size: 18px;
+            line-height: 20px; } }
         @media screen and (min-width: 768px) {
           .main-nav .nav-list > li > a::after {
             width: 6px;
@@ -959,8 +959,10 @@ a.logo {
         @media screen and (min-width: 768px) {
           .main-nav .nav-list > li ol {
             display: block; } }
-        .main-nav .nav-list > li ol li a br {
-          display: none; }
+        .main-nav .nav-list > li ol li {
+          margin-bottom: 10px; }
+          .main-nav .nav-list > li ol li a br {
+            display: none; }
 
 .colorpalettes {
   *zoom: 1; }
