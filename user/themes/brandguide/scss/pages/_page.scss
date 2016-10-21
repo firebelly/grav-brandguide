@@ -51,8 +51,8 @@
   .section-title {
     @include h1;
     margin-top: 0;
-    letter-spacing: 0;
     text-transform: none;
+    letter-spacing: .007em;
   }
 
   .nested-title {

@@ -1328,8 +1328,8 @@ body.color .subnested-modular {
         padding-left: 0; } }
 .page-section .section-title {
   margin-top: 0;
-  letter-spacing: 0;
-  text-transform: none; }
+  text-transform: none;
+  letter-spacing: .007em; }
   @media screen and (max-width: 480px) {
     .page-section .section-title {
       font-size: 28px;
