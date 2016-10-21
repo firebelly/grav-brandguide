@@ -179,6 +179,7 @@
     text-align: right;
     position: absolute;
     padding-right: 20px;
+    letter-spacing: .033em;
     font-family: $font-sans;
     @include media-md {
       padding-right: 0;

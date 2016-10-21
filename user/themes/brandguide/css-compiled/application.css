@@ -1428,6 +1428,7 @@ body.color .subnested-modular {
     text-align: right;
     position: absolute;
     padding-right: 20px;
+    letter-spacing: .033em;
     font-family: "Replica Pro", "Helvetica", sans-serif; }
     @media screen and (min-width: 768px) {
       .subpage-content .sidenote {
