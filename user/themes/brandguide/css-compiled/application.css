@@ -1792,7 +1792,12 @@ body.color .subnested-modular {
 body.visual.identity .subnested-modulars .subnested-modulars .subpage-content p {
   max-width: none; }
 body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
+  margin-top: 0;
   margin-right: 30px; }
+body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .button {
+  opacity: .25;
+  cursor: default;
+  pointer-events: none; }
 @media screen and (min-width: 768px) {
   body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
     float: left;
