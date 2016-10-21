@@ -1361,7 +1361,9 @@ body.color .subnested-modular {
 .childpage.font-specs {
   padding-left: 0; }
   .childpage.font-specs .user-content h3 {
-    margin: 0 0 .5em; }
+    margin: 0 0 .5em;
+    letter-spacing: 0;
+    text-transform: none; }
     @media screen and (max-width: 480px) {
       .childpage.font-specs .user-content h3 {
         font-size: 18px;

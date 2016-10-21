@@ -113,6 +113,8 @@
     h3 {
       @include h2;
       margin: 0 0 .5em;
+      letter-spacing: 0;
+      text-transform: none;
     }
   }
 
