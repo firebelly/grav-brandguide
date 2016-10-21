@@ -65,6 +65,7 @@
 .childpage.half-image {
   .section-title {
     @include h1;
+    margin-bottom: #{$vertical-beat * 3};
   }
 
   @include media-md {

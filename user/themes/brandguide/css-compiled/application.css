@@ -1337,10 +1337,12 @@ body.color .subnested-modular {
 .page-section .nested-title {
   margin-top: 0; }
 
-@media screen and (max-width: 480px) {
-  .childpage.half-image .section-title {
-    font-size: 28px;
-    line-height: 30px; } }
+.childpage.half-image .section-title {
+  margin-bottom: 30px; }
+  @media screen and (max-width: 480px) {
+    .childpage.half-image .section-title {
+      font-size: 28px;
+      line-height: 30px; } }
 @media screen and (min-width: 768px) {
   .childpage.half-image .content {
     float: left;
