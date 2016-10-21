@@ -25,7 +25,8 @@ $imgWidth: 510px;
   overflow: hidden;
   position: relative;
   position: relative;
-  @include media-md {
+  margin-right: #{$global-padding + 2};
+  @include min-screen(#{$imgWidth + 200}) {
     margin-right: #{$global-padding * 3};
   }
   
@@ -37,46 +38,70 @@ $imgWidth: 510px;
     z-index: 1;
     @include clearfix;
     position: relative;
-    padding: #{$global-padding - 5} 0;
+    padding: 18px 0 $global-padding;
   }
 
-  .explore-link,
-  .feature-title {
-    margin: 0;
-    @extend .h3;
-  }
   .explore-link {
-    float: right;
+    @extend .h3;
     position: relative;
+    margin: 0 0 0 35px;
     text-decoration: none;
-    margin-right: $global-padding;
     .explore-arrow {
-      left: 0;
-      top: 100%;
-      width: 100%;
+      top: 2px;
+      left: 100%;
       position: absolute;
-      padding-top: #{$vertical-beat * .5};
+      padding-left: #{$vertical-beat * .5};
       &::after {
-        top: 100%;
+        top: 0;
+        left: 100%;
+        width: 8px;
+        height: 8px;
         content: '';
-        width: 15px;
-        height: 15px;
         position: absolute;
         border-style: solid;
-        left: calc(50% - 10px);
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
         border-width: 0 1px 1px 0;
       }
     }
-    &:hover {
-      .explore-arrow::after {
-        animation: exploreHover 1s linear infinite;
+
+    @include min-screen(#{$imgWidth + 200}) {
+      margin-left: 0;
+      margin-right: $global-padding;
+      &:hover {
+        .explore-arrow::after {
+          animation: exploreHover 1s linear infinite;
+        }
+      }
+
+      .explore-arrow {
+        left: 0;
+        top: 100%;
+        width: 100%;  
+        padding-top: #{$vertical-beat * .5};
+        &::after {
+          top: 100%;
+          width: 15px;
+          height: 15px;
+          left: calc(50% - 10px);
+          transform: rotate(45deg);
+        }
       }
     }
   }
-  .feature-title {
-    float: left;
-    margin-left: $global-padding;
+
+  .feature-title {  
+    @include h2;
+    max-width: 100px;
+    margin: -$vertical-beat 0 #{$vertical-beat * 2} 35px;
+
+    @include min-screen(#{$imgWidth + 200}) {
+      @include h3;
+      max-width: none;
+
+      .secondary-color {
+        color: inherit!important;
+      }
+    }
   }
 
   .feature-foreground {
@@ -84,11 +109,25 @@ $imgWidth: 510px;
     left: 0;
     z-index: 1;
     width: 100%;
+    padding: 0 35px;
     position: relative;
     max-width: $imgWidth;
-    margin-bottom: #{$global-padding - 5};
     img {
       vertical-align: top;
+    }
+    .large {
+      display: none;
+    }
+    @include min-screen(#{$imgWidth + 200}) {
+      padding: 0;
+      margin-bottom: #{$global-padding - 5};
+
+      .small {
+        display: none;
+      }
+      .large {
+        display: block;
+      }
     }
   }
 

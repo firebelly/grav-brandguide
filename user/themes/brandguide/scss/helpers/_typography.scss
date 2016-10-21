@@ -51,17 +51,15 @@ $flor-mono: 'Flor Mono';
 
 @mixin h1 {
   @extend .h1;
-  @include max-screen($breakpoint-sm) {
-    font-size: 28px;
-    line-height: 30px;
-  }
 }
 @mixin h2 {
   @extend .h2;
-  @include max-screen($breakpoint-sm) {
-    font-size: 18px;
-    line-height: 20px;
-  }
+}
+
+@mixin h3 {
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font: 700 12px/20px $font-sans;
 }
 
 // Baseline

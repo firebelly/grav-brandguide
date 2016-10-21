@@ -32,9 +32,20 @@ form:
               acccept:
                 - .png
                 - .jpg
+            header.foregroundSmallImage:
+              type: filepicker
+              folder: '@self'
+              label: Small screen Foreground Image
+              preview_images: true
+              acccept:
+                - .png
+                - .jpg
             header.sectionBackgroundColor:
               type: colorpicker
               label: Section Background Color
             header.sectionTextColor:
               type: colorpicker
               label: Section Text Color
+            header.sectionSecondaryTextColor:
+              type: colorpicker
+              label: Secondary Section Text Color
