@@ -1438,7 +1438,8 @@ body.color .subnested-modular {
 .user-content p {
   margin-top: 0;
   max-width: 580px;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  letter-spacing: .028em; }
 .user-content img {
   width: 100%;
   max-width: 100%; }
@@ -1455,6 +1456,8 @@ body.color .subnested-modular {
     max-width: 400px; }
     .section-intro .page-content > p:first-of-type {
       margin-top: 0; }
+  .section-intro p {
+    letter-spacing: .028em; }
   .section-intro .intro-image {
     display: none; }
   .section-intro h3 {

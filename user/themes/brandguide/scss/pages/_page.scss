@@ -196,6 +196,7 @@
     margin-top: 0;
     max-width: 580px;
     margin-bottom: 2em;
+    letter-spacing: .028em;
   }
   img {
     width: 100%;
@@ -219,6 +220,10 @@
     > p:first-of-type {
       margin-top: 0;
     }
+  }
+
+  p {
+    letter-spacing: .028em;
   }
 
   .intro-image {
