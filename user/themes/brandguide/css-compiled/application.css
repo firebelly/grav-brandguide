@@ -748,6 +748,7 @@ body {
   color: #363d39;
   background: #fff;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
   font: normal 14px/20px "worchesteref", serif; }
 
 .main-nav {
