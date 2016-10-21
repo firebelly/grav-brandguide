@@ -5,4 +5,4 @@ sidenote: "2 × 3 <br>\r\n—<br>\r\nSecondary<br>\r\nVertical"
 sectionBrandColor: primary
 ---
 
-![](secondary-vertical.svg)
+![](secondary-vertical.svg?resize=133)
