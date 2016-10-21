@@ -193,6 +193,10 @@
       -moz-columns: 4;
     }
 
+    li.selected > a {
+      color: $gray;
+    }
+
     a {
       will-change: color;
       transition: color .2s ease-out;

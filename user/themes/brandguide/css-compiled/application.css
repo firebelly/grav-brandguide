@@ -950,6 +950,8 @@ a {
         columns: 4;
         -webkit-columns: 4;
         -moz-columns: 4; } }
+    .main-nav .nav-list li.selected > a {
+      color: #bfbbbd; }
     .main-nav .nav-list a {
       will-change: color;
       transition: color .2s ease-out; }
