@@ -1746,14 +1746,6 @@ body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .s
     margin-right: 150px; } }
 
 /* Logotypes*/
-.logotypes .user-content p {
-  margin: 0; }
-.logotypes .user-content a {
-  margin: 0 20px 20px 0;
-  display: inline-block; }
-  .logotypes .user-content a.button {
-    margin-top: 40px; }
-
 .childpage.flor-mono-characters {
   line-height: 1;
   padding-left: 0;

@@ -25,18 +25,3 @@ body.visual.identity {
 }
 
 /* Logotypes*/
-
-.logotypes {
-  .user-content {
-    p {
-      margin: 0;
-    }
-    a {
-      margin: 0 20px 20px 0;
-      display: inline-block;
-      &.button {
-        margin-top: #{$vertical-beat * 4};
-      }
-    }
-  }
-}
