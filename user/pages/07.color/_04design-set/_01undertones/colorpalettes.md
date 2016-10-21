@@ -2,7 +2,7 @@
 title: Undertones
 colors:
     -
-        color: '#3c383e'
+        color: '#3C383E'
         colorLabel: 'Design Undertone 01'
     -
         color: '#847878'

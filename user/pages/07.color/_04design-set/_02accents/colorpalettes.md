@@ -5,7 +5,7 @@ colors:
         color: '#A1DBE4'
         colorLabel: 'Design Teal'
     -
-        color: '#70a4d8'
+        color: '#70A4D8'
         colorLabel: 'Design Blue'
     -
         color: '#FAB38B'

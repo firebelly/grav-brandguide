@@ -1,6 +1,6 @@
 ---
 title: 'FLOR Core'
-color: '#f1bd19'
+color: '#F1BD19'
 colorLabel: 'FLOR Core'
 sidenote: "1 / 3 <br>\r\n— <br>\r\nPrimary"
 body_classes: single-color
