@@ -357,12 +357,13 @@
   @include h2;
   
   .wrapper {
-    padding-top: 0;
+    display: flex;
     @include clearfix;
-    padding-bottom: 0;
     position: relative;
+    padding: 0 $global-padding 0 #{$global-padding / 2};
     @include media-md {
-      display: flex;
+      padding-left: $global-padding;
+      padding-right: $global-padding;
       &::before {      
         top: 0;
         left: 0;
@@ -382,16 +383,15 @@
   }
 
   .nav-button {
-    width: 50%;
+    width: auto;
     float: left;
     position: relative;
     text-decoration: none;
     display: inline-block;
     padding-bottom: #{$global-padding / 2};
     @include media-md {
-      width: auto;
       max-width: #{$column * 4};
-      flex-basis: #{$column * 4}; 
+      flex-basis: #{$column * 4};
     }
   }
 
@@ -414,7 +414,7 @@
 
   .prev {
     text-align: right;
-    padding-right: #{$global-padding / 2};
+    padding-right: $vertical-beat;
     .arrow {
       right: 100%;
       margin-right: $global-padding;
@@ -433,8 +433,8 @@
     }
   }
   .next {
+    padding-left: $vertical-beat; 
     border-left: 1px solid $black;
-    padding-left: #{$global-padding / 2}; 
     .arrow {
       left: 100%;
       transform: translateX(-20px);

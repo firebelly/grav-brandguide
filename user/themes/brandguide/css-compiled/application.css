@@ -1532,10 +1532,10 @@ body.color .subnested-modular {
   position: relative; }
 
 .page-nav .wrapper {
-  padding-top: 0;
+  display: flex;
   *zoom: 1;
-  padding-bottom: 0;
-  position: relative; }
+  position: relative;
+  padding: 0 50px 0 25px; }
   .page-nav .wrapper:before, .page-nav .wrapper:after {
     content: "\0020";
     display: block;
@@ -1545,7 +1545,8 @@ body.color .subnested-modular {
     clear: both; }
   @media screen and (min-width: 768px) {
     .page-nav .wrapper {
-      display: flex; }
+      padding-left: 50px;
+      padding-right: 50px; }
       .page-nav .wrapper::before {
         top: 0;
         left: 0;
@@ -1559,7 +1560,7 @@ body.color .subnested-modular {
     .page-nav .wrapper::before {
       width: calc(80% - 64px); } }
 .page-nav .nav-button {
-  width: 50%;
+  width: auto;
   float: left;
   position: relative;
   text-decoration: none;
@@ -1567,7 +1568,6 @@ body.color .subnested-modular {
   padding-bottom: 25px; }
   @media screen and (min-width: 768px) {
     .page-nav .nav-button {
-      width: auto;
       max-width: 20%;
       flex-basis: 20%; } }
 .page-nav .label {
@@ -1584,7 +1584,7 @@ body.color .subnested-modular {
       display: block; } }
 .page-nav .prev {
   text-align: right;
-  padding-right: 25px; }
+  padding-right: 10px; }
   .page-nav .prev .arrow {
     right: 100%;
     margin-right: 50px;
@@ -1596,8 +1596,8 @@ body.color .subnested-modular {
     .page-nav .prev {
       padding-right: 50px; } }
 .page-nav .next {
-  border-left: 1px solid #353d38;
-  padding-left: 25px; }
+  padding-left: 10px;
+  border-left: 1px solid #353d38; }
   .page-nav .next .arrow {
     left: 100%;
     transform: translateX(-20px);
