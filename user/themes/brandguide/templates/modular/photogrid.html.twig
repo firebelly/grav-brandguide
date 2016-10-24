@@ -16,8 +16,8 @@
     <div class="grid-sizer"></div>
     <div class="gutter-sizer"></div>
     {% for photo in page.media.images %}
-      <a class="photo chocolat-image" href="{{ photo.url }}">
-        {{ photo }}
+      <a class="photo chocolat-image" href="{{ photo.quality(80).url }}">
+        {{ photo.quality(80) }}
       </a>
     {% endfor %}
   </div>

@@ -13,7 +13,7 @@
       {% endif %}
         <div class="intro-image">
           {% if page.media.images %}
-            {{ page.media.images|first }}
+            {{ page.media.images|first.quality(80) }}
           {% else %}
             <img aria-hidden="true" src="{{ url('theme://images/blank-grid.png') }}">
           {% endif %}
