@@ -10,17 +10,25 @@ body.visual.identity {
       width: calc(100% + #{$global-padding * 2});
     }
     .subpage-content {
+      padding-left: $global-padding;
+
       p {
         max-width: none;
       }
       .sidenote {
         margin-top: 0;
-        margin-right: #{$vertical-beat * 3};
+        display: block;
+        margin-right: $vertical-beat;
       }
       .button {
         opacity: .25;
         cursor: default;
         pointer-events: none;
+      }
+      @include media-sm {
+        .sidenote {
+          margin-right: #{$vertical-beat * 3};
+        }
       }
       @include media-md {
         float: left;

@@ -830,6 +830,9 @@ a {
       background: #353d38;
       position: absolute;
       height: 25px; }
+    @media screen and (max-height: 480px) {
+      .header h2 {
+        display: none; } }
   @media screen and (min-width: 768px) {
     .header {
       width: 100px; }
@@ -1314,11 +1317,14 @@ body.color .subnested-modular {
   background-size: 6px 1px;
   background-image: linear-gradient(to right, #353d38 10%, rgba(255, 255, 255, 0) 0%);
   background-image: -webkit-linear-gradient(to right, #353d38 10%, rgba(255, 255, 255, 0) 0%);
-  padding: 50px 0 50px 75px; }
+  padding: 50px 0 50px 0; }
   .page-section .childpage:last-of-type {
     background: none; }
   .page-section .childpage > .subpage-content > .nested-modular > .content > h3 {
     display: none; }
+  @media screen and (min-width: 480px) {
+    .page-section .childpage {
+      padding-left: 75px; } }
   @media screen and (min-width: 768px) {
     .page-section .childpage {
       padding: 100px 0 100px 20%; } }
@@ -1413,6 +1419,7 @@ body.color .subnested-modular {
     top: 0;
     right: 100%;
     width: 110px;
+    display: none;
     font-size: 12px;
     line-height: 20px;
     text-align: right;
@@ -1420,6 +1427,9 @@ body.color .subnested-modular {
     padding-right: 20px;
     letter-spacing: .033em;
     font-family: "Replica-Regular", sans-serif; }
+    @media screen and (min-width: 480px) {
+      .subpage-content .sidenote {
+        display: block; } }
     @media screen and (min-width: 768px) {
       .subpage-content .sidenote {
         padding-right: 0;
@@ -1791,19 +1801,25 @@ body.color .subnested-modular {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: calc(100% + 100px); } }
-body.visual.identity .subnested-modulars .subnested-modulars .subpage-content p {
-  max-width: none; }
-body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
-  margin-top: 0;
-  margin-right: 30px; }
-body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .button {
-  opacity: .25;
-  cursor: default;
-  pointer-events: none; }
-@media screen and (min-width: 768px) {
-  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
-    float: left;
-    margin-right: 100px; } }
+body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
+  padding-left: 50px; }
+  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content p {
+    max-width: none; }
+  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
+    margin-top: 0;
+    display: block;
+    margin-right: 10px; }
+  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .button {
+    opacity: .25;
+    cursor: default;
+    pointer-events: none; }
+  @media screen and (min-width: 480px) {
+    body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
+      margin-right: 30px; } }
+  @media screen and (min-width: 768px) {
+    body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
+      float: left;
+      margin-right: 100px; } }
 
 /* Logotypes*/
 .brand-typefaces .replica-pro-intro .section-title {

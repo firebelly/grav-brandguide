@@ -18,13 +18,17 @@
   
   .childpage {
     @include dots($black, 6px, bottom);
-    padding: $global-padding 0 $global-padding #{$global-padding * 1.5};
+    padding: $global-padding 0 $global-padding 0;
     &:last-of-type {
       background: none;
     }
 
     > .subpage-content > .nested-modular > .content > h3 {
       display: none;
+    }
+
+    @include media-sm {
+      padding-left: #{$global-padding * 1.5}
     }
 
     @include media-md {
@@ -174,6 +178,7 @@
     top: 0;
     right: 100%;
     width: 110px;
+    display: none;
     font-size: 12px;
     line-height: 20px;
     text-align: right;
@@ -181,6 +186,9 @@
     padding-right: 20px;
     letter-spacing: .033em;
     font-family: $font-sans;
+    @include media-sm {
+      display: block;
+    }
     @include media-md {
       padding-right: 0;
       margin-right: #{$column * 2.5};

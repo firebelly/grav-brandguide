@@ -42,6 +42,10 @@
       position: absolute;
       height: #{$global-padding / 2};
     }
+
+    @media screen and (max-height: $breakpoint-sm) {
+      display: none;
+    }
   }
 
   @include media-md {
