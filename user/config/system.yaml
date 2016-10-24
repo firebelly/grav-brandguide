@@ -73,7 +73,7 @@ cache:
   driver: auto
   prefix: g
   lifetime: 604800
-  gzip: false
+  gzip: true
 twig:
   cache: true
   debug: true
