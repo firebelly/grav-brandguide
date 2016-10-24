@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
+class ComposerStaticInit7110dc61338383a6a240f84b058bcd0f
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -26,6 +26,7 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
             'Seld\\CliPrompt\\' => 15,
         ),
@@ -39,6 +40,10 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
             'RocketTheme\\Toolbox\\DI\\' => 23,
             'RocketTheme\\Toolbox\\Blueprints\\' => 31,
             'RocketTheme\\Toolbox\\ArrayTraits\\' => 32,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
         ),
         'M' => 
         array (
@@ -86,6 +91,10 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
+        'Symfony\\Component\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
@@ -125,6 +134,10 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         'RocketTheme\\Toolbox\\ArrayTraits\\' => 
         array (
             0 => __DIR__ . '/..' . '/rockettheme/toolbox/ArrayTraits/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Monolog\\' => 
         array (
@@ -170,10 +183,6 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'Pimple' => 
             array (
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
@@ -295,6 +304,7 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         'Grav\\Common\\Data\\Validation' => __DIR__ . '/../..' . '/system/src/Grav/Common/Data/Validation.php',
         'Grav\\Common\\Data\\ValidationException' => __DIR__ . '/../..' . '/system/src/Grav/Common/Data/ValidationException.php',
         'Grav\\Common\\Debugger' => __DIR__ . '/../..' . '/system/src/Grav/Common/Debugger.php',
+        'Grav\\Common\\Errors\\BareHandler' => __DIR__ . '/../..' . '/system/src/Grav/Common/Errors/BareHandler.php',
         'Grav\\Common\\Errors\\Errors' => __DIR__ . '/../..' . '/system/src/Grav/Common/Errors/Errors.php',
         'Grav\\Common\\Errors\\SimplePageHandler' => __DIR__ . '/../..' . '/system/src/Grav/Common/Errors/SimplePageHandler.php',
         'Grav\\Common\\File\\CompiledFile' => __DIR__ . '/../..' . '/system/src/Grav/Common/File/CompiledFile.php',
@@ -308,6 +318,7 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         'Grav\\Common\\GPM\\Common\\Package' => __DIR__ . '/../..' . '/system/src/Grav/Common/GPM/Common/Package.php',
         'Grav\\Common\\GPM\\GPM' => __DIR__ . '/../..' . '/system/src/Grav/Common/GPM/GPM.php',
         'Grav\\Common\\GPM\\Installer' => __DIR__ . '/../..' . '/system/src/Grav/Common/GPM/Installer.php',
+        'Grav\\Common\\GPM\\Licenses' => __DIR__ . '/../..' . '/system/src/Grav/Common/GPM/Licenses.php',
         'Grav\\Common\\GPM\\Local\\AbstractPackageCollection' => __DIR__ . '/../..' . '/system/src/Grav/Common/GPM/Local/AbstractPackageCollection.php',
         'Grav\\Common\\GPM\\Local\\Package' => __DIR__ . '/../..' . '/system/src/Grav/Common/GPM/Local/Package.php',
         'Grav\\Common\\GPM\\Local\\Packages' => __DIR__ . '/../..' . '/system/src/Grav/Common/GPM/Local/Packages.php',
@@ -324,6 +335,7 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         'Grav\\Common\\Getters' => __DIR__ . '/../..' . '/system/src/Grav/Common/Getters.php',
         'Grav\\Common\\Grav' => __DIR__ . '/../..' . '/system/src/Grav/Common/Grav.php',
         'Grav\\Common\\GravTrait' => __DIR__ . '/../..' . '/system/src/Grav/Common/GravTrait.php',
+        'Grav\\Common\\Helpers\\Excerpts' => __DIR__ . '/../..' . '/system/src/Grav/Common/Helpers/Excerpts.php',
         'Grav\\Common\\Helpers\\Truncator' => __DIR__ . '/../..' . '/system/src/Grav/Common/Helpers/Truncator.php',
         'Grav\\Common\\Inflector' => __DIR__ . '/../..' . '/system/src/Grav/Common/Inflector.php',
         'Grav\\Common\\Iterator' => __DIR__ . '/../..' . '/system/src/Grav/Common/Iterator.php',
@@ -397,6 +409,7 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         'Grav\\Console\\Cli\\SandboxCommand' => __DIR__ . '/../..' . '/system/src/Grav/Console/Cli/SandboxCommand.php',
         'Grav\\Console\\ConsoleCommand' => __DIR__ . '/../..' . '/system/src/Grav/Console/ConsoleCommand.php',
         'Grav\\Console\\ConsoleTrait' => __DIR__ . '/../..' . '/system/src/Grav/Console/ConsoleTrait.php',
+        'Grav\\Console\\Gpm\\DirectInstallCommand' => __DIR__ . '/../..' . '/system/src/Grav/Console/Gpm/DirectInstallCommand.php',
         'Grav\\Console\\Gpm\\IndexCommand' => __DIR__ . '/../..' . '/system/src/Grav/Console/Gpm/IndexCommand.php',
         'Grav\\Console\\Gpm\\InfoCommand' => __DIR__ . '/../..' . '/system/src/Grav/Console/Gpm/InfoCommand.php',
         'Grav\\Console\\Gpm\\InstallCommand' => __DIR__ . '/../..' . '/system/src/Grav/Console/Gpm/InstallCommand.php',
@@ -406,6 +419,7 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         'Grav\\Console\\Gpm\\VersionCommand' => __DIR__ . '/../..' . '/system/src/Grav/Console/Gpm/VersionCommand.php',
         'Grav\\Console\\TerminalObjects\\Table' => __DIR__ . '/../..' . '/system/src/Grav/Console/TerminalObjects/Table.php',
         'Gregwar\\Cache\\Cache' => __DIR__ . '/..' . '/gregwar/cache/Gregwar/Cache/Cache.php',
+        'Gregwar\\Cache\\CacheInterface' => __DIR__ . '/..' . '/gregwar/cache/Gregwar/Cache/CacheInterface.php',
         'Gregwar\\Cache\\GarbageCollect' => __DIR__ . '/..' . '/gregwar/cache/Gregwar/Cache/GarbageCollect.php',
         'Gregwar\\Image\\Adapter\\Adapter' => __DIR__ . '/..' . '/gregwar/image/Gregwar/Image/Adapter/Adapter.php',
         'Gregwar\\Image\\Adapter\\AdapterInterface' => __DIR__ . '/..' . '/gregwar/image/Gregwar/Image/Adapter/AdapterInterface.php',
@@ -725,6 +739,23 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         'Symfony\\Component\\Console\\Style\\SymfonyStyle' => __DIR__ . '/..' . '/symfony/console/Style/SymfonyStyle.php',
         'Symfony\\Component\\Console\\Tester\\ApplicationTester' => __DIR__ . '/..' . '/symfony/console/Tester/ApplicationTester.php',
         'Symfony\\Component\\Console\\Tester\\CommandTester' => __DIR__ . '/..' . '/symfony/console/Tester/CommandTester.php',
+        'Symfony\\Component\\Debug\\BufferingLogger' => __DIR__ . '/..' . '/symfony/debug/BufferingLogger.php',
+        'Symfony\\Component\\Debug\\Debug' => __DIR__ . '/..' . '/symfony/debug/Debug.php',
+        'Symfony\\Component\\Debug\\DebugClassLoader' => __DIR__ . '/..' . '/symfony/debug/DebugClassLoader.php',
+        'Symfony\\Component\\Debug\\ErrorHandler' => __DIR__ . '/..' . '/symfony/debug/ErrorHandler.php',
+        'Symfony\\Component\\Debug\\ExceptionHandler' => __DIR__ . '/..' . '/symfony/debug/ExceptionHandler.php',
+        'Symfony\\Component\\Debug\\Exception\\ClassNotFoundException' => __DIR__ . '/..' . '/symfony/debug/Exception/ClassNotFoundException.php',
+        'Symfony\\Component\\Debug\\Exception\\ContextErrorException' => __DIR__ . '/..' . '/symfony/debug/Exception/ContextErrorException.php',
+        'Symfony\\Component\\Debug\\Exception\\FatalErrorException' => __DIR__ . '/..' . '/symfony/debug/Exception/FatalErrorException.php',
+        'Symfony\\Component\\Debug\\Exception\\FatalThrowableError' => __DIR__ . '/..' . '/symfony/debug/Exception/FatalThrowableError.php',
+        'Symfony\\Component\\Debug\\Exception\\FlattenException' => __DIR__ . '/..' . '/symfony/debug/Exception/FlattenException.php',
+        'Symfony\\Component\\Debug\\Exception\\OutOfMemoryException' => __DIR__ . '/..' . '/symfony/debug/Exception/OutOfMemoryException.php',
+        'Symfony\\Component\\Debug\\Exception\\UndefinedFunctionException' => __DIR__ . '/..' . '/symfony/debug/Exception/UndefinedFunctionException.php',
+        'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException' => __DIR__ . '/..' . '/symfony/debug/Exception/UndefinedMethodException.php',
+        'Symfony\\Component\\Debug\\FatalErrorHandler\\ClassNotFoundFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/ClassNotFoundFatalErrorHandler.php',
+        'Symfony\\Component\\Debug\\FatalErrorHandler\\FatalErrorHandlerInterface' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php',
+        'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedFunctionFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php',
+        'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedMethodFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php',
         'Symfony\\Component\\EventDispatcher\\ContainerAwareEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/ContainerAwareEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcherInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php',
@@ -924,6 +955,7 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
         'Twig_Profiler_Node_EnterProfile' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Profiler/Node/EnterProfile.php',
         'Twig_Profiler_Node_LeaveProfile' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Profiler/Node/LeaveProfile.php',
         'Twig_Profiler_Profile' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Profiler/Profile.php',
+        'Twig_RuntimeLoaderInterface' => __DIR__ . '/..' . '/twig/twig/lib/Twig/RuntimeLoaderInterface.php',
         'Twig_Sandbox_SecurityError' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Sandbox/SecurityError.php',
         'Twig_Sandbox_SecurityNotAllowedFilterError' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedFilterError.php',
         'Twig_Sandbox_SecurityNotAllowedFunctionError' => __DIR__ . '/..' . '/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedFunctionError.php',
@@ -991,11 +1023,11 @@ class ComposerStaticInit1440df0a01425ed0b23742052ad04ca4
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1440df0a01425ed0b23742052ad04ca4::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1440df0a01425ed0b23742052ad04ca4::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit1440df0a01425ed0b23742052ad04ca4::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1440df0a01425ed0b23742052ad04ca4::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1440df0a01425ed0b23742052ad04ca4::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7110dc61338383a6a240f84b058bcd0f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7110dc61338383a6a240f84b058bcd0f::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit7110dc61338383a6a240f84b058bcd0f::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7110dc61338383a6a240f84b058bcd0f::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7110dc61338383a6a240f84b058bcd0f::$classMap;
 
         }, null, ClassLoader::class);
     }
