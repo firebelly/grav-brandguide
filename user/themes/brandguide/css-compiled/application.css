@@ -1790,7 +1790,7 @@ body.color .subnested-modular {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    width: calc(100% + 150px); } }
+    width: calc(100% + 100px); } }
 body.visual.identity .subnested-modulars .subnested-modulars .subpage-content p {
   max-width: none; }
 body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
@@ -1803,7 +1803,7 @@ body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .b
 @media screen and (min-width: 768px) {
   body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
     float: left;
-    margin-right: 150px; } }
+    margin-right: 100px; } }
 
 /* Logotypes*/
 .brand-typefaces .replica-pro-intro .section-title {

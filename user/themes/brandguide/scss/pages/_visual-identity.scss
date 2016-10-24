@@ -7,7 +7,7 @@ body.visual.identity {
       display: flex;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-      width: calc(100% + #{$global-padding * 3});
+      width: calc(100% + #{$global-padding * 2});
     }
     .subpage-content {
       p {
@@ -24,7 +24,7 @@ body.visual.identity {
       }
       @include media-md {
         float: left;
-        margin-right: #{$global-padding * 3};
+        margin-right: #{$global-padding * 2};
       }
     }
   }
