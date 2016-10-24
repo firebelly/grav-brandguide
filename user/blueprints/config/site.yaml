@@ -1,2 +1,14 @@
-@extends:
-    '@parent'
+@extends: '@parent'
+
+form:
+  fields:
+    analytics:
+      type: section
+      title: Analytics
+      underline: true
+
+      fields:
+        googleAnalytics:
+          type: text
+          size: small
+          label: Google Analytics Tracking Code

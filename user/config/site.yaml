@@ -15,3 +15,4 @@ summary:
 blog:
   route: /blog
 primaryColor: '#f1bd19'
+googleAnalytics: UA-998109-51
