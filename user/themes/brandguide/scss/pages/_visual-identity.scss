@@ -7,32 +7,24 @@ body.visual.identity {
       display: flex;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-      width: calc(100% + #{$global-padding * 2});
+      width: calc(100% + #{$global-padding * 3});
     }
     .subpage-content {
-      padding-left: $global-padding;
-
       p {
         max-width: none;
       }
       .sidenote {
         margin-top: 0;
-        display: block;
-        margin-right: $vertical-beat;
+        margin-right: #{$vertical-beat * 3};
       }
       .button {
         opacity: .25;
         cursor: default;
         pointer-events: none;
       }
-      @include media-sm {
-        .sidenote {
-          margin-right: #{$vertical-beat * 3};
-        }
-      }
       @include media-md {
         float: left;
-        margin-right: #{$global-padding * 2};
+        margin-right: #{$global-padding * 3};
       }
     }
   }

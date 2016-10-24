@@ -1800,26 +1800,20 @@ body.color .subnested-modular {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    width: calc(100% + 100px); } }
-body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
-  padding-left: 50px; }
-  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content p {
-    max-width: none; }
-  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
-    margin-top: 0;
-    display: block;
-    margin-right: 10px; }
-  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .button {
-    opacity: .25;
-    cursor: default;
-    pointer-events: none; }
-  @media screen and (min-width: 480px) {
-    body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
-      margin-right: 30px; } }
-  @media screen and (min-width: 768px) {
-    body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
-      float: left;
-      margin-right: 100px; } }
+    width: calc(100% + 150px); } }
+body.visual.identity .subnested-modulars .subnested-modulars .subpage-content p {
+  max-width: none; }
+body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .sidenote {
+  margin-top: 0;
+  margin-right: 30px; }
+body.visual.identity .subnested-modulars .subnested-modulars .subpage-content .button {
+  opacity: .25;
+  cursor: default;
+  pointer-events: none; }
+@media screen and (min-width: 768px) {
+  body.visual.identity .subnested-modulars .subnested-modulars .subpage-content {
+    float: left;
+    margin-right: 150px; } }
 
 /* Logotypes*/
 .brand-typefaces .replica-pro-intro .section-title {
