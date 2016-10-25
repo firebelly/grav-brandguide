@@ -73,11 +73,12 @@ var FB = (function($) {
         }
     });
 
-    $document.on('click', 'body.menu-open', function(e) {
-      if (!isNav($(e.target))) {
-        _hideMobileNav();
-      }
-    });
+    // Leaving out for now since the nav fills the viewport
+    // $document.on('click', 'body.menu-open', function(e) {
+    //   if (!isNav($(e.target))) {
+    //     _hideMobileNav();
+    //   }
+    // });
 
     function isNav(target) {
       if (target.is('.menu-toggle') || target.parents('.menu-toggle').length || target.is('.main-nav') || target.parents('.main-nav').length) {

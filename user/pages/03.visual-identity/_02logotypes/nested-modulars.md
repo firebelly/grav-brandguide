@@ -8,5 +8,6 @@ content:
     order:
         by: date
         dir: desc
+visible: true
 ---
 

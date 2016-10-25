@@ -6,23 +6,6 @@ form:
     tabs:
 
       fields:
-        assets:
-          type: tab
-          title: Assets
-          fields:
-            header.assets:
-              name: assets
-              type: list
-              label: Assets
-
-              fields:
-                .title:
-                  type: text
-                  label: Title
-                .file:
-                  label: Choose media
-                  type: pagemediaselect
-
         advanced:
           fields:
             columns:
@@ -40,6 +23,9 @@ form:
 
         content:
           fields:
+            header.test:
+              label: test
+              type: text
             uploads:
               label: Page Media
             header.sidenote:

@@ -1,5 +1,6 @@
 ---
 title: 'Characters'
+visible: true
 ---
 
 ABCDEF-

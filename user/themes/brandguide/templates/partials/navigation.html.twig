@@ -11,9 +11,11 @@
                 {% if page.children %}
                     <ol>
                     {% for childpage in page.children %}
+                        {% if childpage.header.visible %}
                         <li>
                             <a href="{{ page.url }}#{{ _self.pageLinkName(childpage.menu) }}">{{ childpage.menu }}</a>
                         </li>
+                        {% endif %}
                     {% endfor %}
                     </ol>
                 {% endif %}

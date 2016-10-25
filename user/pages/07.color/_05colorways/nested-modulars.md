@@ -1,5 +1,6 @@
 ---
 title: Colorways
+visible: true
 ---
 
 ### Combining Nature and Design

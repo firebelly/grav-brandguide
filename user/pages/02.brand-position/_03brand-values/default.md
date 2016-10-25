@@ -2,6 +2,7 @@
 title: 'Brand Values'
 sidenote: "3 / 5<br>\r\n—<br>\r\nTaken<br>\r\ntogether, our<br>\r\nvalues make<br>\r\nus utterly<br>\r\nunique"
 sectionBrandColor: primary
+visible: true
 ---
 
 ### Fearless self-expression

@@ -7,8 +7,9 @@
   z-index: 20;
   position: fixed;
   text-align: center;
-  width: $global-padding;
   padding: $global-padding 0;
+  margin-right: $vertical-beat;
+  width: #{$global-padding - $vertical-beat};
   .logo {
     width: 22px;
     margin: 0 auto;
@@ -166,13 +167,12 @@
   .nav-list {
     opacity: 0;
     padding-left: 0;
-    margin-top: $global-padding;
     will-change: opacity, transform;
     margin-bottom: #{$global-padding * 2};
     transform: translateY(-#{$global-padding * 3});
+    margin-top: #{$global-padding - $vertical-beat};
     transition: opacity .3s ease-out 0s, transform .5s ease-out 0s;
-    @include media-lg {
-      margin-top: #{$global-padding * 3};
+    @include media-md {
       columns: 2;
       column-width: 215px;
       column-rule: 1px solid $black;
@@ -186,12 +186,12 @@
       -moz-column-rule: 1px solid $black;
       -moz-column-gap: #{$global-padding * 2};
     }
-    @include media-xl {
+    @include media-lg {
       columns: 3;
       -webkit-columns: 3;
       -moz-columns: 3;      
     }
-    @include min-screen(1390px) {
+    @include min-screen(1200px) {
       columns: 4;
       -webkit-columns: 4;
       -moz-columns: 4;
@@ -216,9 +216,6 @@
       margin-bottom: 10px;
       @include media-md {
         padding-bottom: $global-padding;
-      }
-      @include media-xl {
-        padding-bottom: #{$global-padding * 2};
       }
 
       > a {

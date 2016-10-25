@@ -19,6 +19,7 @@ custom_file:
         size: 119006
         file: user/themes/brandguide/assets/brian.jpg
         route: null
+visible: true
 ---
 
 FLOR provides a uniquely rewarding design experience built firmly on our belief that care for people and the planet are essential to Good Design.

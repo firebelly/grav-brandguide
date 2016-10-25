@@ -1,4 +1,5 @@
 ---
 title: 'Pitch'
+visible: true
 ---
 

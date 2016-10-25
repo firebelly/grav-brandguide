@@ -2,6 +2,7 @@
 title: Specifications
 sidenote: ''
 sectionBrandColor: primary
+visible: true
 ---
 
 ### Metric Kerning

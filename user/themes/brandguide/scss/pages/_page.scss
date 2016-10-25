@@ -17,10 +17,17 @@
   }
   
   .childpage {
+    padding: 0 0 $global-padding 0;
     @include dots($black, 6px, bottom);
-    padding: $global-padding 0 $global-padding 0;
     &:last-of-type {
       background: none;
+    }
+
+    > .subpage-content {
+      padding-top: $global-padding;
+      @include media-md {
+        padding-top: #{$global-padding * 2};
+      }
     }
 
     > .subpage-content > .nested-modular > .content > h3 {
@@ -32,7 +39,7 @@
     }
 
     @include media-md {
-      padding: #{$global-padding * 2} 0  #{$global-padding * 2} #{$column * 4};
+      padding: 0 0  #{$global-padding * 2} #{$column * 4};
     }
 
     // Title Section

@@ -26,6 +26,7 @@ keywordsAndNots:
         keyword: Confident
         not: 'never arrogant'
 sidenote: "5 / 5<br>\r\n—<br>\r\nThe voice and<br>\r\ntone we use<br>\r\nare as<br>\r\nimportant as<br>\r\nthe words<br>\r\nwe choose"
+visible: true
 ---
 
 ### Our voice is an extension of our brand. 
