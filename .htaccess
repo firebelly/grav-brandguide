@@ -13,6 +13,13 @@ RewriteEngine On
 
 ## End - RewriteBase
 
+## Begin Force HTTPS
+RewriteCond %{REQUEST_URI} !\.well-known
+RewriteCond %{HTTP_HOST} !^flor-brand-guide.firebellydesign.com [NC]
+RewriteCond %{HTTP_HOST} !^grav-brandguide\.(localhost|sage) [NC]
+RewriteRule ^(.*)$ https://flor-brand-guide.firebellydesign.com%{REQUEST_URI} [R=301,L]
+## End - Force HTTPS
+
 ## Begin - Exploits
 # If you experience problems on your site block out the operations listed below
 # This attempts to block the most common type of exploit `attempts` to Grav
