@@ -10,39 +10,25 @@ namespace RocketTheme\Toolbox\Blueprints;
  */
 class BlueprintSchema
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $items = [];
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $rules = [];
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $nested = [];
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $dynamic = [];
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $filter = ['validation' => true];
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $ignoreFormKeys = ['fields' => 1];
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $types = [];
 
     /**
@@ -52,7 +38,7 @@ class BlueprintSchema
      */
     public function __construct($serialized = null)
     {
-        if (is_array($serialized) && !empty($serialized)) {
+        if (\is_array($serialized) && !empty($serialized)) {
             $this->items = (array) $serialized['items'];
             $this->rules = (array) $serialized['rules'];
             $this->nested = (array) $serialized['nested'];
@@ -92,6 +78,7 @@ class BlueprintSchema
     {
         foreach ($this->dynamic as $key => $data) {
             $field = &$this->items[$key];
+
             foreach ($data as $property => $call) {
                 $action = 'dynamic' . ucfirst($call['action']);
 
@@ -127,7 +114,7 @@ class BlueprintSchema
      */
     public function get($name, $default = null, $separator = '.')
     {
-        $name = $separator != '.' ? strtr($name, $separator, '.') : $name;
+        $name = $separator !== '.' ? str_replace($separator, '.', $name) : $name;
 
         return isset($this->items[$name]) ? $this->items[$name] : $default;
     }
@@ -143,7 +130,7 @@ class BlueprintSchema
      */
     public function set($name, $value, $separator = '.')
     {
-        $name = $separator != '.' ? strtr($name, $separator, '.') : $name;
+        $name = $separator !== '.' ? str_replace($separator, '.', $name) : $name;
 
         $this->items[$name] = $value;
         $this->addProperty($name);
@@ -214,24 +201,31 @@ class BlueprintSchema
         if (isset($value['rules'])) {
             $this->rules = array_merge($this->rules, $value['rules']);
         }
-        if (!isset($value['form']['fields']) || !is_array($value['form']['fields'])) {
-            $value['form']['fields'] = [];
-        }
-        $name = $separator != '.' ? strtr($name, $separator, '.') : $name;
 
-        $form = array_diff_key($value['form'], ['fields' => 1]);
+        $name = $separator !== '.' ? str_replace($separator, '.', $name) : $name;
+
+        if (isset($value['form'])) {
+            $form = array_diff_key($value['form'], ['fields' => 1, 'field' => 1]);
+        } else {
+            $form = [];
+        }
+
         $items = isset($this->items[$name]) ? $this->items[$name] : ['type' => '_root', 'form_field' => false];
 
-        $this->items[$name] = [
-                'form' => $form
-            ] + $items;
-
+        $this->items[$name] = $items;
         $this->addProperty($name);
 
         $prefix = $name ? $name . '.' : '';
         $params = array_intersect_key($form, $this->filter);
         $location = [$name];
-        $this->parseFormFields($value['form']['fields'], $params, $prefix, '', $merge, $location);
+
+        if (isset($value['form']['field'])) {
+            $this->parseFormField($name, $value['form']['field'], $params, $prefix, '', $merge, $location);
+        } elseif (isset($value['form']['fields'])) {
+            $this->parseFormFields($value['form']['fields'], $params, $prefix, '', $merge, $location);
+        }
+
+        $this->items[$name] += ['form' => $form];
 
         return $this;
     }
@@ -249,7 +243,7 @@ class BlueprintSchema
     {
         $nested = $this->getNested($name, $separator);
 
-        if (!is_array($nested)) {
+        if (!\is_array($nested)) {
             $nested = [];
         }
 
@@ -319,6 +313,14 @@ class BlueprintSchema
             }
         }
 
+        // Check if the form cannot have extra fields.
+        if (isset($rules[''])) {
+            $rule = $this->items[''];
+            if (isset($rule['type']) && $rule['type'] !== '_root') {
+                return [];
+            }
+        }
+
         return $this->extraArray($data, $rules, $prefix);
     }
 
@@ -331,7 +333,7 @@ class BlueprintSchema
      */
     protected function getPropertyRecursion($property, $nested)
     {
-        if (!isset($property['type']) || empty($nested) || !is_array($nested)) {
+        if (empty($nested) || !\is_array($nested) || !isset($property['type'])) {
             return $property;
         }
 
@@ -340,12 +342,13 @@ class BlueprintSchema
                 if ($key === '') {
                     continue;
                 }
-                $name = is_array($value) ? $key : $value;
+
+                $name = \is_array($value) ? $key : $value;
                 $property['fields'][$key] = $this->getPropertyRecursion($this->get($name), $value);
             }
         } elseif ($property['type'] === '_parent' || !empty($property['array'])) {
             foreach ($nested as $key => $value) {
-                $name = is_array($value) ? "{$property['name']}.{$key}" : $value;
+                $name = \is_array($value) ? "{$property['name']}.{$key}" : $value;
                 $property['fields'][$key] = $this->getPropertyRecursion($this->get($name), $value);
             }
         }
@@ -396,7 +399,8 @@ class BlueprintSchema
                 // TODO: Add support for adding defaults to collections.
                 continue;
             }
-            if (is_array($value)) {
+
+            if (\is_array($value)) {
                 // Recursively fetch the items.
                 $list = $this->buildDefaults($value);
 
@@ -429,11 +433,10 @@ class BlueprintSchema
     {
         foreach ($data2 as $key => $field) {
             $val = isset($rules[$key]) ? $rules[$key] : null;
-            $rule = is_string($val) ? $this->items[$val] : null;
+            $rule = \is_string($val) ? $this->items[$val] : null;
 
-            if (!empty($rule['type']) && $rule['type'][0] === '_'
-                || (array_key_exists($key, $data1) && is_array($data1[$key]) && is_array($field) && is_array($val) && !isset($val['*']))
-            ) {
+            if ((array_key_exists($key, $data1) && \is_array($data1[$key]) && \is_array($field) && \is_array($val) && !isset($val['*']))
+                || (!empty($rule['type']) && strpos($rule['type'], '_') === 0)) {
                 // Array has been defined in blueprints and is not a collection of items.
                 $data1[$key] = $this->mergeArrays($data1[$key], $field, $val);
             } else {
@@ -457,72 +460,97 @@ class BlueprintSchema
      */
     protected function parseFormFields(array $fields, array $params, $prefix = '', $parent = '', $merge = false, array $formPath = [])
     {
+        if (isset($fields['type']) && !\is_array($fields['type'])) {
+            return;
+        }
+
         // Go though all the fields in current level.
         foreach ($fields as $key => $field) {
-            $key = $this->getFieldKey($key, $prefix, $parent);
+            $this->parseFormField($key, $field, $params, $prefix, $parent, $merge, $formPath);
+        }
+    }
 
-            $newPath = array_merge($formPath, [$key]);
+    /**
+     * @param string $key
+     * @param array $field
+     * @param array $params
+     * @param string $prefix
+     * @param string $parent
+     * @param bool $merge
+     * @param array $formPath
+     */
+    protected function parseFormField($key, array $field, array $params, $prefix = '', $parent = '', $merge = false, array $formPath = [])
+    {
+        // Skip illegal field (needs to be an array).
+        if (!\is_array($field)) {
+            return;
+        }
 
-            $properties = array_diff_key($field, $this->ignoreFormKeys) + $params;
-            $properties['name'] = $key;
+        $key = $this->getFieldKey($key, $prefix, $parent);
 
-            // Set default properties for the field type.
-            $type = isset($properties['type']) ? $properties['type'] : '';
-            if (isset($this->types[$type])) {
-                $properties += $this->types[$type];
+        $newPath = array_merge($formPath, [$key]);
+
+        $properties = array_diff_key($field, $this->ignoreFormKeys) + $params;
+        $properties['name'] = $key;
+
+        // Set default properties for the field type.
+        $type = isset($properties['type']) ? $properties['type'] : '';
+        if (isset($this->types[$type])) {
+            $properties += $this->types[$type];
+        }
+
+        // Merge properties with existing ones.
+        if ($merge && isset($this->items[$key])) {
+            $properties += $this->items[$key];
+        }
+
+        $isInputField = !isset($properties['input@']) || $properties['input@'];
+
+        $propertyExists = isset($this->items[$key]);
+        if (!$isInputField) {
+            // Remove property if it exists.
+            if ($propertyExists) {
+                $this->removeProperty($key);
             }
+        } elseif (!$propertyExists) {
+            // Add missing property.
+            $this->addProperty($key);
+        }
 
-            // Merge properties with existing ones.
-            if ($merge && isset($this->items[$key])) {
-                $properties += $this->items[$key];
-            }
+        if (isset($field['fields'])) {
+            // Recursively get all the nested fields.
+            $isArray = !empty($properties['array']);
+            $newParams = array_intersect_key($properties, $this->filter);
+            $this->parseFormFields($field['fields'], $newParams, $prefix, $key . ($isArray ? '.*': ''), $merge, $newPath);
+        } else {
+            if (!isset($this->items[$key])) {
+                // Add parent rules.
+                $path = explode('.', $key);
+                array_pop($path);
+                $parent = '';
 
-            $isInputField = !isset($properties['input@']) || $properties['input@'];
-
-            if (!$isInputField) {
-                // Remove property if it exists.
-                if (isset($this->items[$key])) {
-                    $this->removeProperty($key);
-                }
-            } elseif (!isset($this->items[$key])) {
-                // Add missing property.
-                $this->addProperty($key);
-            }
-
-            if (isset($field['fields'])) {
-                // Recursively get all the nested fields.
-                $isArray = !empty($properties['array']);
-                $newParams = array_intersect_key($properties, $this->filter);
-                $this->parseFormFields($field['fields'], $newParams, $prefix, $key . ($isArray ? '.*': ''), $merge, $newPath);
-            } else {
-                if (!isset($this->items[$key])) {
-                    // Add parent rules.
-                    $path = explode('.', $key);
-                    array_pop($path);
-                    $parent = '';
-                    foreach ($path as $part) {
-                        $parent .= ($parent ? '.' : '') . $part;
-                        if (!isset($this->items[$parent])) {
-                            $this->items[$parent] = ['type' => '_parent', 'name' => $parent, 'form_field' => false];
-                        }
+                foreach ($path as $part) {
+                    $parent .= ($parent ? '.' : '') . $part;
+                    if (!isset($this->items[$parent])) {
+                        $this->items[$parent] = ['type' => '_parent', 'name' => $parent, 'form_field' => false];
                     }
-                }
-
-                if ($isInputField) {
-                    $this->parseProperties($key, $properties);
                 }
             }
 
             if ($isInputField) {
-                $this->items[$key] = $properties;
+                $this->parseProperties($key, $properties);
             }
+        }
+
+        if ($isInputField) {
+            $this->items[$key] = $properties;
         }
     }
 
     protected function getFieldKey($key, $prefix, $parent)
     {
         // Set name from the array key.
-        if ($key && $key[0] == '.') {
+        if (strpos($key[0], '.') === 0) {
             return ($parent ?: rtrim($prefix, '.')) . $key;
         }
 
@@ -538,7 +566,7 @@ class BlueprintSchema
         }
 
         foreach ($properties as $name => $value) {
-            if (!empty($name) && ($name[0] === '@' || $name[strlen($name) - 1] === '@')) {
+            if (strpos($name[0], '@') !== false) {
                 $list = explode('-', trim($name, '@'), 2);
                 $action = array_shift($list);
                 $property = array_shift($list);
@@ -566,9 +594,10 @@ class BlueprintSchema
 
         $nested = &$this->nested;
         foreach ($parts as $part) {
-            if (!isset($nested[$part]) || !is_array($nested[$part])) {
+            if (!isset($nested[$part]) || !\is_array($nested[$part])) {
                 $nested[$part] = [];
             }
+
             $nested = &$nested[$part];
         }
 
@@ -590,9 +619,10 @@ class BlueprintSchema
 
         $nested = &$this->nested;
         foreach ($parts as $part) {
-            if (!isset($nested[$part]) || !is_array($nested[$part])) {
+            if (!isset($nested[$part]) || !\is_array($nested[$part])) {
                 return;
             }
+
             $nested = &$nested[$part];
         }
 
@@ -608,7 +638,7 @@ class BlueprintSchema
      */
     protected function getRule($rule)
     {
-        if (isset($this->rules[$rule]) && is_array($this->rules[$rule])) {
+        if (isset($this->rules[$rule]) && \is_array($this->rules[$rule])) {
             return $this->rules[$rule];
         }
         return [];
@@ -627,13 +657,13 @@ class BlueprintSchema
 
         foreach ($data as $key => $field) {
             $val = isset($rules[$key]) ? $rules[$key] : (isset($rules['*']) ? $rules['*'] : null);
-            $rule = is_string($val) ? $this->items[$val] : null;
+            $rule = \is_string($val) ? $this->items[$val] : null;
 
             if ($rule || isset($val['*'])) {
                 // Item has been defined in blueprints.
-            } elseif (is_array($field) && is_array($val)) {
+            } elseif (\is_array($field) && \is_array($val)) {
                 // Array has been defined in blueprints.
-                $array += $this->ExtraArray($field, $val, $prefix . $key . '.');
+                $array += $this->extraArray($field, $val, $prefix . $key . '.');
             } else {
                 // Undefined/extra item.
                 $array[$prefix.$key] = $field;
@@ -651,29 +681,30 @@ class BlueprintSchema
     {
         $params = $call['params'];
 
-        if (is_array($params)) {
+        if (\is_array($params)) {
             $function = array_shift($params);
         } else {
             $function = $params;
             $params = [];
         }
 
-        $list = preg_split('/::/', $function, 2);
+        $list = explode('::', $function, 2);
         $f = array_pop($list);
         $o = array_pop($list);
+
         if (!$o) {
-            if (function_exists($f)) {
-                $data = call_user_func_array($f, $params);
+            if (\function_exists($f)) {
+                $data = \call_user_func_array($f, $params);
             }
         } else {
             if (method_exists($o, $f)) {
-                $data = call_user_func_array(array($o, $f), $params);
+                $data = \call_user_func_array(array($o, $f), $params);
             }
         }
 
         // If function returns a value,
         if (isset($data)) {
-            if (isset($field[$property]) && is_array($field[$property]) && is_array($data)) {
+            if (\is_array($data) && isset($field[$property]) && \is_array($field[$property])) {
                 // Combine field and @data-field together.
                 $field[$property] += $data;
             } else {

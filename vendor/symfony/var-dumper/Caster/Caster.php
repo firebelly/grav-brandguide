@@ -54,7 +54,7 @@ class Caster
         if ($a) {
             $p = array_keys($a);
             foreach ($p as $i => $k) {
-                if (isset($k[0]) && "\0" !== $k[0] && !$reflector->hasProperty($k)) {
+                if (isset($k[0]) ? "\0" !== $k[0] && !$reflector->hasProperty($k) : \PHP_VERSION_ID >= 70200) {
                     $p[$i] = self::PREFIX_DYNAMIC.$k;
                 } elseif (isset($k[16]) && "\0" === $k[16] && 0 === strpos($k, "\0class@anonymous\0")) {
                     $p[$i] = "\0".$reflector->getParentClass().'@anonymous'.strrchr($k, "\0");
@@ -89,10 +89,10 @@ class Caster
             if (empty($v)) {
                 $type |= self::EXCLUDE_EMPTY & $filter;
             }
-            if ((self::EXCLUDE_NOT_IMPORTANT & $filter) && !in_array($k, $listedProperties, true)) {
+            if ((self::EXCLUDE_NOT_IMPORTANT & $filter) && !\in_array($k, $listedProperties, true)) {
                 $type |= self::EXCLUDE_NOT_IMPORTANT;
             }
-            if ((self::EXCLUDE_VERBOSE & $filter) && in_array($k, $listedProperties, true)) {
+            if ((self::EXCLUDE_VERBOSE & $filter) && \in_array($k, $listedProperties, true)) {
                 $type |= self::EXCLUDE_VERBOSE;
             }
 

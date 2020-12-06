@@ -89,6 +89,7 @@ abstract class AbstractCloner implements ClonerInterface
         'AMQPEnvelope' => 'Symfony\Component\VarDumper\Caster\AmqpCaster::castEnvelope',
 
         'ArrayObject' => 'Symfony\Component\VarDumper\Caster\SplCaster::castArrayObject',
+        'ArrayIterator' => 'Symfony\Component\VarDumper\Caster\SplCaster::castArrayIterator',
         'SplDoublyLinkedList' => 'Symfony\Component\VarDumper\Caster\SplCaster::castDoublyLinkedList',
         'SplFileInfo' => 'Symfony\Component\VarDumper\Caster\SplCaster::castFileInfo',
         'SplFileObject' => 'Symfony\Component\VarDumper\Caster\SplCaster::castFileObject',
@@ -111,6 +112,7 @@ abstract class AbstractCloner implements ClonerInterface
         ':pgsql result' => 'Symfony\Component\VarDumper\Caster\PgSqlCaster::castResult',
         ':process' => 'Symfony\Component\VarDumper\Caster\ResourceCaster::castProcess',
         ':stream' => 'Symfony\Component\VarDumper\Caster\ResourceCaster::castStream',
+        ':persistent stream' => 'Symfony\Component\VarDumper\Caster\ResourceCaster::castStream',
         ':stream-context' => 'Symfony\Component\VarDumper\Caster\ResourceCaster::castStreamContext',
         ':xml' => 'Symfony\Component\VarDumper\Caster\XmlResourceCaster::castXml',
     );
@@ -135,7 +137,7 @@ abstract class AbstractCloner implements ClonerInterface
             $casters = static::$defaultCasters;
         }
         $this->addCasters($casters);
-        $this->useExt = extension_loaded('symfony_debug');
+        $this->useExt = \extension_loaded('symfony_debug');
     }
 
     /**
@@ -287,9 +289,9 @@ abstract class AbstractCloner implements ClonerInterface
     private function callCaster($callback, $obj, $a, $stub, $isNested)
     {
         try {
-            $cast = call_user_func($callback, $obj, $a, $stub, $isNested, $this->filter);
+            $cast = \call_user_func($callback, $obj, $a, $stub, $isNested, $this->filter);
 
-            if (is_array($cast)) {
+            if (\is_array($cast)) {
                 $a = $cast;
             }
         } catch (\Exception $e) {
@@ -312,7 +314,7 @@ abstract class AbstractCloner implements ClonerInterface
         }
 
         if ($this->prevErrorHandler) {
-            return call_user_func($this->prevErrorHandler, $type, $msg, $file, $line, $context);
+            return \call_user_func($this->prevErrorHandler, $type, $msg, $file, $line, $context);
         }
 
         return false;

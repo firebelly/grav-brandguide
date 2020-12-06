@@ -12,4 +12,5 @@ return array(
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'Gregwar\\Image' => array($vendorDir . '/gregwar/image'),
     'Gregwar\\Cache' => array($vendorDir . '/gregwar/cache'),
+    'Behat\\Gherkin' => array($vendorDir . '/behat/gherkin/src'),
 );

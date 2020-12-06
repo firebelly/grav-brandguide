@@ -11,8 +11,8 @@
 
 namespace Symfony\Component\VarDumper\Caster;
 
-use Symfony\Component\VarDumper\Exception\ThrowingCasterException;
 use Symfony\Component\VarDumper\Cloner\Stub;
+use Symfony\Component\VarDumper\Exception\ThrowingCasterException;
 
 /**
  * Casts common Exception classes to array representation.
@@ -65,14 +65,14 @@ class ExceptionCaster
         $prefix = Caster::PREFIX_PROTECTED;
         $xPrefix = "\0Exception\0";
 
-        if (isset($a[$xPrefix.'previous'], $a[$xPrefix.'trace'])) {
+        if (isset($a[$xPrefix.'previous'], $a[$xPrefix.'trace']) && $a[$xPrefix.'previous'] instanceof \Exception) {
             $b = (array) $a[$xPrefix.'previous'];
             array_unshift($b[$xPrefix.'trace'], array(
-                'function' => 'new '.get_class($a[$xPrefix.'previous']),
+                'function' => 'new '.\get_class($a[$xPrefix.'previous']),
                 'file' => $b[$prefix.'file'],
                 'line' => $b[$prefix.'line'],
             ));
-            $a[$xPrefix.'trace'] = new TraceStub($b[$xPrefix.'trace'], false, 0, -1 - count($a[$xPrefix.'trace']->value));
+            $a[$xPrefix.'trace'] = new TraceStub($b[$xPrefix.'trace'], false, 0, -1 - \count($a[$xPrefix.'trace']->value));
         }
 
         unset($a[$xPrefix.'previous'], $a[$prefix.'code'], $a[$prefix.'file'], $a[$prefix.'line']);
@@ -90,7 +90,7 @@ class ExceptionCaster
         $frames = $trace->value;
 
         $a = array();
-        $j = count($frames);
+        $j = \count($frames);
         if (0 > $i = $trace->sliceOffset) {
             $i = max(0, $j + $i);
         }
@@ -126,7 +126,7 @@ class ExceptionCaster
             true
         );
         if (null !== $trace->sliceLength) {
-            $a = array_slice($a, 0, $trace->sliceLength, true);
+            $a = \array_slice($a, 0, $trace->sliceLength, true);
         }
 
         return $a;
@@ -142,23 +142,28 @@ class ExceptionCaster
 
         if (isset($f['file'], $f['line'])) {
             if (preg_match('/\((\d+)\)(?:\([\da-f]{32}\))? : (?:eval\(\)\'d code|runtime-created function)$/', $f['file'], $match)) {
-                $f['file'] = substr($f['file'], 0, -strlen($match[0]));
+                $f['file'] = substr($f['file'], 0, -\strlen($match[0]));
                 $f['line'] = (int) $match[1];
             }
             if (file_exists($f['file']) && 0 <= self::$srcContext) {
                 $src[$f['file'].':'.$f['line']] = self::extractSource(explode("\n", file_get_contents($f['file'])), $f['line'], self::$srcContext);
 
-                if (!empty($f['class']) && is_subclass_of($f['class'], 'Twig_Template') && method_exists($f['class'], 'getDebugInfo')) {
-                    $template = isset($f['object']) ? $f['object'] : new $f['class'](new \Twig_Environment(new \Twig_Loader_Filesystem()));
+                if (!empty($f['class']) && (is_subclass_of($f['class'], 'Twig\Template') || is_subclass_of($f['class'], 'Twig_Template')) && method_exists($f['class'], 'getDebugInfo')) {
+                    $template = isset($f['object']) ? $f['object'] : unserialize(sprintf('O:%d:"%s":0:{}', \strlen($f['class']), $f['class']));
 
-                    try {
-                        $templateName = $template->getTemplateName();
-                        $templateSrc = explode("\n", method_exists($template, 'getSource') ? $template->getSource() : $template->getEnvironment()->getLoader()->getSource($templateName));
-                        $templateInfo = $template->getDebugInfo();
-                        if (isset($templateInfo[$f['line']])) {
-                            $src[$templateName.':'.$templateInfo[$f['line']]] = self::extractSource($templateSrc, $templateInfo[$f['line']], self::$srcContext);
+                    $templateName = $template->getTemplateName();
+                    $templateSrc = method_exists($template, 'getSourceContext') ? $template->getSourceContext()->getCode() : (method_exists($template, 'getSource') ? $template->getSource() : '');
+                    $templateInfo = $template->getDebugInfo();
+                    if (isset($templateInfo[$f['line']])) {
+                        if (method_exists($template, 'getSourceContext')) {
+                            $templateName = $template->getSourceContext()->getPath() ?: $templateName;
                         }
-                    } catch (\Twig_Error_Loader $e) {
+                        if ($templateSrc) {
+                            $templateSrc = explode("\n", $templateSrc);
+                            $src[$templateName.':'.$templateInfo[$f['line']]] = self::extractSource($templateSrc, $templateInfo[$f['line']], self::$srcContext);
+                        } else {
+                            $src[$templateName] = $templateInfo[$f['line']];
+                        }
                     }
                 }
             } else {
@@ -188,7 +193,7 @@ class ExceptionCaster
      */
     public static function filterTrace(&$trace, $dumpArgs, $offset = 0)
     {
-        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.8 and will be removed in 3.0. Use the castTraceStub method instead.', E_USER_DEPRECATED);
+        @trigger_error('The '.__METHOD__.' method is deprecated since Symfony 2.8 and will be removed in 3.0. Use the castTraceStub method instead.', E_USER_DEPRECATED);
 
         if (0 > $offset || empty($trace[$offset])) {
             return $trace = null;
@@ -229,11 +234,13 @@ class ExceptionCaster
         }
 
         if (!($filter & Caster::EXCLUDE_VERBOSE)) {
-            array_unshift($trace, array(
-                'function' => $xClass ? 'new '.$xClass : null,
-                'file' => $a[Caster::PREFIX_PROTECTED.'file'],
-                'line' => $a[Caster::PREFIX_PROTECTED.'line'],
-            ));
+            if (isset($a[Caster::PREFIX_PROTECTED.'file'], $a[Caster::PREFIX_PROTECTED.'line'])) {
+                array_unshift($trace, array(
+                    'function' => $xClass ? 'new '.$xClass : null,
+                    'file' => $a[Caster::PREFIX_PROTECTED.'file'],
+                    'line' => $a[Caster::PREFIX_PROTECTED.'line'],
+                ));
+            }
             $a[$xPrefix.'trace'] = new TraceStub($trace, self::$traceArgs);
         }
         if (empty($a[$xPrefix.'previous'])) {
