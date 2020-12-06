@@ -22,8 +22,6 @@ class Parser
 
     protected $trailing;
 
-    protected $trailingArray;
-
     public function __construct()
     {
         $this->summary = new Summary();
@@ -110,16 +108,6 @@ class Parser
     }
 
     /**
-     * Get the trailing arguments as an array
-     *
-     * @return array|null
-     */
-    public function trailingArray()
-    {
-        return $this->trailingArray;
-    }
-
-    /**
      * Remove the trailing arguments from the parser and set them aside
      *
      * @param array $arguments
@@ -130,7 +118,6 @@ class Parser
     {
         $trailing = array_splice($arguments, array_search('--', $arguments));
         array_shift($trailing);
-        $this->trailingArray = $trailing;
         $this->trailing = implode(' ', $trailing);
 
         return $arguments;

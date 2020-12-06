@@ -59,6 +59,11 @@ interface AdapterInterface
     public function init();
 
     /**
+     * Unload the resource
+     */
+    public function deinit();
+
+    /**
      * Save the image as a gif.
      *
      * @return $this
@@ -71,6 +76,13 @@ interface AdapterInterface
      * @return $this
      */
     public function savePng($file);
+
+    /**
+     * Save the image as a Webp.
+     *
+     * @return $this
+     */
+    public function saveWebp($file, $quality);
 
     /**
      * Save the image as a jpeg.
@@ -377,10 +389,10 @@ interface AdapterInterface
 
     /**
      * Flips the image.
-     * 
+     *
      * @param int $flipVertical
      * @param int $flipHorizontal
-     * 
+     *
      * @return $this
      */
     public function flip($flipVertical, $flipHorizontal);

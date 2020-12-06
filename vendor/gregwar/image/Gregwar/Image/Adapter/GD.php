@@ -11,6 +11,7 @@ class GD extends Common
         'jpeg'  => \IMG_JPG,
         'gif'   => \IMG_GIF,
         'png'   => \IMG_PNG,
+        'webp'  => \IMG_WEBP
     );
 
     protected function loadResource($resource)
@@ -206,6 +207,55 @@ class GD extends Common
     {
         imagefilter($this->resource, IMG_FILTER_GRAYSCALE);
         imagefilter($this->resource, IMG_FILTER_COLORIZE, 100, 50, 0);
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function gaussianBlur($blurFactor = 1)
+    {
+        $blurFactor = round($blurFactor); // blurFactor has to be an integer
+
+        $originalWidth = $this->width();
+        $originalHeight = $this->height();
+
+        $smallestWidth = ceil($originalWidth * pow(0.5, $blurFactor));
+        $smallestHeight = ceil($originalHeight * pow(0.5, $blurFactor));
+
+        // for the first run, the previous image is the original input
+        $prevImage = $this->resource;
+        $prevWidth = $originalWidth;
+        $prevHeight = $originalHeight;
+
+        // scale way down and gradually scale back up, blurring all the way
+        for ($i = 0; $i < $blurFactor; ++$i) {
+            // determine dimensions of next image
+            $nextWidth = $smallestWidth * pow(2, $i);
+            $nextHeight = $smallestHeight * pow(2, $i);
+
+            // resize previous image to next size
+            $nextImage = imagecreatetruecolor($nextWidth, $nextHeight);
+            imagecopyresized($nextImage, $prevImage, 0, 0, 0, 0,
+                $nextWidth, $nextHeight, $prevWidth, $prevHeight);
+
+            // apply blur filter
+            imagefilter($nextImage, IMG_FILTER_GAUSSIAN_BLUR);
+
+            // now the new image becomes the previous image for the next step
+            $prevImage = $nextImage;
+            $prevWidth = $nextWidth;
+            $prevHeight = $nextHeight;
+        }
+
+        // scale back to original size and blur one more time
+        imagecopyresized($this->resource, $nextImage,
+            0, 0, 0, 0, $originalWidth, $originalHeight, $nextWidth, $nextHeight);
+        imagefilter($this->resource, IMG_FILTER_GAUSSIAN_BLUR);
+
+        // clean up
+        imagedestroy($prevImage);
 
         return $this;
     }
@@ -521,6 +571,16 @@ class GD extends Common
 
         return $this;
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function saveWebp($file, $quality)
+    {
+        imagewebp($this->resource, $file, $quality);
+
+        return $this;
+    }
 
     /**
      * {@inheritdoc}
@@ -537,7 +597,11 @@ class GD extends Common
      */
     protected function openJpeg($file)
     {
-        $this->resource = @imagecreatefromjpeg($file);
+        if (file_exists($file) && filesize($file)) {
+            $this->resource = @imagecreatefromjpeg($file);
+        } else {
+            $this->resource = false;
+        }
     }
 
     /**
@@ -545,7 +609,11 @@ class GD extends Common
      */
     protected function openGif($file)
     {
-        $this->resource = @imagecreatefromgif($file);
+        if (file_exists($file) && filesize($file)) {
+            $this->resource = @imagecreatefromgif($file);
+        } else {
+            $this->resource = false;
+        }
     }
 
     /**
@@ -553,7 +621,23 @@ class GD extends Common
      */
     protected function openPng($file)
     {
-        $this->resource = @imagecreatefrompng($file);
+        if (file_exists($file) && filesize($file)) {
+            $this->resource = @imagecreatefrompng($file);
+        } else {
+            $this->resource = false;
+        }
+    }
+
+    /**
+     * Try to open the file using WEBP.
+     */
+    protected function openWebp($file)
+    {
+        if (file_exists($file) && filesize($file)) {
+            $this->resource = @imagecreatefromwebp($file);
+        } else {
+            $this->resource = false;
+        }
     }
 
     /**

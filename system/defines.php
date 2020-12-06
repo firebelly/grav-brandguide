@@ -1,17 +1,20 @@
 <?php
 /**
- * @package    Grav.Core
+ * @package    Grav\Core
  *
- * @copyright  Copyright (C) 2014 - 2016 RocketTheme, LLC. All rights reserved.
+ * @copyright  Copyright (C) 2015 - 2019 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
 // Some standard defines
 define('GRAV', true);
-define('GRAV_VERSION', '1.1.8');
+define('GRAV_VERSION', '1.6.30');
 define('GRAV_TESTING', false);
 define('DS', '/');
-define('GRAV_PHP_MIN', '5.5.9');
+
+if (!defined('GRAV_PHP_MIN')) {
+    define('GRAV_PHP_MIN', '7.1.3');
+}
 
 // Directories and Paths
 if (!defined('GRAV_ROOT')) {

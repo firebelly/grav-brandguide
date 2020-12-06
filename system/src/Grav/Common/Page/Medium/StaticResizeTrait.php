@@ -1,8 +1,9 @@
 <?php
+
 /**
- * @package    Grav.Common.Page
+ * @package    Grav\Common\Page
  *
- * @copyright  Copyright (C) 2014 - 2016 RocketTheme, LLC. All rights reserved.
+ * @copyright  Copyright (C) 2015 - 2019 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -15,7 +16,7 @@ trait StaticResizeTrait
      *
      * @param  int $width
      * @param  int $height
-     * @return Medium
+     * @return $this
      */
     public function resize($width = null, $height = null)
     {

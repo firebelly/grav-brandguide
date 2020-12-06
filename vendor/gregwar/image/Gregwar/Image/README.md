@@ -1,6 +1,7 @@
 # Gregwar's Image class
 
 [![Build status](https://travis-ci.org/Gregwar/Image.svg?branch=master)](https://travis-ci.org/Gregwar/Image)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YUXRLWHQSWS6L)
 
 The `Gregwar\Image` class purpose is to provide a simple object-oriented images handling and caching API.
 
@@ -109,6 +110,8 @@ The other methods available are:
 * `fillBackground($bg=0xffffff)`: fills the background of a transparent image to the 'bg' color
 
 * `fixOrientation()`: return the image rotated and flipped using image exif information 
+
+* `applyExifOrientation(int $exif_rotation_value)`: return the image rotated and flipped using an exif rotation value 
 
 * `html($title = '', $type = 'jpg')`: return the `<img ... />` tag with the cache image
 

@@ -1,17 +1,20 @@
 <?php
+
 /**
- * @package    Grav.Console
+ * @package    Grav\Console
  *
- * @copyright  Copyright (C) 2014 - 2016 RocketTheme, LLC. All rights reserved.
+ * @copyright  Copyright (C) 2015 - 2019 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
 namespace Grav\Console;
 
+use Grav\Common\Cache;
 use Grav\Common\Grav;
 use Grav\Common\Composer;
 use Grav\Common\GravTrait;
 use Grav\Console\Cli\ClearCacheCommand;
+use RocketTheme\Toolbox\File\YamlFile;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputInterface;
@@ -19,11 +22,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 trait ConsoleTrait
 {
-    use GravTrait;
-
-    /**
-     * @var
-     */
     protected $argv;
 
     /* @var InputInterface $output */
@@ -31,6 +29,9 @@ trait ConsoleTrait
 
     /* @var OutputInterface $output */
     protected $output;
+
+    /** @var array */
+    protected $local_config;
 
     /**
      * Set colors style definition for the formatter.
@@ -40,12 +41,11 @@ trait ConsoleTrait
      */
     public function setupConsole(InputInterface $input, OutputInterface $output)
     {
-        if (Grav::instance()) {
-            Grav::instance()['config']->set('system.cache.driver', 'default');
-        }
+        // Initialize cache with CLI compatibility
+        Grav::instance()['config']->set('system.cache.cli_compatibility', true);
+        Grav::instance()['cache'];
 
         $this->argv = $_SERVER['argv'][0];
-
         $this->input  = $input;
         $this->output = $output;
 
@@ -59,7 +59,7 @@ trait ConsoleTrait
     }
 
     /**
-     * @param $path
+     * @param string $path
      */
     public function isGravInstance($path)
     {
@@ -81,7 +81,7 @@ trait ConsoleTrait
 
         if (!file_exists($path . DS . 'index.php') || !file_exists($path . DS . '.dependencies') || !file_exists($path . DS . 'system' . DS . 'config' . DS . 'system.yaml')) {
             $this->output->writeln('');
-            $this->output->writeln("<red>ERROR</red>: Destination chosen to install does not appear to be a Grav instance:");
+            $this->output->writeln('<red>ERROR</red>: Destination chosen to install does not appear to be a Grav instance:');
             $this->output->writeln("       <white>$path</white>");
             $this->output->writeln('');
             exit;
@@ -112,20 +112,28 @@ trait ConsoleTrait
         return $command->run($input, $this->output);
     }
 
-    /**
-     * Validate if the system is based on windows or not.
-     *
-     * @return bool
-     */
-    public function isWindows()
+    public function invalidateCache()
     {
-        $keys = [
-            'CYGWIN_NT-5.1',
-            'WIN32',
-            'WINNT',
-            'Windows'
-        ];
+        Cache::invalidateCache();
+    }
 
-        return array_key_exists(PHP_OS, $keys);
+    /**
+     * Load the local config file
+     *
+     * @return mixed string the local config file name. false if local config does not exist
+     */
+    public function loadLocalConfig()
+    {
+        $home_folder = getenv('HOME') ?: getenv('HOMEDRIVE') . getenv('HOMEPATH');
+        $local_config_file = $home_folder . '/.grav/config';
+
+        if (file_exists($local_config_file)) {
+            $file = YamlFile::instance($local_config_file);
+            $this->local_config = $file->content();
+            $file->free();
+            return $local_config_file;
+        }
+
+        return false;
     }
 }

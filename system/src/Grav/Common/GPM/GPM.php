@@ -1,18 +1,20 @@
 <?php
+
 /**
- * @package    Grav.Common.GPM
+ * @package    Grav\Common\GPM
  *
- * @copyright  Copyright (C) 2014 - 2016 RocketTheme, LLC. All rights reserved.
+ * @copyright  Copyright (C) 2015 - 2019 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
 namespace Grav\Common\GPM;
 
 use Grav\Common\Grav;
+use Grav\Common\Filesystem\Folder;
 use Grav\Common\Inflector;
 use Grav\Common\Iterator;
 use Grav\Common\Utils;
-use Symfony\Component\Yaml\Yaml;
+use RocketTheme\Toolbox\File\YamlFile;
 
 class GPM extends Iterator
 {
@@ -35,7 +37,7 @@ class GPM extends Iterator
 
     /**
      * Internal cache
-     * @var
+     * @var array
      */
     protected $cache;
 
@@ -47,11 +49,13 @@ class GPM extends Iterator
 
     /**
      * Creates a new GPM instance with Local and Remote packages available
-     * @param boolean $refresh Applies to Remote Packages only and forces a refetch of data
+     * @param bool $refresh Applies to Remote Packages only and forces a refetch of data
      * @param callable $callback Either a function or callback in array notation
      */
     public function __construct($refresh = false, $callback = null)
     {
+        parent::__construct();
+        $this->cache = [];
         $this->installed = new Local\Packages();
         try {
             $this->repository = new Remote\Packages($refresh, $callback);
@@ -74,7 +78,7 @@ class GPM extends Iterator
      * Returns the Locally installable packages
      *
      * @param array $list_type_installed
-     * @return Iterator The installed packages
+     * @return array The installed packages
      */
     public function getInstallable($list_type_installed = ['plugins' => true, 'themes' => true])
     {
@@ -93,7 +97,7 @@ class GPM extends Iterator
 
     /**
      * Returns the amount of locally installed packages
-     * @return integer Amount of installed packages
+     * @return int Amount of installed packages
      */
     public function countInstalled()
     {
@@ -117,6 +121,8 @@ class GPM extends Iterator
         if (isset($this->installed['themes'][$slug])) {
             return $this->installed['themes'][$slug];
         }
+
+        return null;
     }
 
     /**
@@ -141,7 +147,7 @@ class GPM extends Iterator
     /**
      * Checks if a Plugin is installed
      * @param  string $slug The slug of the Plugin
-     * @return boolean True if the Plugin has been installed. False otherwise
+     * @return bool True if the Plugin has been installed. False otherwise
      */
     public function isPluginInstalled($slug)
     {
@@ -175,7 +181,7 @@ class GPM extends Iterator
     /**
      * Checks if a Theme is installed
      * @param  string $slug The slug of the Theme
-     * @return boolean True if the Theme has been installed. False otherwise
+     * @return bool True if the Theme has been installed. False otherwise
      */
     public function isThemeInstalled($slug)
     {
@@ -184,7 +190,7 @@ class GPM extends Iterator
 
     /**
      * Returns the amount of updates available
-     * @return integer Amount of available updates
+     * @return int Amount of available updates
      */
     public function countUpdates()
     {
@@ -199,7 +205,7 @@ class GPM extends Iterator
     /**
      * Returns an array of Plugins and Themes that can be updated.
      * Plugins and Themes are extended with the `available` property that relies to the remote version
-     * @param $list_type_update specifies what type of package to update
+     * @param array $list_type_update specifies what type of package to update
      * @return array Array of updatable Plugins and Themes.
      *               Format: ['total' => int, 'plugins' => array, 'themes' => array]
      */
@@ -222,11 +228,16 @@ class GPM extends Iterator
     /**
      * Returns an array of Plugins that can be updated.
      * The Plugins are extended with the `available` property that relies to the remote version
-     * @return Iterator Array of updatable Plugins
+     * @return array Array of updatable Plugins
      */
     public function getUpdatablePlugins()
     {
         $items = [];
+
+        if (!$this->repository) {
+            return $items;
+        }
+
         $repository = $this->repository['plugins'];
 
         // local cache to speed things up
@@ -239,13 +250,12 @@ class GPM extends Iterator
                 continue;
             }
 
-            $local_version = $plugin->version ? $plugin->version : 'Unknown';
+            $local_version = $plugin->version ?: 'Unknown';
             $remote_version = $repository[$slug]->version;
 
             if (version_compare($local_version, $remote_version) < 0) {
                 $repository[$slug]->available = $remote_version;
                 $repository[$slug]->version = $local_version;
-                $repository[$slug]->name = $repository[$slug]->name;
                 $repository[$slug]->type = $repository[$slug]->release_type;
                 $items[$slug] = $repository[$slug];
             }
@@ -259,7 +269,7 @@ class GPM extends Iterator
     /**
      * Get the latest release of a package from the GPM
      *
-     * @param $package_name
+     * @param string $package_name
      *
      * @return string|null
      */
@@ -282,7 +292,7 @@ class GPM extends Iterator
     /**
      * Check if a Plugin or Theme is updatable
      * @param  string $slug The slug of the package
-     * @return boolean True if updatable. False otherwise or if not found
+     * @return bool True if updatable. False otherwise or if not found
      */
     public function isUpdatable($slug)
     {
@@ -292,7 +302,7 @@ class GPM extends Iterator
     /**
      * Checks if a Plugin is updatable
      * @param  string $plugin The slug of the Plugin
-     * @return boolean True if the Plugin is updatable. False otherwise
+     * @return bool True if the Plugin is updatable. False otherwise
      */
     public function isPluginUpdatable($plugin)
     {
@@ -302,11 +312,16 @@ class GPM extends Iterator
     /**
      * Returns an array of Themes that can be updated.
      * The Themes are extended with the `available` property that relies to the remote version
-     * @return Iterator Array of updatable Themes
+     * @return array Array of updatable Themes
      */
     public function getUpdatableThemes()
     {
         $items = [];
+
+        if (!$this->repository) {
+            return $items;
+        }
+
         $repository = $this->repository['themes'];
 
         // local cache to speed things up
@@ -319,7 +334,7 @@ class GPM extends Iterator
                 continue;
             }
 
-            $local_version = $plugin->version ? $plugin->version : 'Unknown';
+            $local_version = $plugin->version ?: 'Unknown';
             $remote_version = $repository[$slug]->version;
 
             if (version_compare($local_version, $remote_version) < 0) {
@@ -338,7 +353,7 @@ class GPM extends Iterator
     /**
      * Checks if a Theme is Updatable
      * @param  string $theme The slug of the Theme
-     * @return boolean True if the Theme is updatable. False otherwise
+     * @return bool True if the Theme is updatable. False otherwise
      */
     public function isThemeUpdatable($theme)
     {
@@ -348,12 +363,16 @@ class GPM extends Iterator
     /**
      * Get the release type of a package (stable / testing)
      *
-     * @param $package_name
+     * @param string $package_name
      *
      * @return string|null
      */
     public function getReleaseType($package_name)
     {
+        if (!$this->repository) {
+            return null;
+        }
+
         $repository = $this->repository['plugins'];
         if (isset($repository[$package_name])) {
             return $repository[$package_name]->release_type;
@@ -371,9 +390,9 @@ class GPM extends Iterator
     /**
      * Returns true if the package latest release is stable
      *
-     * @param $package_name
+     * @param string $package_name
      *
-     * @return boolean
+     * @return bool
      */
     public function isStableRelease($package_name)
     {
@@ -383,9 +402,9 @@ class GPM extends Iterator
     /**
      * Returns true if the package latest release is testing
      *
-     * @param $package_name
+     * @param string $package_name
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestingRelease($package_name)
     {
@@ -402,7 +421,7 @@ class GPM extends Iterator
      */
     public function getRepositoryPlugin($slug)
     {
-        return @$this->repository['plugins'][$slug];
+        return $this->repository['plugins'][$slug] ?? null;
     }
 
     /**
@@ -411,7 +430,7 @@ class GPM extends Iterator
      */
     public function getRepositoryPlugins()
     {
-        return $this->repository['plugins'];
+        return $this->repository['plugins'] ?? null;
     }
 
     /**
@@ -421,7 +440,7 @@ class GPM extends Iterator
      */
     public function getRepositoryTheme($slug)
     {
-        return @$this->repository['themes'][$slug];
+        return $this->repository['themes'][$slug] ?? null;
     }
 
     /**
@@ -430,12 +449,12 @@ class GPM extends Iterator
      */
     public function getRepositoryThemes()
     {
-        return $this->repository['themes'];
+        return $this->repository['themes'] ?? null;
     }
 
     /**
      * Returns the list of Plugins and Themes available in the repository
-     * @return array Array of available Plugins and Themes
+     * @return Remote\Packages Available Plugins and Themes
      *               Format: ['plugins' => array, 'themes' => array]
      */
     public function getRepository()
@@ -446,9 +465,10 @@ class GPM extends Iterator
     /**
      * Searches for a Package in the repository
      * @param  string $search Can be either the slug or the name
-     * @return Remote\Package Package if found, FALSE if not
+     * @param  bool $ignore_exception True if should not fire an exception (for use in Twig)
+     * @return Remote\Package|bool Package if found, FALSE if not
      */
-    public function findPackage($search)
+    public function findPackage($search, $ignore_exception = false)
     {
         $search = strtolower($search);
 
@@ -468,6 +488,10 @@ class GPM extends Iterator
         if (!$themes && !$plugins) {
             if (!is_writable(ROOT_DIR . '/cache/gpm')) {
                 throw new \RuntimeException("The cache/gpm folder is not writable. Please check the folder permissions.");
+            }
+
+            if ($ignore_exception) {
+                return false;
             }
 
             throw new \RuntimeException("GPM not reachable. Please check your internet connection or check the Grav site is reachable");
@@ -490,6 +514,158 @@ class GPM extends Iterator
         }
 
         return false;
+    }
+
+    /**
+     * Download the zip package via the URL
+     *
+     * @param string $package_file
+     * @param string $tmp
+     * @return null|string
+     */
+    public static function downloadPackage($package_file, $tmp)
+    {
+        $package = parse_url($package_file);
+        $filename = basename($package['path']);
+
+        if (Grav::instance()['config']->get('system.gpm.official_gpm_only') && $package['host'] !== 'getgrav.org') {
+            throw new \RuntimeException("Only official GPM URLs are allowed. You can modify this behavior in the System configuration.");
+        }
+
+        $output = Response::get($package_file, []);
+
+        if ($output) {
+            Folder::create($tmp);
+            file_put_contents($tmp . DS . $filename, $output);
+            return $tmp . DS . $filename;
+        }
+
+        return null;
+    }
+
+    /**
+     * Copy the local zip package to tmp
+     *
+     * @param string $package_file
+     * @param string $tmp
+     * @return null|string
+     */
+    public static function copyPackage($package_file, $tmp)
+    {
+        $package_file = realpath($package_file);
+
+        if (file_exists($package_file)) {
+            $filename = basename($package_file);
+            Folder::create($tmp);
+            copy(realpath($package_file), $tmp . DS . $filename);
+            return $tmp . DS . $filename;
+        }
+
+        return null;
+    }
+
+    /**
+     * Try to guess the package type from the source files
+     *
+     * @param string $source
+     * @return bool|string
+     */
+    public static function getPackageType($source)
+    {
+        $plugin_regex = '/^class\\s{1,}[a-zA-Z0-9]{1,}\\s{1,}extends.+Plugin/m';
+        $theme_regex = '/^class\\s{1,}[a-zA-Z0-9]{1,}\\s{1,}extends.+Theme/m';
+
+        if (
+            file_exists($source . 'system/defines.php') &&
+            file_exists($source . 'system/config/system.yaml')
+        ) {
+            return 'grav';
+        }
+
+        // must have a blueprint
+        if (!file_exists($source . 'blueprints.yaml')) {
+            return false;
+        }
+
+        // either theme or plugin
+        $name = basename($source);
+        if (Utils::contains($name, 'theme')) {
+            return 'theme';
+        }
+        if (Utils::contains($name, 'plugin')) {
+            return 'plugin';
+        }
+        foreach (glob($source . '*.php') as $filename) {
+            $contents = file_get_contents($filename);
+            if (preg_match($theme_regex, $contents)) {
+                return 'theme';
+            }
+            if (preg_match($plugin_regex, $contents)) {
+                return 'plugin';
+            }
+        }
+
+        // Assume it's a theme
+        return 'theme';
+    }
+
+    /**
+     * Try to guess the package name from the source files
+     *
+     * @param string $source
+     * @return bool|string
+     */
+    public static function getPackageName($source)
+    {
+        $ignore_yaml_files = ['blueprints', 'languages'];
+
+        foreach (glob($source . '*.yaml') as $filename) {
+            $name = strtolower(basename($filename, '.yaml'));
+            if (in_array($name, $ignore_yaml_files)) {
+                continue;
+            }
+            return $name;
+        }
+        return false;
+    }
+
+    /**
+     * Find/Parse the blueprint file
+     *
+     * @param string $source
+     * @return array|bool
+     */
+    public static function getBlueprints($source)
+    {
+        $blueprint_file = $source . 'blueprints.yaml';
+        if (!file_exists($blueprint_file)) {
+            return false;
+        }
+
+        $file = YamlFile::instance($blueprint_file);
+        $blueprint = (array)$file->content();
+        $file->free();
+
+        return $blueprint;
+    }
+
+    /**
+     * Get the install path for a name and a particular type of package
+     *
+     * @param string $type
+     * @param string $name
+     * @return string
+     */
+    public static function getInstallPath($type, $name)
+    {
+        $locator = Grav::instance()['locator'];
+
+        if ($type === 'theme') {
+            $install_path = $locator->findResource('themes://', false) . DS . $name;
+        } else {
+            $install_path = $locator->findResource('plugins://', false) . DS . $name;
+        }
+        return $install_path;
     }
 
     /**
@@ -534,7 +710,7 @@ class GPM extends Iterator
                 }
 
                 $not_found = new \stdClass();
-                $not_found->name = $inflector->camelize($search);
+                $not_found->name = $inflector::camelize($search);
                 $not_found->slug = $search;
                 $not_found->package_type = $type;
                 $not_found->install_path = str_replace('%name%', $search, $this->install_paths[$type]);
@@ -564,11 +740,11 @@ class GPM extends Iterator
         foreach ($packages as $package_name => $package) {
             if (isset($package['dependencies'])) {
                 foreach ($package['dependencies'] as $dependency) {
-                    if (is_array($dependency)) {
-                        $dependency = array_keys($dependency)[0];
+                    if (is_array($dependency) && isset($dependency['name'])) {
+                        $dependency = $dependency['name'];
                     }
 
-                    if ($dependency == $slug) {
+                    if ($dependency === $slug) {
                         $dependent_packages[] = $package_name;
                     }
                 }
@@ -582,8 +758,8 @@ class GPM extends Iterator
     /**
      * Get the required version of a dependency of a package
      *
-     * @param $package_slug
-     * @param $dependency_slug
+     * @param string $package_slug
+     * @param string $dependency_slug
      *
      * @return mixed
      */
@@ -595,6 +771,8 @@ class GPM extends Iterator
                 return $dependency[$dependency_slug];
             }
         }
+
+        return null;
     }
 
     /**
@@ -606,7 +784,7 @@ class GPM extends Iterator
      * @param array $ignore_packages_list
      *
      * @return bool
-     * @throws \Exception
+     * @throws \RuntimeException
      */
     public function checkNoOtherPackageNeedsThisDependencyInALowerVersion(
         $slug,
@@ -629,8 +807,8 @@ class GPM extends Iterator
                     $compatible = $this->checkNextSignificantReleasesAreCompatible($version,
                         $other_dependency_version);
                     if (!$compatible) {
-                        if (!in_array($dependent_package, $ignore_packages_list)) {
-                            throw new \Exception("Package <cyan>$slug</cyan> is required in an older version by package <cyan>$dependent_package</cyan>. This package needs a newer version, and because of this it cannot be installed. The <cyan>$dependent_package</cyan> package must be updated to use a newer release of <cyan>$slug</cyan>.",
+                        if (!in_array($dependent_package, $ignore_packages_list, true)) {
+                            throw new \RuntimeException("Package <cyan>$slug</cyan> is required in an older version by package <cyan>$dependent_package</cyan>. This package needs a newer version, and because of this it cannot be installed. The <cyan>$dependent_package</cyan> package must be updated to use a newer release of <cyan>$slug</cyan>.",
                                 2);
                         }
                     }
@@ -644,7 +822,7 @@ class GPM extends Iterator
     /**
      * Check the passed packages list can be updated
      *
-     * @param $packages_names_list
+     * @param array $packages_names_list
      *
      * @throws \Exception
      */
@@ -673,22 +851,36 @@ class GPM extends Iterator
     {
         $dependencies = $this->calculateMergedDependenciesOfPackages($packages);
         foreach ($dependencies as $dependency_slug => $dependencyVersionWithOperator) {
-            if (in_array($dependency_slug, $packages)) {
+            if (\in_array($dependency_slug, $packages, true)) {
+                unset($dependencies[$dependency_slug]);
+                continue;
+            }
+
+            // Check PHP version
+            if ($dependency_slug === 'php') {
+                $current_php_version = phpversion();
+                if (version_compare($this->calculateVersionNumberFromDependencyVersion($dependencyVersionWithOperator),
+                        $current_php_version) === 1
+                ) {
+                    //Needs a Grav update first
+                    throw new \RuntimeException("<red>One of the packages require PHP {$dependencies['php']}. Please update PHP to resolve this");
+                }
+
                 unset($dependencies[$dependency_slug]);
                 continue;
             }
 
             //First, check for Grav dependency. If a dependency requires Grav > the current version, abort and tell.
-            if ($dependency_slug == 'grav') {
+            if ($dependency_slug === 'grav') {
                 if (version_compare($this->calculateVersionNumberFromDependencyVersion($dependencyVersionWithOperator),
                         GRAV_VERSION) === 1
                 ) {
                     //Needs a Grav update first
-                    throw new \Exception("<red>One of the packages require Grav " . $dependencies['grav'] . ". Please update Grav to the latest release.");
-                } else {
-                    unset($dependencies[$dependency_slug]);
-                    continue;
+                    throw new \RuntimeException("<red>One of the packages require Grav {$dependencies['grav']}. Please update Grav to the latest release.");
                 }
+
+                unset($dependencies[$dependency_slug]);
+                continue;
             }
 
             if ($this->isPluginInstalled($dependency_slug)) {
@@ -702,7 +894,9 @@ class GPM extends Iterator
                 // get currently installed version
                 $locator = Grav::instance()['locator'];
                 $blueprints_path = $locator->findResource('plugins://' . $dependency_slug . DS . 'blueprints.yaml');
-                $package_yaml = Yaml::parse(file_get_contents($blueprints_path));
+                $file = YamlFile::instance($blueprints_path);
+                $package_yaml = $file->content();
+                $file->free();
                 $currentlyInstalledVersion = $package_yaml['version'];
 
                 // if requirement is next significant release, check is compatible with currently installed version, might not be
@@ -712,7 +906,7 @@ class GPM extends Iterator
                             $currentlyInstalledVersion);
 
                         if (!$compatible) {
-                            throw new \Exception('Dependency <cyan>' . $dependency_slug . '</cyan> is required in an older version than the one installed. This package must be updated. Please get in touch with its developer.',
+                            throw new \RuntimeException('Dependency <cyan>' . $dependency_slug . '</cyan> is required in an older version than the one installed. This package must be updated. Please get in touch with its developer.',
                                 2);
                         }
                     }
@@ -723,7 +917,7 @@ class GPM extends Iterator
 
                 if ($this->firstVersionIsLower($latestRelease, $dependencyVersion)) {
                     //throw an exception if a required version cannot be found in the GPM yet
-                    throw new \Exception('Dependency <cyan>' . $package_yaml['name'] . '</cyan> is required in version <cyan>' . $dependencyVersion . '</cyan> which is higher than the latest release, <cyan>' . $latestRelease . '</cyan>. Try running `bin/gpm -f index` to force a refresh of the GPM cache',
+                    throw new \RuntimeException('Dependency <cyan>' . $package_yaml['name'] . '</cyan> is required in version <cyan>' . $dependencyVersion . '</cyan> which is higher than the latest release, <cyan>' . $latestRelease . '</cyan>. Try running `bin/gpm -f index` to force a refresh of the GPM cache',
                         1);
                 }
 
@@ -774,7 +968,7 @@ class GPM extends Iterator
 
     private function firstVersionIsLower($firstVersion, $secondVersion)
     {
-        return version_compare($firstVersion, $secondVersion) == -1;
+        return version_compare($firstVersion, $secondVersion) === -1;
     }
 
     /**
@@ -829,7 +1023,7 @@ class GPM extends Iterator
 
                         $current_package_version_number = $this->calculateVersionNumberFromDependencyVersion($current_package_version_information);
                         if (!$current_package_version_number) {
-                            throw new \Exception('Bad format for version of dependency ' . $current_package_name . ' for package ' . $packageName,
+                            throw new \RuntimeException('Bad format for version of dependency ' . $current_package_name . ' for package ' . $packageName,
                                 1);
                         }
 
@@ -845,7 +1039,7 @@ class GPM extends Iterator
                             if (!$currently_stored_version_is_in_next_significant_release_format && !$current_package_version_is_in_next_significant_release_format) {
                                 //Comparing versions equals or higher, a simple version_compare is enough
                                 if (version_compare($currently_stored_version_number,
-                                        $current_package_version_number) == -1
+                                        $current_package_version_number) === -1
                                 ) { //Current package version is higher
                                     $dependencies[$current_package_name] = $current_package_version_information;
                                 }
@@ -853,7 +1047,7 @@ class GPM extends Iterator
                                 $compatible = $this->checkNextSignificantReleasesAreCompatible($currently_stored_version_number,
                                     $current_package_version_number);
                                 if (!$compatible) {
-                                    throw new \Exception('Dependency ' . $current_package_name . ' is required in two incompatible versions',
+                                    throw new \RuntimeException('Dependency ' . $current_package_name . ' is required in two incompatible versions',
                                         2);
                                 }
                             }
@@ -900,17 +1094,20 @@ class GPM extends Iterator
      */
     public function calculateVersionNumberFromDependencyVersion($version)
     {
-        if ($version == '*') {
+        if ($version === '*') {
             return null;
-        } elseif ($version == '') {
-            return null;
-        } elseif ($this->versionFormatIsNextSignificantRelease($version)) {
-            return substr($version, 1);
-        } elseif ($this->versionFormatIsEqualOrHigher($version)) {
-            return substr($version, 2);
-        } else {
-            return $version;
         }
+        if ($version === '') {
+            return null;
+        }
+        if ($this->versionFormatIsNextSignificantRelease($version)) {
+            return trim(substr($version, 1));
+        }
+        if ($this->versionFormatIsEqualOrHigher($version)) {
+            return trim(substr($version, 2));
+        }
+
+        return $version;
     }
 
     /**
@@ -918,13 +1115,13 @@ class GPM extends Iterator
      *
      * Example: returns true for $version: '~2.0'
      *
-     * @param $version
+     * @param string $version
      *
      * @return bool
      */
-    public function versionFormatIsNextSignificantRelease($version)
+    public function versionFormatIsNextSignificantRelease($version): bool
     {
-        return substr($version, 0, 1) == '~';
+        return strpos($version, '~') === 0;
     }
 
     /**
@@ -932,13 +1129,13 @@ class GPM extends Iterator
      *
      * Example: returns true for $version: '>=2.0'
      *
-     * @param $version
+     * @param string $version
      *
      * @return bool
      */
-    public function versionFormatIsEqualOrHigher($version)
+    public function versionFormatIsEqualOrHigher($version): bool
     {
-        return substr($version, 0, 2) == '>=';
+        return strpos($version, '>=') === 0;
     }
 
     /**
@@ -954,17 +1151,17 @@ class GPM extends Iterator
      *
      * @return bool
      */
-    public function checkNextSignificantReleasesAreCompatible($version1, $version2)
+    public function checkNextSignificantReleasesAreCompatible($version1, $version2): bool
     {
         $version1array = explode('.', $version1);
         $version2array = explode('.', $version2);
 
-        if (count($version1array) > count($version2array)) {
+        if (\count($version1array) > \count($version2array)) {
             list($version1array, $version2array) = [$version2array, $version1array];
         }
 
         $i = 0;
-        while ($i < count($version1array) - 1) {
+        while ($i < \count($version1array) - 1) {
             if ($version1array[$i] != $version2array[$i]) {
                 return false;
             }
